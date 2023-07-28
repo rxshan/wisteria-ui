@@ -9,9 +9,10 @@
   "scripts": {
     "cz": "npx git-cz",
     "format": "npx prettier --write --cache .",
+    "stub": "pnpm run -r --parallel --filter=./packages/* stub",
     "build": "pnpm run -r --filter=./packages/* build",
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "npx husky install & pnpm build"
+    "postinstall": "npx husky install & pnpm stub"
   },
   "pnpm": {
     "peerDependencyRules": {
@@ -26,7 +27,15 @@
     }
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "*.json": "prettier --write",
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
@@ -35,6 +44,7 @@
     "@wisteria-ui/eslint-config": "workspace:*",
     "@wisteria-ui/stylelint-config": "workspace:*",
     "commitizen": "^4.3.0",
+    "eslint": "^8.45.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "only-allow": "^1.1.1",

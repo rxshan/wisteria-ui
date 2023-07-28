@@ -11,7 +11,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "moduleResolution": "bundler",
-    "jsx": "preserve"
+    "verbatimModuleSyntax": true
   },
   "exclude": ["**/dist/**", "**/node_modules/**"]
 }

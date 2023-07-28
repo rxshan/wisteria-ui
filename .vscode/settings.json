@@ -1,12 +1,14 @@
 {
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.prettier": true,
+    "source.fixAll.stylelint": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "typescript.tsdk": "node_modules/typescript/lib",
   "css.validate": false,
   "scss.validate": false,
-  "stylelint.customSyntax": "postcss-scss",
-  "stylelint.validate": ["css", "scss"]
+  "stylelint.validate": ["css", "scss"],
+  "stylelint.customSyntax": "postcss-scss"
 }

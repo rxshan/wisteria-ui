@@ -1,0 +1,5 @@
+{
+  "root": true,
+  "extends": ["@wisteria-ui/eslint-config"],
+  "ignorePatterns": ["**/dist/**", "**/node_modules/**"]
+}

@@ -1,4 +1,4 @@
 {
   "extends": "@wisteria-ui/stylelint-config",
-  "ignoreFiles": ["**/dist", "**/.next", "**/node_modules"]
+  "ignoreFiles": ["**/dist/**", "**/node_modules/**"]
 }
