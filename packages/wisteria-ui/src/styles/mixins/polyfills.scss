@@ -1,0 +1,36 @@
+@mixin flex-row-gap($gap: 0) {
+  row-gap: $gap;
+
+  @supports not (row-gap: 0) {
+    margin-top: calc($gap * -1);
+
+    & > * {
+      margin-top: $gap;
+    }
+  }
+}
+
+@mixin flex-col-gap($gap: 0) {
+  column-gap: $gap;
+
+  @supports not (column-gap: 0) {
+    margin-left: calc($gap * -1);
+
+    & > * {
+      margin-left: $gap;
+    }
+  }
+}
+
+@mixin flex-gap($row-gap, $col-gap) {
+  @include flex-row-gap($row-gap);
+  @include flex-col-gap(if($col-gap, $col-gap, $row-gap));
+}
+
+@mixin mix-blend-color($mode, $fallback-color: white) {
+  mix-blend-mode: $mode;
+
+  @supports not (mix-blend-mode: $mode) {
+    color: $fallback-color;
+  }
+}

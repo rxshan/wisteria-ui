@@ -1,0 +1,17 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es2015",
+    "lib": ["esnext", "dom"],
+    "strict": true,
+    "allowJs": false,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "moduleResolution": "bundler",
+    "jsx": "preserve"
+  },
+  "exclude": ["**/dist/**", "**/node_modules/**"]
+}
