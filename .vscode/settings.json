@@ -11,6 +11,7 @@
   "scss.validate": false,
   "stylelint.validate": ["css", "scss"],
   "stylelint.customSyntax": "postcss-scss",
+  "eslint.codeActionsOnSave.mode": "all",
   "cSpell.words": [
     "commitlint",
     "compat",
@@ -21,5 +22,8 @@
     "prepass",
     "stylelint",
     "tailwindcss"
-  ]
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

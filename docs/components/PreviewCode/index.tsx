@@ -1,6 +1,6 @@
-import { h, type FunctionComponent, type VNode } from 'preact';
-import styles from './styles.module.css';
+import type { FunctionComponent, VNode } from 'preact';
 import { Fieldset } from './Fieldset';
+import styles from './styles.module.css';
 
 export { Fieldset };
 
@@ -14,7 +14,7 @@ export const PreviewCode: FunctionComponent<PreviewCodeProps> = ({
   label,
   children
 }) => {
-  const line = !!label ? 'dashed' : 'hidden';
+  const line = label ? 'dashed' : 'hidden';
   const gap = !label ? 0 : 16;
   return (
     <div className={styles.previewCode}>

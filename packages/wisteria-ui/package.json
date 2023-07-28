@@ -2,7 +2,18 @@
   "name": "wisteria-ui",
   "type": "module",
   "version": "0.0.1",
+  "license": "MIT",
+  "files": [
+    "src"
+  ],
+  "main": "./src/index.ts",
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "preact": ">=10"
+  },
+  "devDependencies": {
+    "preact": "^10.15.1"
   }
 }

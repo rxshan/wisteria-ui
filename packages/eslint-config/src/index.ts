@@ -6,6 +6,7 @@ export default {
   },
   extends: [
     'prettier',
+    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
@@ -36,6 +37,7 @@ export default {
         allow: ['warn', 'error']
       }
     ],
+    'no-duplicate-imports': 'error',
     /* typescript rules */
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',

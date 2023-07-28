@@ -24,6 +24,7 @@ const nextConfig = {
   experimental: {
     esmExternals: true
   },
+  transpilePackages: ['wisteria-ui'],
   webpack: config => {
     config.resolve.alias = {
       ...config.resolve.alias,

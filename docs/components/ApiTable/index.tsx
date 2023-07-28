@@ -1,4 +1,4 @@
-import { h, type FunctionComponent } from 'preact';
+import type { FunctionComponent } from 'preact';
 import styles from './styles.module.css';
 
 type Type = string;

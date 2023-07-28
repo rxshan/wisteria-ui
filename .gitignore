@@ -7,4 +7,5 @@
 
 # Deps or Bundler
 dist
+.next
 node_modules

@@ -142,7 +142,11 @@ importers:
         specifier: ^10.0.0
         version: 10.0.0(postcss@8.4.27)(stylelint@15.10.2)
 
-  packages/wisteria-ui: {}
+  packages/wisteria-ui:
+    devDependencies:
+      preact:
+        specifier: ^10.15.1
+        version: 10.15.1
 
 packages:
 
