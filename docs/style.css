@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+div[class~='nextra-code-block'] > pre {
+  padding-bottom: 0 !important;
+}
+
+div[class~='nextra-code-block'] > pre > code {
+  padding-bottom: 1rem !important;
+  overflow: auto;
+}
+
+div[class~='nextra-code-block'] > pre > code::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+div[class~='nextra-code-block'] > pre > code::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 3px;
+}
+
+button[role='tab']:focus-visible {
+  box-shadow: none !important;
+}

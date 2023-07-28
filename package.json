@@ -11,15 +11,9 @@
     "format": "npx prettier --write --cache .",
     "stub": "pnpm run -r --parallel --filter=./packages/* stub",
     "build": "pnpm run -r --filter=./packages/* build",
+    "dev": "pnpm run --filter @wisteria-ui/docs dev",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "npx husky install & pnpm stub"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "react"
-      ]
-    }
   },
   "config": {
     "commitizen": {

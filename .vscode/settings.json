@@ -10,5 +10,16 @@
   "css.validate": false,
   "scss.validate": false,
   "stylelint.validate": ["css", "scss"],
-  "stylelint.customSyntax": "postcss-scss"
+  "stylelint.customSyntax": "postcss-scss",
+  "cSpell.words": [
+    "commitlint",
+    "compat",
+    "nextra",
+    "preact",
+    "prefresh",
+    "preinstall",
+    "prepass",
+    "stylelint",
+    "tailwindcss"
+  ]
 }

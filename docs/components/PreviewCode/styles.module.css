@@ -1,0 +1,72 @@
+.fieldset {
+  padding: 16px;
+  border-style: var(--line-mode) !important;
+  border-width: 1px !important;
+  border-radius: 6px;
+}
+
+.fieldset > legend {
+  padding: 0 8px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.previewCode {
+  margin: 24px 0;
+}
+
+.previewCode .layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+}
+
+.previewCode .arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+}
+
+.previewCode .arrow > svg {
+  width: 28px;
+}
+
+.previewCode .mdx,
+.previewCode .code {
+  flex: 1 1 0;
+  width: calc(50% - 30px);
+}
+
+@media screen and (width >= 1201px) {
+  .previewCode .code > fieldset {
+    height: calc(100% + 8px) !important;
+  }
+}
+
+@media screen and (width <= 1200px) {
+  .previewCode .layout {
+    flex-direction: column;
+  }
+
+  .previewCode .mdx,
+  .previewCode .code {
+    width: 100%;
+  }
+
+  .previewCode .code {
+    height: 100%;
+  }
+
+  .previewCode .arrow {
+    width: auto;
+    height: 60px;
+    transform: rotate(90deg);
+  }
+}
+
+.previewCode pre,
+.previewCode div[class~='nextra-code-block'] {
+  margin: 0;
+  overflow: auto;
+}

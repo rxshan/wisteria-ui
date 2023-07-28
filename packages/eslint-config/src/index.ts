@@ -8,6 +8,7 @@ export default {
     'prettier',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended'
   ],
   parser: '@typescript-eslint/parser',
@@ -71,7 +72,6 @@ export default {
     'react/jsx-uses-vars': 'error',
     'react/jsx-uses-react': 'error',
     'react/self-closing-comp': 'warn',
-    'react/react-in-jsx-scope': 'error',
     'react/jsx-key': ['error', { checkFragmentShorthand: true }],
     /* react-hooks rules */
     'react-hooks/rules-of-hooks': 'error',

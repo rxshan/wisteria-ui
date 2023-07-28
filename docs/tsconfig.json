@@ -1,0 +1,15 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "module": "esnext",
+    "jsxFactory": "h",
+    "jsxImportSource": "preact",
+    "noEmit": true,
+    "incremental": true,
+    "moduleResolution": "node",
+    "isolatedModules": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", ".next", ".swc", "dist"]
+}
