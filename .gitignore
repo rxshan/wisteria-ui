@@ -1,0 +1,10 @@
+.DS_*
+.idea
+
+# Logs
+*.log
+*.log.*
+
+# Deps or Bundler
+dist
+node_modules

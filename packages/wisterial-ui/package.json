@@ -1,0 +1,8 @@
+{
+  "name": "wisteria-ui",
+  "type": "module",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  }
+}
