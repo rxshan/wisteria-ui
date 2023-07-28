@@ -1,8 +1,34 @@
 {
-  "name": "@wisteria/stylelint-config",
-  "type": "module",
+  "name": "@wisteria-ui/stylelint-config",
   "version": "0.0.1",
   "publishConfig": {
     "access": "public"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "unbuild"
+  },
+  "dependencies": {
+    "stylelint-config-recess-order": "^4.3.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^10.0.0"
+  },
+  "peerDependencies": {
+    "postcss-scss": "^4.0.6",
+    "stylelint": "^15.10.2"
   }
 }
