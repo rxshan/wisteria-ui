@@ -14,6 +14,8 @@ const withNextra = nextra({
 const nextConfig = {
   distDir: 'dist',
   output: 'export',
+  basePath: '/wisteria-ui',
+  assetPrefix: '/wisteria-ui/',
   cleanDistDir: true,
   images: {
     unoptimized: true
@@ -22,7 +24,7 @@ const nextConfig = {
     ignoreDuringBuilds: true
   },
   experimental: {
-    esmExternals: true
+    esmExternals: false
   },
   transpilePackages: ['wisteria-ui'],
   webpack: config => {
