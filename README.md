@@ -15,6 +15,20 @@
 
 如果有想法参与其中，请先阅读 [CONTRIBUTING](https://github.com/wisteria-ui/wisteria-ui/blob/main/CONTRIBUTING.md) 了解流程。
 
+如果您已参与该项目，但不在贡献列表里，请在 `PR` 或 `ISSUE` 中添加以下评论。
+
+```sh
+@all-contributors please add @tbenning for design
+```
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## 状态
 
 ![Alt](https://repobeats.axiom.co/api/embed/3f26eab41c4367a0e2f362681b547231a8253640.svg 'Repobeats analytics image')
@@ -23,6 +37,6 @@
 
 本仓库旨在以 [Preact](https://preactjs.com) 来实现 [Material Design](https://m3.material.io) 的设计，欢迎加入👋。
 
-如果您有任何想法或好的主意，可以直接提 [Issue](https://github.com/wisteria-ui/wisteria-ui/issues) 或扫描下方二维码添加我。
+如果您有任何想法或好的主意，可以直接提 [ISSUE](https://github.com/wisteria-ui/wisteria-ui/issues) 或扫描下方二维码添加我。
 
 <img width="320px" src="https://i.mji.rip/2023/07/30/c43723c8f50f35bfb704c489a8d50a86.jpeg" />
