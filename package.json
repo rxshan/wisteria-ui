@@ -8,6 +8,7 @@
     "docs:build": "pnpm run --filter @wisteria-ui/docs docs:build",
     "docs:dev": "pnpm run --filter @wisteria-ui/docs docs:dev",
     "format": "npx prettier --write --cache .",
+    "generate-contributors": "npx all-contributors generate",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "npx husky install & pnpm stub",
     "sorted": "npx sort-package-json",
