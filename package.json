@@ -1,25 +1,17 @@
 {
+  "version": "0.0.1",
   "private": true,
   "type": "module",
-  "version": "0.0.1",
-  "packageManager": "^pnpm@8.1.1",
-  "engines": {
-    "node": ">=14"
-  },
   "scripts": {
-    "cz": "npx git-cz",
-    "format": "npx prettier --write --cache .",
-    "stub": "pnpm run -r --parallel --filter=./packages/* stub",
     "build": "pnpm run -r --filter=./packages/* build",
-    "docs:dev": "pnpm run --filter @wisteria-ui/docs docs:dev",
+    "cz": "npx git-cz",
     "docs:build": "pnpm run --filter @wisteria-ui/docs docs:build",
+    "docs:dev": "pnpm run --filter @wisteria-ui/docs docs:dev",
+    "format": "npx prettier --write --cache .",
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "npx husky install & pnpm stub"
-  },
-  "config": {
-    "commitizen": {
-      "path": "@commitlint/cz-commitlint"
-    }
+    "postinstall": "npx husky install & pnpm stub",
+    "sorted": "npx sort-package-json",
+    "stub": "pnpm run -r --parallel --filter=./packages/* stub"
   },
   "lint-staged": {
     "*.{md,json}": "prettier --write",
@@ -31,6 +23,11 @@
       "stylelint --fix",
       "prettier --write"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
@@ -45,8 +42,13 @@
     "only-allow": "^1.1.1",
     "postcss-scss": "^4.0.6",
     "prettier": "^3.0.0",
+    "sort-package-json": "^2.5.1",
     "stylelint": "^15.10.2",
     "typescript": "^5.1.6",
     "unbuild": "^1.2.1"
+  },
+  "packageManager": "^pnpm@8.1.1",
+  "engines": {
+    "node": ">=14"
   }
 }
