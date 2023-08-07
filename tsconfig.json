@@ -15,10 +15,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": true,
-    "forceConsistentCasingInFileNames": true,
-    "paths": {
-      "wisteria-ui": ["./packages/wisteria-ui/src/index.ts"]
-    }
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": ["**/dist/**", "**/node_modules/**"]
 }

@@ -8,7 +8,10 @@
     "noEmit": true,
     "incremental": true,
     "moduleResolution": "node",
-    "isolatedModules": true
+    "isolatedModules": true,
+    "paths": {
+      "wisteria-ui": ["./packages/wisteria-ui/src/index.ts"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", ".next", ".swc", "dist"]

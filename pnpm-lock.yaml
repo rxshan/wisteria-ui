@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -64,7 +64,7 @@ importers:
     dependencies:
       next:
         specifier: 13.4.4
-        version: 13.4.4(@babel/core@7.22.9)(@preact/compat@17.1.2)(@preact/compat@17.1.2)
+        version: 13.4.4(@babel/core@7.22.9)(@preact/compat@17.1.2)(@preact/compat@17.1.2)(sass@1.64.1)
       nextra:
         specifier: 2.7.1
         version: 2.7.1(@preact/compat@17.1.2)(@preact/compat@17.1.2)(next@13.4.4)
@@ -89,6 +89,12 @@ importers:
       react-ssr-prepass:
         specifier: npm:preact-ssr-prepass@^1.2.0
         version: /preact-ssr-prepass@1.2.0(preact@10.15.1)
+      sass:
+        specifier: ^1.64.1
+        version: 1.64.1
+      wisteria-ui:
+        specifier: workspace:*
+        version: link:../packages/wisteria-ui
     devDependencies:
       '@prefresh/next':
         specifier: ^1.7.0
@@ -1376,7 +1382,7 @@ packages:
       '@prefresh/core': 1.5.1(preact@10.15.1)
       '@prefresh/utils': 1.2.0
       '@prefresh/webpack': 4.0.0(@prefresh/babel-plugin@0.5.0)(preact@10.15.1)(webpack@5.88.2)
-      next: 13.4.4(@babel/core@7.22.9)(@preact/compat@17.1.2)(@preact/compat@17.1.2)
+      next: 13.4.4(@babel/core@7.22.9)(@preact/compat@17.1.2)(@preact/compat@17.1.2)(sass@1.64.1)
       preact: 10.15.1
       webpack: 5.88.2
     dev: true
@@ -2034,7 +2040,6 @@ packages:
     dependencies:
       normalize-path: 3.0.0
       picomatch: 2.3.1
-    dev: true
 
   /arch@2.2.0:
     resolution: {integrity: sha512-Of/R0wqp83cgHozfIYLbBMnej79U/SVGOOyuB3VVFv1NRM/PSFMK12x9KVtiYzJqmnU5WR2qp0Z5rHb7sWGnFQ==}
@@ -2188,7 +2193,6 @@ packages:
   /binary-extensions@2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
-    dev: true
 
   /bl@4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
@@ -2387,7 +2391,6 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /chrome-trace-event@1.0.3:
     resolution: {integrity: sha512-p3KULyQg4S7NIHixdwbGX+nFHkoBiA4YQmyWtjb8XngSKV124nJmRysgAeujbUVb15vh+RvFUfCPqU7rXk+hZg==}
@@ -3765,7 +3768,6 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /function-bind@1.1.1:
@@ -4234,6 +4236,9 @@ packages:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
     engines: {node: '>= 4'}
 
+  /immutable@4.3.1:
+    resolution: {integrity: sha512-lj9cnmB/kVS0QHsJnYKD1uo3o39nrbKxszjnqS9Fr6NB7bZzW45U6WSGBPKXDL/CvDKqDNPA4r3DoDQ8GTxo2A==}
+
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -4365,7 +4370,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       binary-extensions: 2.2.0
-    dev: true
 
   /is-boolean-object@1.1.2:
     resolution: {integrity: sha512-gDYaKHJmnj4aWxyj6YHyXVpdQawtVLHU5cb+eztPGczf6cjuTdwve5ZIEfgXqH4e57An1D1AKf8CZ3kYrQRqYA==}
@@ -5749,7 +5753,7 @@ packages:
       react: '>=16.0.0'
       react-dom: '>=16.0.0'
     dependencies:
-      next: 13.4.4(@babel/core@7.22.9)(@preact/compat@17.1.2)(@preact/compat@17.1.2)
+      next: 13.4.4(@babel/core@7.22.9)(@preact/compat@17.1.2)(@preact/compat@17.1.2)(sass@1.64.1)
       react: /@preact/compat@17.1.2(preact@10.15.1)
       react-dom: /@preact/compat@17.1.2(preact@10.15.1)
     dev: false
@@ -5761,12 +5765,12 @@ packages:
       react: '*'
       react-dom: '*'
     dependencies:
-      next: 13.4.4(@babel/core@7.22.9)(@preact/compat@17.1.2)(@preact/compat@17.1.2)
+      next: 13.4.4(@babel/core@7.22.9)(@preact/compat@17.1.2)(@preact/compat@17.1.2)(sass@1.64.1)
       react: /@preact/compat@17.1.2(preact@10.15.1)
       react-dom: /@preact/compat@17.1.2(preact@10.15.1)
     dev: false
 
-  /next@13.4.4(@babel/core@7.22.9)(@preact/compat@17.1.2)(@preact/compat@17.1.2):
+  /next@13.4.4(@babel/core@7.22.9)(@preact/compat@17.1.2)(@preact/compat@17.1.2)(sass@1.64.1):
     resolution: {integrity: sha512-C5S0ysM0Ily9McL4Jb48nOQHT1BukOWI59uC3X/xCMlYIh9rJZCv7nzG92J6e1cOBqQbKovlpgvHWFmz4eKKEA==}
     engines: {node: '>=16.8.0'}
     hasBin: true
@@ -5791,6 +5795,7 @@ packages:
       postcss: 8.4.14
       react: /@preact/compat@17.1.2(preact@10.15.1)
       react-dom: /@preact/compat@17.1.2(preact@10.15.1)
+      sass: 1.64.1
       styled-jsx: 5.1.1(@babel/core@7.22.9)(@preact/compat@17.1.2)
       zod: 3.21.4
     optionalDependencies:
@@ -5823,7 +5828,7 @@ packages:
       git-url-parse: 13.1.0
       intersection-observer: 0.12.2
       match-sorter: 6.3.1
-      next: 13.4.4(@babel/core@7.22.9)(@preact/compat@17.1.2)(@preact/compat@17.1.2)
+      next: 13.4.4(@babel/core@7.22.9)(@preact/compat@17.1.2)(@preact/compat@17.1.2)(sass@1.64.1)
       next-seo: 6.1.0(@preact/compat@17.1.2)(@preact/compat@17.1.2)(next@13.4.4)
       next-themes: 0.2.1(@preact/compat@17.1.2)(@preact/compat@17.1.2)(next@13.4.4)
       nextra: 2.7.1(@preact/compat@17.1.2)(@preact/compat@17.1.2)(next@13.4.4)
@@ -5851,7 +5856,7 @@ packages:
       gray-matter: 4.0.3
       katex: 0.16.8
       lodash.get: 4.4.2
-      next: 13.4.4(@babel/core@7.22.9)(@preact/compat@17.1.2)(@preact/compat@17.1.2)
+      next: 13.4.4(@babel/core@7.22.9)(@preact/compat@17.1.2)(@preact/compat@17.1.2)(sass@1.64.1)
       next-mdx-remote: 4.4.1(@preact/compat@17.1.2)(@preact/compat@17.1.2)
       p-limit: 3.1.0
       react: /@preact/compat@17.1.2(preact@10.15.1)
@@ -6524,7 +6529,6 @@ packages:
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.1
-    dev: true
 
   /reading-time@1.5.0:
     resolution: {integrity: sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg==}
@@ -6807,6 +6811,15 @@ packages:
 
   /safer-buffer@2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+
+  /sass@1.64.1:
+    resolution: {integrity: sha512-16rRACSOFEE8VN7SCgBu1MpYCyN7urj9At898tyzdXFhC+a+yOX5dXwAR7L8/IdPJ1NB8OYoXmD55DM30B2kEQ==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.3.1
+      source-map-js: 1.0.2
 
   /schema-utils@3.3.0:
     resolution: {integrity: sha512-pN/yOAvcC+5rQ5nERGuwrjLlYvLTbCibnZ1I7B1LaiAz9BRBlE9GMgE/eqV30P7aJQUf7Ddimy/RsbYO/GrVGg==}

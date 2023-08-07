@@ -20,7 +20,9 @@
     "preact-render-to-string": "^6.1.0",
     "react": "npm:@preact/compat@^17.1.2",
     "react-dom": "npm:@preact/compat@^17.1.2",
-    "react-ssr-prepass": "npm:preact-ssr-prepass@^1.2.0"
+    "react-ssr-prepass": "npm:preact-ssr-prepass@^1.2.0",
+    "sass": "^1.64.1",
+    "wisteria-ui": "workspace:*"
   },
   "devDependencies": {
     "@prefresh/next": "^1.7.0",

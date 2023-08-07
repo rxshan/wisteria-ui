@@ -6,7 +6,16 @@
   "files": [
     "src"
   ],
-  "main": "./src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    },
+    "./style.scss": "./src/styles/theme/index.scss"
+  },
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
+  ],
   "publishConfig": {
     "access": "public"
   },
