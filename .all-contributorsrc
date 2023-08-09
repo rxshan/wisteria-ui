@@ -1,6 +1,6 @@
 {
   "projectName": "wisteria-ui",
-  "projectOwner": "wisteria-ui",
+  "projectOwner": "wisteria-zone",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -8,7 +8,6 @@
   ],
   "imageSize": 100,
   "commit": true,
-  "commitConvention": "gitmoji",
   "contributors": [],
   "contributorsPerLine": 7,
   "linkToUsage": false
