@@ -1,0 +1,65 @@
+{
+  "name": "@wisteria-ui/build",
+  "version": "0.0.1",
+  "bin": {
+    "wisteria": "./bin/wisteria.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/es/src/index.js",
+      "require": "./dist/cjs/src/index.js",
+      "types": "./dist/es/src/index.d.ts"
+    }
+  },
+  "main": "./dist/cjs/src/index.js",
+  "module": "./dist/es/src/index.js",
+  "typings": "./dist/es/src/index.d.ts",
+  "scripts": {
+    "dev": "rimraf dist && concurrently \"tsc -w -p ./tsconfig.json\" \"tsc -w -p ./tsconfig.cjs.json\"",
+    "build": "rimraf dist && concurrently \"tsc -p ./tsconfig.json\" \"tsc -p ./tsconfig.cjs.json\""
+  },
+  "dependencies": {
+    "@babel/core": "^7.22.8",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/plugin-transform-runtime": "^7.22.7",
+    "@babel/preset-env": "^7.22.7",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/runtime": "^7.22.6",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@types/rollup-plugin-css-only": "^3.1.0",
+    "autoprefixer": "^10.4.14",
+    "cac": "^6.7.14",
+    "chalk": "4.1.2",
+    "consola": "^3.1.0",
+    "defu": "^6.1.2",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-typescript": "6.0.0-alpha.1",
+    "jiti": "^1.18.2",
+    "merge2": "^1.4.1",
+    "ora": "5.4.1",
+    "rimraf": "^5.0.1",
+    "rollup": "^3.26.2",
+    "rollup-plugin-css-only": "^4.3.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.63.6",
+    "through2": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/gulp": "^4.0.11",
+    "@types/gulp-babel": "^6.1.30",
+    "@types/gulp-postcss": "^8.0.3",
+    "@types/merge2": "^1.4.1",
+    "@types/through2": "^2.0.38",
+    "@types/vinyl": "^2.0.7",
+    "concurrently": "^8.2.0",
+    "types-package-json": "^2.0.39"
+  }
+}

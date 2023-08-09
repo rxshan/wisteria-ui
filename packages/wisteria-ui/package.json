@@ -12,6 +12,9 @@
     },
     "./style.scss": "./src/styles/theme/index.scss"
   },
+  "scripts": {
+    "build": "pnpm run --filter=@wisteria-ui/build build & wisteria build --bundle"
+  },
   "sideEffects": [
     "**/*.css",
     "**/*.scss"

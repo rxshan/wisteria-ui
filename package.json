@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "stub": "pnpm run -r --parallel --filter=./packages/* stub",
     "build": "pnpm run -r --filter=./packages/* build",
     "cz": "npx git-cz",
     "docs:build": "pnpm run --filter @wisteria-ui/docs docs:build",
@@ -11,8 +12,7 @@
     "generate-contributors": "npx all-contributors generate",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "npx husky install & pnpm stub",
-    "sorted": "npx sort-package-json",
-    "stub": "pnpm run -r --parallel --filter=./packages/* stub"
+    "sorted": "npx sort-package-json"
   },
   "lint-staged": {
     "*.{md,json}": "prettier --write",
@@ -34,6 +34,7 @@
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
     "@commitlint/cz-commitlint": "^17.6.7",
+    "@wisteria-ui/build": "workspace:*",
     "@wisteria-ui/eslint-config": "workspace:*",
     "@wisteria-ui/stylelint-config": "workspace:*",
     "all-contributors-cli": "^6.26.1",
