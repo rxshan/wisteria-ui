@@ -24,6 +24,13 @@
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/rxshan"><img src="https://avatars.githubusercontent.com/u/131181654?v=4?s=100" width="100px;" alt="橙子"/><br /><sub><b>橙子</b></sub></a><br /><a href="https://github.com/wisteria-zone/wisteria-ui/commits?author=rxshan" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
