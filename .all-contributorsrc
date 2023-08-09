@@ -8,7 +8,19 @@
   ],
   "imageSize": 100,
   "commit": true,
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "rxshan",
+      "name": "橙子",
+      "avatar_url": "https://avatars.githubusercontent.com/u/131181654?v=4",
+      "profile": "https://github.com/rxshan",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
   "contributorsPerLine": 7,
-  "linkToUsage": false
+  "linkToUsage": false,
+  "commitType": "docs",
+  "commitConvention": "angular"
 }
