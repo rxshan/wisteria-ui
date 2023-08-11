@@ -1,6 +1,10 @@
 const nextra = require('nextra');
 const withPrefresh = require('@prefresh/next');
 
+const GIT_REPO_NAME = 'wisteria-ui';
+
+const isProd = process.env.NODE_ENV === 'production';
+
 const withNextra = nextra({
   theme: 'nextra-theme-docs',
   themeConfig: './config/index.tsx',
@@ -14,8 +18,8 @@ const withNextra = nextra({
 const nextConfig = {
   distDir: 'dist',
   output: 'export',
-  basePath: '/wisteria-ui',
-  assetPrefix: '/wisteria-ui/',
+  basePath: (isProd && `/${GIT_REPO_NAME}`) || undefined,
+  assetPrefix: (isProd && `/${GIT_REPO_NAME}/`) || undefined,
   cleanDistDir: true,
   images: {
     unoptimized: true
