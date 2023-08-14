@@ -9,6 +9,9 @@
   <a href="https://github.com/wisteria-ui/wisteria-ui/blob/main/LICENSE">
     <img alt="License" src="https://img.shields.io/github/license/wisteria-ui/wisteria-ui" />
   </a>
+  <a>
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=wisteria-zone.wisteria-ui" />
+  </a>
 </p>
 
 ## 贡献
