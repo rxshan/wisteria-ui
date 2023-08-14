@@ -27,5 +27,8 @@
   },
   "devDependencies": {
     "preact": "^10.15.1"
+  },
+  "dependencies": {
+    "@iconify/iconify": "^3.1.1"
   }
 }
