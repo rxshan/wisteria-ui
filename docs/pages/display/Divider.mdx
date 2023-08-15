@@ -1,0 +1,97 @@
+import { Divider } from 'wisteria-ui';
+import { Tabs, Tab } from 'nextra/components';
+import { ApiTable, PreviewCode } from '../../components';
+
+# Divider
+
+<Tabs items={['水平方向', '垂直方向']}>
+  <Tab>
+    <div class="flex flex-col gap-4 text-justify">
+      Sunt incididunt non amet in cupidatat voluptate irure aliquip est labore
+      deserunt. Velit dolore exercitation pariatur adipisicing esse minim
+      occaecat sunt duis non sit id. Eiusmod ipsum proident reprehenderit
+      eiusmod magna consectetur nulla sit veniam dolor ea ullamco deserunt in.
+      <Divider variant="middle" insetSize={32} children="middle - 32px" />
+      In tempor et aliqua duis nostrud non id est commodo ad amet reprehenderit
+      non. Commodo incididunt ipsum sit deserunt quis do irure proident tempor
+      nostrud adipisicing quis adipisicing aliqua. Lorem labore ea culpa minim
+      magna duis ipsum.
+      <Divider variant="inset" insetSize={32} children="inset - 32px" />
+      Tempor consectetur aliqua ut laboris eu cupidatat sit aliquip labore sit
+      cillum id ipsum. Nostrud dolore ea fugiat nisi aute deserunt reprehenderit
+      cillum ipsum et ex aliquip.
+      <Divider dashed variant="fullWidth" children="fullWidth - dashed" />
+      Ipsum anim culpa deserunt adipisicing in magna veniam aliqua in id do
+      incididunt. Quis consequat esse dolore Lorem consequat Lorem id. Sint
+      eiusmod eiusmod irure cupidatat et exercitation minim. Irure dolor laboris
+      culpa Lorem cillum velit culpa labore excepteur. Aliqua mollit duis cillum
+      proident adipisicing duis sint cupidatat.
+      <Divider textAlign="left" children="text left" />
+      Consectetur anim nisi eu tempor. Amet qui elit occaecat do irure. Sunt
+      consequat adipisicing dolore cillum laboris cillum nisi pariatur enim
+      commodo ad. Velit sit incididunt amet sint enim eiusmod non ullamco
+      veniam.
+      <Divider textAlign="right" children="text right" />
+      Irure enim ex ipsum minim sint elit consequat. Mollit dolore laborum
+      veniam duis esse qui minim proident enim exercitation sint dolore. Amet
+      labore nostrud ipsum dolor pariatur duis ea reprehenderit. Nostrud anim ad
+      aliqua dolor non aute.
+    </div>
+
+    ```tsx
+      <Divider variant="middle" insetSize={32} children="middle - 32px" />
+
+      <Divider variant="inset" insetSize={32} children="inset - 32px" />
+
+      <Divider dashed variant="fullWidth" children="fullWidth - dashed" />
+
+      <Divider textAlign="left" children="text left" />
+
+      <Divider textAlign="right" children="text right" />
+    ```
+
+  </Tab>
+  <Tab>
+    <div class="flex flex-row justify-center gap-4 text-justify">
+      Ipsum anim culpa deserunt adipisicing in magna veniam aliqua in id do
+      incididunt. Quis consequat esse dolore Lorem consequat Lorem id. Sint
+      eiusmod eiusmod irure cupidatat et exercitation minim.Consectetur ad
+      deserunt labore ut exercitation cupidatat aute amet sunt ad. Consectetur
+      Lorem aute est laboris Lorem non incididunt mollit tempor minim esse.
+      Ipsum pariatur sunt cillum amet est adipisicing culpa irure duis excepteur
+      nostrud.
+      <Divider dashed direction="vertical" textAlign="left" children="vertical"  />
+      Dolor enim ut duis in ad sint. Quis duis ea aute sunt labore ipsum esse
+      reprehenderit adipisicing. Nisi dolore aliqua magna duis.Nisi sint dolor
+      minim proident pariatur minim pariatur aliqua irure mollit dolor. Dolore
+      velit id do laboris exercitation. Ullamco nisi ullamco consectetur ut.
+      Esse ullamco qui consequat cillum aliquip excepteur Lorem do sunt
+      voluptate. Amet incididunt exercitation nisi duis laborum consectetur.
+    </div>
+  </Tab>
+</Tabs>
+
+## API
+
+<ApiTable
+  options={[
+    ['dashed', '分割线采用虚线样式', 'boolean', '-'],
+    ['variant', '分割线的变体类型', 'inset | middle | fullWidth', 'fullWidth'],
+    ['direction', '水平方向或垂直方向', 'horizontal | vertical', 'horizontal'],
+    [
+      'textAlign',
+      '文字位置，当设置 children 时生效',
+      'left | center | right',
+      'center'
+    ],
+    [
+      'insetSize',
+      '缩进大小，当 vatiant 不为 fullWidth 时生效',
+      'number',
+      '16px'
+    ],
+    ['className', '自定义样式类名', 'string', '-'],
+    ['style', '自定义样式对象', 'string | JSX.CSSProperties', '-'],
+    ['children', '-', 'ComponentChild', '-']
+  ]}
+/>

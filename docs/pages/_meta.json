@@ -2,5 +2,8 @@
   "index": {
     "display": "hidden",
     "title": "指南"
+  },
+  "display": {
+    "title": "数据展示"
   }
 }
