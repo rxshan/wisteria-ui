@@ -1,12 +1,6 @@
 {
   "name": "@wisteria-ui/build",
   "version": "0.0.1",
-  "bin": {
-    "wisteria": "./bin/wisteria.js"
-  },
-  "files": [
-    "dist"
-  ],
   "exports": {
     ".": {
       "import": "./dist/es/src/index.js",
@@ -17,9 +11,15 @@
   "main": "./dist/cjs/src/index.js",
   "module": "./dist/es/src/index.js",
   "typings": "./dist/es/src/index.d.ts",
+  "bin": {
+    "wisteria": "./bin/wisteria.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "rimraf dist && concurrently \"tsc -w -p ./tsconfig.json\" \"tsc -w -p ./tsconfig.cjs.json\"",
-    "build": "rimraf dist && concurrently \"tsc -p ./tsconfig.json\" \"tsc -p ./tsconfig.cjs.json\""
+    "build": "rimraf dist && concurrently \"tsc -p ./tsconfig.json\" \"tsc -p ./tsconfig.cjs.json\"",
+    "dev": "rimraf dist && concurrently \"tsc -w -p ./tsconfig.json\" \"tsc -w -p ./tsconfig.cjs.json\""
   },
   "dependencies": {
     "@babel/core": "^7.22.8",

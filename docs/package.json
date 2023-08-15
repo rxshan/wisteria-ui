@@ -2,15 +2,15 @@
   "name": "@wisteria-ui/docs",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "docs:dev": "next dev -p 9000",
-    "docs:build": "next build",
-    "postinstall": "patch-package"
-  },
   "sideEffects": [
     "**/*.css",
     "**/*.scss"
   ],
+  "scripts": {
+    "docs:build": "next build",
+    "docs:dev": "next dev -p 9000",
+    "postinstall": "patch-package"
+  },
   "dependencies": {
     "next": "13.4.4",
     "nextra": "2.10.0",

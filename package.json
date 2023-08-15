@@ -3,7 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "stub": "pnpm run -r --parallel --filter=./packages/* stub",
     "build": "pnpm run -r --filter=./packages/* build",
     "cz": "npx git-cz",
     "docs:build": "pnpm run --filter @wisteria-ui/docs docs:build",
@@ -11,8 +10,9 @@
     "format": "npx prettier --write --cache .",
     "generate-contributors": "npx all-contributors generate",
     "preinstall": "npx only-allow pnpm",
-    "postinstall": "npx husky install & pnpm stub",
-    "sorted": "npx sort-package-json"
+    "postinstall": "npx husky install && pnpm stub",
+    "sorted": "npx sort-package-json **/package.json ./packages/**/package.json",
+    "stub": "pnpm run -r --parallel --filter=./packages/* stub"
   },
   "lint-staged": {
     "*.{md,json}": "prettier --write",

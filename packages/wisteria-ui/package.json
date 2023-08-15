@@ -1,11 +1,12 @@
 {
   "name": "wisteria-ui",
-  "type": "module",
   "version": "0.0.1",
   "license": "MIT",
-  "files": [
-    "src"
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
   ],
+  "type": "module",
   "exports": {
     ".": {
       "import": "./src/index.ts"
@@ -13,23 +14,22 @@
     "./*": "./src/*",
     "./style.scss": "./src/styles/theme/index.scss"
   },
+  "files": [
+    "src"
+  ],
   "scripts": {
     "build": "pnpm run --filter=@wisteria-ui/build build & wisteria build --bundle"
   },
-  "sideEffects": [
-    "**/*.css",
-    "**/*.scss"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "peerDependencies": {
-    "preact": ">=10"
+  "dependencies": {
+    "@iconify/iconify": "^3.1.1"
   },
   "devDependencies": {
     "preact": "^10.15.1"
   },
-  "dependencies": {
-    "@iconify/iconify": "^3.1.1"
+  "peerDependencies": {
+    "preact": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
