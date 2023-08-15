@@ -10,6 +10,7 @@
     ".": {
       "import": "./src/index.ts"
     },
+    "./*": "./src/*",
     "./style.scss": "./src/styles/theme/index.scss"
   },
   "scripts": {
