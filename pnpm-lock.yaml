@@ -277,6 +277,9 @@ importers:
       '@iconify/iconify':
         specifier: ^3.1.1
         version: 3.1.1
+      preact-transitioning:
+        specifier: ^1.4.0
+        version: 1.4.0(preact@10.15.1)
     devDependencies:
       preact:
         specifier: ^10.15.1
@@ -9849,6 +9852,14 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
+  /preact-merge-refs@1.0.2(preact@10.15.1):
+    resolution: {integrity: sha512-e0P9XELyn1/L/mNsZfyGXks3TIt35aqaAZw6QPxlKa2UUwWOMNmSdgjW4VDbWtP61wjgsLywscOK6w3PUgdp4w==}
+    peerDependencies:
+      preact: '>=10.0.0'
+    dependencies:
+      preact: 10.15.1
+    dev: false
+
   /preact-render-to-string@6.1.0(preact@10.15.1):
     resolution: {integrity: sha512-/AsKU4Q4R8r4aKwwNQrkQQNUVEDmTeZr6IwesDffobFRPcTk4dSQrfo1VOcXjtlcUss6QYEe7JShUGbQIhaw+A==}
     peerDependencies:
@@ -9863,6 +9874,15 @@ packages:
       preact: '>=10 || ^10.0.0-beta.0 || ^10.0.0-alpha.0'
     dependencies:
       preact: 10.15.1
+
+  /preact-transitioning@1.4.0(preact@10.15.1):
+    resolution: {integrity: sha512-nTWw2fN02+ghemiRc/h57oKq0SKcbpmG2xYeGqaY002YYsF8hOAhjGUa65/yHkU39t4na43oh0ArM0MoEiykkg==}
+    peerDependencies:
+      preact: '>=10.0.0'
+    dependencies:
+      preact: 10.15.1
+      preact-merge-refs: 1.0.2(preact@10.15.1)
+    dev: false
 
   /preact@10.15.1:
     resolution: {integrity: sha512-qs2ansoQEwzNiV5eAcRT1p1EC/dmEzaATVDJNiB3g2sRDWdA7b7MurXdJjB2+/WQktGWZwxvDrnuRFbWuIr64g==}

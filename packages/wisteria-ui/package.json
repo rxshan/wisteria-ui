@@ -18,10 +18,7 @@
     "src"
   ],
   "scripts": {
-    "build": "pnpm run --filter=@wisteria-ui/build build & wisteria build --bundle"
-  },
-  "dependencies": {
-    "@iconify/iconify": "^3.1.1"
+    "build": "wisteria build --bundle"
   },
   "devDependencies": {
     "preact": "^10.15.1"
@@ -31,5 +28,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@iconify/iconify": "^3.1.1",
+    "preact-transitioning": "^1.4.0"
   }
 }

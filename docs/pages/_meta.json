@@ -3,7 +3,10 @@
     "display": "hidden",
     "title": "指南"
   },
-  "display": {
+  "displays": {
     "title": "数据展示"
+  },
+  "inputs": {
+    "title": "数据输入"
   }
 }
