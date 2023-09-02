@@ -11,8 +11,13 @@
     "generate-contributors": "npx all-contributors generate",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "npx husky install && pnpm stub",
-    "sorted": "npx sort-package-json **/package.json ./packages/**/package.json",
+    "sorted": "npx sort-package-json ./package.json **/package.json ./packages/*/package.json",
     "stub": "pnpm run -r --parallel --filter=./packages/* stub"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "lint-staged": {
     "*.{md,json}": "prettier --write",
@@ -29,6 +34,25 @@
     "commitizen": {
       "path": "@commitlint/cz-commitlint"
     }
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "jsxSingleQuote": false,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@wisteria-ui/eslint-config"
+    ],
+    "root": true
+  },
+  "stylelint": {
+    "extends": "@wisteria-ui/stylelint-config"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
