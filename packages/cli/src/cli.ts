@@ -3,7 +3,7 @@ import pkg from '../package.json';
 import build from './build';
 
 export const startCommand = async () => {
-  const cli = cac('violetx');
+  const cli = cac('wisteria');
 
   cli
     .command('build', 'Build module with gulp')
@@ -15,5 +15,3 @@ export const startCommand = async () => {
   cli.parse(process.argv, { run: false });
   await cli.runMatchedCommand();
 };
-
-startCommand();

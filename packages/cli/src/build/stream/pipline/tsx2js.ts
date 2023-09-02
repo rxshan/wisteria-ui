@@ -4,7 +4,7 @@ import path from 'node:path';
 import consola from 'consola';
 import type Vinyl from 'vinyl';
 import tsc, { type Settings } from 'gulp-typescript';
-import { readConfig } from '../../utils/helper';
+import { readConfig } from '../../../utils/helper';
 import through2 from 'through2';
 
 type TSConfig = {

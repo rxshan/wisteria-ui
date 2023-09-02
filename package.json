@@ -58,7 +58,7 @@
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
     "@commitlint/cz-commitlint": "^17.6.7",
-    "@wisteria-ui/build": "workspace:*",
+    "@wisteria-ui/cli": "workspace:*",
     "@wisteria-ui/eslint-config": "workspace:*",
     "@wisteria-ui/stylelint-config": "workspace:*",
     "all-contributors-cli": "^6.26.1",

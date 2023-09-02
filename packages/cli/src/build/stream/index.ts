@@ -10,7 +10,7 @@ import { tsx2js } from './pipline/tsx2js';
 import { scss2css } from './pipline/scss2css';
 import { babelify } from './pipline/babelify';
 import { flattenImportUrl } from './pipline/flattenImportUrl';
-import type { CompileModule } from '../utils/helper';
+import type { CompileModule } from '../../utils/helper';
 
 const matchStream = (options: { extensions: string[] }) => {
   return through2.obj(function (

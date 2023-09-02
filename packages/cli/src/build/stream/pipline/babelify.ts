@@ -1,7 +1,7 @@
 import { defu } from 'defu';
 import babel from 'gulp-babel';
 import { type PackageJson } from 'types-package-json';
-import { readConfig, type CompileModule } from '../../utils/helper';
+import { readConfig, type CompileModule } from '../../../utils/helper';
 
 type BabelConfig = Parameters<typeof babel>[number];
 
