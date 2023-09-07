@@ -11,7 +11,7 @@
     ".": {
       "import": "./src/index.ts"
     },
-    "./*": "./src/*",
+    "./*": "./src/components/*",
     "./style.scss": "./src/styles/theme/index.scss"
   },
   "files": [
@@ -19,6 +19,10 @@
   ],
   "scripts": {
     "build": "wisteria build --bundle"
+  },
+  "dependencies": {
+    "@iconify/iconify": "^3.1.1",
+    "preact-transitioning": "^1.4.0"
   },
   "devDependencies": {
     "preact": "^10.15.1"
@@ -28,9 +32,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "@iconify/iconify": "^3.1.1",
-    "preact-transitioning": "^1.4.0"
   }
 }
