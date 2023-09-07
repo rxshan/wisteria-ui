@@ -1,2 +1,2 @@
-export * from './helper';
+export * from './is';
 export * from './style';

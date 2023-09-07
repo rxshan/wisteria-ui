@@ -6,7 +6,7 @@ import {
   combineStyles,
   createPrefixClass,
   combineClassnames
-} from '../utils';
+} from '../../utils';
 import type { DividerProps } from './types';
 
 const classnames = createPrefixClass('divider');

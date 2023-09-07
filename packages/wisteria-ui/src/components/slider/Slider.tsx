@@ -1,7 +1,7 @@
 import type { FunctionComponent } from 'preact';
 import { SliderTrack } from './SliderTrack';
 import { SliderThumb } from './SliderThumb';
-import { useEventListener } from '../hooks';
+import { useEventListener } from '../../hooks';
 
 export const Slider: FunctionComponent = () => {
   useEventListener('mouseup', () => {});

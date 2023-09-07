@@ -1,3 +1,3 @@
-export * from './config-provider';
-export * from './divider';
-export * from './slider';
+export * from './components/config-provider';
+export * from './components/divider';
+export * from './components/slider';

@@ -1,8 +1,8 @@
 import type { FunctionComponent } from 'preact';
-import { createPrefixClass } from '../utils';
+import { createPrefixClass } from '../../utils';
 import type { SliderThumbProps } from './types';
 import { useRef } from 'preact/hooks';
-import { useEventListener } from '../hooks';
+import { useEventListener } from '../../hooks';
 
 const classnames = createPrefixClass('slider-thumb');
 

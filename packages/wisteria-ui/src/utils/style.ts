@@ -1,5 +1,5 @@
 import { type JSX } from 'preact/jsx-runtime';
-import { isNumber, isObject, isString, isArray } from './helper';
+import { isNumber, isObject, isString, isArray } from './is';
 
 type JSXStyleStyle = string | false | undefined | null | JSX.CSSProperties;
 

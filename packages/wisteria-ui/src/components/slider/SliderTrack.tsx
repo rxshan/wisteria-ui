@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'preact';
-import { createPrefixClass } from '../utils';
+import { createPrefixClass } from '../../utils';
 
 const classnames = createPrefixClass('slider-track');
 

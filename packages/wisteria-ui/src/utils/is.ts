@@ -22,9 +22,3 @@ export const isFunc = (val: unknown): val is Function => {
 export const isNullish = (val: unknown): val is null | undefined => {
   return typeof val === 'undefined' || (typeof val === 'object' && !val);
 };
-
-export const randomString = (len = 6) => {
-  return Math.random()
-    .toString(36)
-    .slice(2, 2 + len);
-};
