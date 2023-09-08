@@ -1,7 +1,13 @@
 import { type JSX } from 'preact/jsx-runtime';
 import { isNumber, isObject, isString, isArray } from './is';
 
-type JSXStyleStyle = string | false | undefined | null | JSX.CSSProperties;
+type JSXStyleStyle =
+  | null
+  | false
+  | string
+  | undefined
+  | JSX.CSSProperties
+  | JSX.SignalLike<string | JSX.CSSProperties | undefined>;
 
 export const combineStyles = (
   ...styles: JSXStyleStyle[]

@@ -21,7 +21,6 @@
     "build": "wisteria build --bundle"
   },
   "dependencies": {
-    "@iconify/iconify": "^3.1.1",
     "preact-transitioning": "^1.4.0"
   },
   "devDependencies": {

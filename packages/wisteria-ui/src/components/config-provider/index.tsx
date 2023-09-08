@@ -1,4 +1,3 @@
-import '@iconify/iconify';
 import { ErrorBoundary } from './ErrorBoundary';
 import { ConfigProvider, useWisteriaConfig } from './ConfigProvider';
 
