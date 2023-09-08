@@ -1,6 +1,7 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
+    "incremental": true,
     "module": "esnext",
     "target": "es2015",
     "lib": ["esnext", "dom"],
