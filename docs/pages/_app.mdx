@@ -1,11 +1,6 @@
 import '../style.css';
 import 'wisteria-ui/style.scss';
-import { ConfigProvider } from 'wisteria-ui';
 
 export default function App({ Component, pageProps }) {
-  return (
-    <ConfigProvider>
-      <Component {...pageProps} />
-    </ConfigProvider>
-  );
+  return <Component {...pageProps} />;
 }

@@ -3,6 +3,7 @@
     "display": "hidden",
     "title": "指南"
   },
+  "ConfigProvider": "ConfigProvider",
   "displays": {
     "title": "数据展示"
   },

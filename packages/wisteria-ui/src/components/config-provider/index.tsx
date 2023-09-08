@@ -1,6 +1,10 @@
 import '@iconify/iconify';
-import { Fragment, type FunctionComponent } from 'preact';
+import { ErrorBoundary } from './ErrorBoundary';
+import { ConfigProvider, useWisteriaConfig } from './ConfigProvider';
 
-export const ConfigProvider: FunctionComponent = ({ children }) => {
-  return <Fragment>{children}</Fragment>;
-};
+ErrorBoundary.displayName = 'WisErrorBoundary';
+ConfigProvider.displayName = 'WisConfigProvider';
+
+export { ErrorBoundary };
+export { ConfigProvider, useWisteriaConfig };
+export type { ConfigProviderProps, ErrorBoundaryProps } from './types';
