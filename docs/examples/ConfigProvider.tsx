@@ -63,9 +63,11 @@ export const BROWSER_CACHE_KEY = 'wisteria-theme';
 export const ColorPickerDemo = () => {
   const { cssVars } = useWisteriaConfig();
 
-  const [textColor, setTextColor] = useState(cssVars?.primary ?? '#49454e');
+  const [textColor, setTextColor] = useState(
+    cssVars?.onSurfaceVariant ?? '#49454e'
+  );
   const [primaryColor, setPrimaryColor] = useState(
-    cssVars?.onSurfaceVariant ?? '#6750a4'
+    cssVars?.primary ?? '#6750a4'
   );
 
   const cssVarsRef = useRef(cssVars);
