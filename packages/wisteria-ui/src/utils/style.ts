@@ -45,6 +45,9 @@ type JSXClassType =
   | BasicClassType[]
   | Record<string, BasicClassType>;
 
+/**
+ * @deprecated
+ */
 export const createPrefixClass = (prefix: string, identify = 'wisteria') => {
   const prefixClass = `${identify}-${prefix}`;
 
@@ -72,4 +75,34 @@ export const suffixCssUnit = (cssValue: string | number, unit = 'px') => {
     return `${cssValue}${unit}`;
   }
   return cssValue.replace(/(\d+).*?/g, (_, size) => `${size}${unit}`);
+};
+
+const createPrefixClasses = (
+  prefixClass: string,
+  ...classnames: JSXClassType[]
+) => {
+  if (!classnames.length) return prefixClass;
+  const classes = classnames
+    .map(cn => {
+      if (!cn) return cn;
+      if (isString(cn)) return `${prefixClass}-${cn}`;
+      if (isArray(cn)) {
+        return cn.map(name => !!name && `${prefixClass}-${name}`);
+      }
+      return Object.entries(cn).map((name, status) => {
+        if (!status) return '';
+        return `${prefixClass}-${name}`;
+      });
+    })
+    .flat(1);
+  return combineClassnames(...classes);
+};
+
+export const createCssClass = (prefix: string, identify = 'wisteria') => {
+  const prefixClass = `${identify}-${prefix}`;
+  return [
+    (...classes: JSXClassType[]) =>
+      createPrefixClasses(prefixClass, ...classes),
+    prefixClass
+  ] as const;
 };

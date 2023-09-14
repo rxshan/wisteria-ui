@@ -8,9 +8,9 @@ export const useDefaultState = <
   defaultState: Partial<State>
 ) => {
   return useState<State & DefaultState>(() => {
-    const _state = Object.fromEntries(
-      Object.entries(state).filter(([, value]) => !!value)
+    const _defaultState = Object.fromEntries(
+      Object.entries(defaultState).filter(([, value]) => !!value)
     );
-    return Object.assign({}, defaultState, _state) as any;
+    return Object.assign({}, state, _defaultState) as any;
   });
 };

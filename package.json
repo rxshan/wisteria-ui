@@ -72,7 +72,8 @@
     "sort-package-json": "^2.5.1",
     "stylelint": "^15.10.2",
     "typescript": "^5.1.6",
-    "unbuild": "^1.2.1"
+    "unbuild": "^1.2.1",
+    "wisteria-ui": "workspace:^"
   },
   "packageManager": "pnpm@8.1.1",
   "engines": {

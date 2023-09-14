@@ -1,5 +1,79 @@
 import { Radio } from 'wisteria-ui';
+import { useState } from 'preact/hooks';
+import { RadioGroupDemo } from './examples/Radio.tsx';
+import { ApiTable, Fieldset, PreviewCode } from '../../components';
 
 # Radio
 
-<Radio />
+```tsx
+import { Radio } from 'wisteria-ui';
+```
+
+<Fieldset label="Radio" line="dashed">
+  <Fieldset label="Disabled" line="dashed">
+    <Radio>正常</Radio>
+    <Radio checked disabled>
+      禁用
+    </Radio>
+  </Fieldset>
+  <Fieldset label="Color" line="dashed">
+    <Radio checked color="violet">
+      紫罗兰色
+    </Radio>
+    <Radio checked color="orange">
+      橙色
+    </Radio>
+    <Radio checked color="pink">
+      粉色
+    </Radio>
+    <Radio checked color="red">
+      红色
+    </Radio>
+  </Fieldset>
+</Fieldset>
+
+<Fieldset label="Radio.Group" line="dashed">
+  <RadioGroupDemo />
+</Fieldset>
+
+## API
+
+### Radio
+
+<ApiTable
+  options={[
+    ['color', '设置选中颜色', 'string', '-'],
+    ['checked', '是否选中', 'boolean', '-'],
+    ['disabeled', '禁用', 'boolean', '-'],
+    ['className', '样式类名', 'string', '-'],
+    ['style', '样式', 'CSSProperties', '-'],
+    ['ref', '-', 'Ref<HTMLInputElement>', '-'],
+    [
+      'onChange',
+      '回调事件',
+      '(event: TargetedEvent<HTMLInputElement>) => void',
+      '-'
+    ],
+
+]}
+/>
+
+### Radio.Group
+
+<ApiTable
+  options={[
+    ['name', '设置表单项名称', 'string', '-'],
+    ['disabeled', '禁用', 'boolean', '-'],
+    ['value', '是否选中', 'string | number', '-'],
+    ['defaultValue', '禁用', 'string | number', '-'],
+    ['className', '样式类名', 'string', '-'],
+    ['style', '样式', 'CSSProperties', '-'],
+    [
+      'onChange',
+      '回调事件',
+      '(selectedValue: string | number) => void',
+      '-'
+    ],
+
+]}
+/>

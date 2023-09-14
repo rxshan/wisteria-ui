@@ -1,3 +1,4 @@
+import './style/index.scss';
 import { Slider } from './Slider';
 
 Slider.displayName = 'WisSlider';

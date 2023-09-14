@@ -20,7 +20,7 @@
  * 通过 $color-alpha 设置元素初始状态颜色
 **/
 @mixin element-state-layer($color, $color-alpha: 0) {
-  &::before {
+  &::after {
     position: absolute;
     inset: 0;
     z-index: -1;
@@ -31,7 +31,7 @@
     transition: inherit;
   }
 
-  &:hover::before {
+  &:hover::after {
     opacity: if(
       $color-alpha > calc(3 * $state-layer-hovered-alpha),
       calc($color-alpha - $state-layer-hovered-alpha),
@@ -39,7 +39,7 @@
     );
   }
 
-  &:active::before {
+  &:active::after {
     opacity: if(
       $color-alpha > calc(3 * $state-layer-pressed-alpha),
       calc($color-alpha - $state-layer-pressed-alpha),

@@ -21,9 +21,11 @@
     "build": "wisteria build --bundle"
   },
   "dependencies": {
+    "lodash.merge": "^4.6.2",
     "preact-transitioning": "^1.4.0"
   },
   "devDependencies": {
+    "@types/lodash.merge": "^4.6.7",
     "preact": "^10.15.1"
   },
   "peerDependencies": {

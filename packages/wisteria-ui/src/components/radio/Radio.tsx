@@ -1,19 +1,67 @@
-import type { FunctionalComponent } from 'preact';
+import { useRef, forwardRef, type PropsWithChildren } from 'preact/compat';
+import {
+  isNullish,
+  combineStyles,
+  combineClassnames,
+  createCssClass
+} from '../../utils';
+import type { RadioProps } from './types';
+import { RadioMarker } from './RadioMarker';
+import { useRadioGroupContext } from './RadioContext';
+import { useForkRef, useMergeValue } from '../../hooks';
 
-export const Radio: FunctionalComponent = () => {
+const [classnames] = createCssClass('radio');
+
+export const Radio = forwardRef<
+  HTMLInputElement,
+  PropsWithChildren<RadioProps>
+>(({ style, color, children, className, ...props }, ref) => {
+  const innerRef = useRef<HTMLInputElement>(null);
+  const mergeRef = useForkRef(ref, innerRef);
+
+  const { group, state } = useRadioGroupContext();
+
+  if (group) {
+    Object.assign(props, {
+      name: state.name,
+      disabled: !!(props.disabled || state.disabled),
+      checked: isNullish(state.value) ? undefined : props.value === state.value,
+      defaultChecked: props.value === state.defaultValue
+    });
+  }
+
+  const [checked, setChecked] = useMergeValue(false, {
+    value: props.checked,
+    defaultValue: props.defaultChecked
+  });
+
   return (
-    <label role="radio">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-      >
-        <path
-          fill="#888888"
-          d="M12 20a8 8 0 0 1-8-8a8 8 0 0 1 8-8a8 8 0 0 1 8 8a8 8 0 0 1-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"
-        />
-      </svg>
+    <label
+      htmlFor={props.id}
+      className={combineClassnames(classnames('root'), className)}
+      style={combineStyles(style, {
+        cursor: props.disabled ? 'default' : 'pointer',
+        '--wisteria-radio-color': color
+      })}
+    >
+      <RadioMarker
+        {...props}
+        ref={mergeRef as any}
+        checked={checked}
+        onChange={event => {
+          if (group) {
+            state.onChange?.((event.target as any).value);
+          } else if (!Object.hasOwn(props, 'checked')) {
+            setChecked(true);
+          }
+          props.onChange?.(event);
+        }}
+      />
+      {!isNullish(children) && (
+        <span className={classnames('text', props.disabled && 'text-disabled')}>
+          {children}
+        </span>
+      )}
     </label>
   );
-};
+});

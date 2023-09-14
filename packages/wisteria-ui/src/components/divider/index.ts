@@ -1,3 +1,4 @@
+import './style/index.scss';
 import { Divider } from './Divider';
 
 Divider.displayName = 'WisDivider';
