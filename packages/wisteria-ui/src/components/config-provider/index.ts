@@ -7,6 +7,7 @@ ConfigProvider.displayName = 'WisConfigProvider';
 export { ErrorBoundary };
 export { ConfigProvider, useWisteriaConfig };
 export type {
+  Theme,
   CSSColorVars,
   ConfigProviderProps,
   ErrorBoundaryProps

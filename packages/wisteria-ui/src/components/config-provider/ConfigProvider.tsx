@@ -6,15 +6,15 @@ import type {
   WisteriaGlobalState
 } from './types';
 import { useDefaultState } from '../../hooks';
-import { isObject, noop } from '../../utils';
+import { isNullish, isObject, noop } from '../../utils';
 
-const CSS_VAR_PREFIX = '--wisteria-color';
+const CSS_VAR_PREFIX = '--wisteria-color-';
 
 const INITIAL_CONFIG_CONTEXT: WisteriaGlobalState = {
   theme: 'auto'
 };
 
-export const WisteriaConfigContext = createContext<WisteriaConfigState>({
+const WisteriaConfigContext = createContext<WisteriaConfigState>({
   globalState: INITIAL_CONFIG_CONTEXT,
   dispathConfig: noop
 });
@@ -45,7 +45,7 @@ export const ConfigProvider: FunctionalComponent<ConfigProviderProps> = ({
     const rootElement = document.documentElement;
     rootElement.classList.remove('light', 'dark');
 
-    if (state.theme === 'auto') {
+    if (state.theme === 'auto' || isNullish(state.theme)) {
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
       if (mediaQuery.matches) {
         _theme = 'dark';
@@ -58,14 +58,17 @@ export const ConfigProvider: FunctionalComponent<ConfigProviderProps> = ({
 
   useEffect(() => {
     if (isObject(state.cssVars) && !!Object.keys(state.cssVars).length) {
-      const cssColorsMap = Object.fromEntries(
-        Object.entries(state.cssVars).map(([cssVar, colorValue]) => [
-          CSS_VAR_PREFIX + cssVar,
-          colorValue
-        ])
+      const cssColorTokens = Object.entries(state.cssVars).map(
+        ([cssVar, colorValue]) => {
+          const token = cssVar.replace(
+            /([A-Z])/g,
+            word => `-${word.toLowerCase()}`
+          );
+          return `${CSS_VAR_PREFIX + token}: ${colorValue}`;
+        }
       );
-      const cssVarsString = JSON.stringify(cssColorsMap).replace(/[{}]/g, '');
-      document.documentElement.setAttribute('style', cssVarsString);
+
+      document.documentElement.setAttribute('style', cssColorTokens.join(';'));
     }
   }, [state.cssVars]);
 

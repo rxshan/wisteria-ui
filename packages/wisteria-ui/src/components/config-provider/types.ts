@@ -1,25 +1,26 @@
 import type { StateUpdater } from 'preact/hooks';
 import type { ComponentChild, ErrorInfo } from 'preact';
 
-type Theme = 'light' | 'dark' | 'auto';
+export type Theme = 'light' | 'dark' | 'auto';
 
-type ColorTokens<Color extends string> = `${Color}` | `on-${Color}`;
+type ColorTokens<Color extends string> = `${Color}` | `on${Capitalize<Color>}`;
+
 export type CSSColorVars = Record<
   | 'scrim'
   | 'shadow'
   | 'outline'
-  | 'surface-tint'
-  | 'inverse-surface'
-  | 'inverse-primary'
-  | 'outline-variant'
-  | 'inverse-on-surface'
-  | 'surface-container-highest'
+  | 'surfaceTint'
+  | 'inverseSurface'
+  | 'inversePrimary'
+  | 'outlineVariant'
+  | 'inverseOnSurface'
+  | 'surfaceContainerHighest'
   | ColorTokens<'background'>
-  | ColorTokens<'error' | 'error-container'>
-  | ColorTokens<'surface' | 'surface-variant'>
-  | ColorTokens<'primary' | 'primary-container'>
-  | ColorTokens<'tertiary' | 'tertiary-container'>
-  | ColorTokens<'secondary' | 'secondary-container'>,
+  | ColorTokens<'error' | 'errorContainer'>
+  | ColorTokens<'surface' | 'surfaceVariant'>
+  | ColorTokens<'primary' | 'primaryContainer'>
+  | ColorTokens<'tertiary' | 'tertiaryContainer'>
+  | ColorTokens<'secondary' | 'secondaryContainer'>,
   string
 >;
 

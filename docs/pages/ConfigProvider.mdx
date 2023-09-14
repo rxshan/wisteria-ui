@@ -1,5 +1,65 @@
 import { ConfigProvider } from 'wisteria-ui';
+import { Callout } from 'nextra/components';
+import { ApiTable, Fieldset } from '../components';
+import {
+  SwitchThemeDemo,
+  ColorPickerDemo
+} from '../examples/ConfigProvider.tsx';
 
 # ConfigProvider
 
-<ConfigProvider theme="dark" />
+```tsx
+import { ConfigProvider } from 'wisteria-ui';
+```
+
+## 主题切换
+
+```tsx
+<ConfigProvider theme="light" />
+```
+
+<Fieldset line="dashed" label="Theme">
+  <SwitchThemeDemo />
+</Fieldset>
+
+## 动态主题
+
+> 通过 CSS 变量实现
+
+```tsx
+<ConfigProvider
+  theme="light"
+  cssVars={{
+    primary: '#6750a4',
+    primaryContainer: '#e9ddff',
+    secondary: '#625b71',
+    secondaryContainer: '#e8def8',
+    tertiary: '#7e5260',
+    tertoaryContainer: '#ffd9e3'
+  }}
+/>
+```
+
+<Fieldset label="Dynamic Color" line="dashed">
+  <ColorPickerDemo />
+</Fieldset>
+
+<Callout>
+  当前代码仅为示例，更多样式设置请查看 **CSSColorVars** 类型，具体详情可在
+  [Material Design](https://m3.material.io/styles/color/the-color-system/tokens)
+  文档中查看
+</Callout>
+
+## API
+
+<ApiTable
+  options={[
+    ['cssVars', '自定义样式', 'object', '-'],
+    ['theme', '主题', 'light | dark | auto', 'auto'],
+    ['children', '', 'ComponentChild', '-']
+  ]}
+/>
+
+<Callout type="info">
+  **theme** 为 `auto` 时，会根据系统主题自动切换主题。
+</Callout>
