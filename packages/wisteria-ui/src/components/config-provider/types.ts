@@ -4,7 +4,7 @@ import type { ComponentChild, ErrorInfo } from 'preact';
 type Theme = 'light' | 'dark' | 'auto';
 
 type ColorTokens<Color extends string> = `${Color}` | `on-${Color}`;
-type CSSColorVars = Record<
+export type CSSColorVars = Record<
   | 'scrim'
   | 'shadow'
   | 'outline'
@@ -36,6 +36,7 @@ export interface ConfigProviderProps {
 
 export type WisteriaGlobalState = Omit<ConfigProviderProps, 'theme'> &
   Required<Pick<ConfigProviderProps, 'theme'>>;
+
 export interface WisteriaConfigState {
   globalState: WisteriaGlobalState;
   dispathConfig: StateUpdater<WisteriaGlobalState>;

@@ -8,3 +8,4 @@ Radio.displayName = 'WisRadio';
 RadioGroup.displayName = 'WisRadioGroup';
 
 export { Radio };
+export type { RadioValue, RadioProps, RadioGroupProps } from './types';
