@@ -3,7 +3,7 @@
   "compilerOptions": {
     "jsx": "preserve",
     "jsxFactory": "h",
-    "jsxImportSource": "preact"
-  },
-  "include": ["src", "@types"]
+    "jsxImportSource": "preact",
+    "jsxFragmentFactory": "Fragment"
+  }
 }

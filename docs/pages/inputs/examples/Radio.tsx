@@ -2,7 +2,7 @@ import { Radio } from 'wisteria-ui';
 import { useState } from 'preact/hooks';
 
 export const RadioGroupDemo = () => {
-  const [state, setState] = useState();
+  const [state, setState] = useState<string | number>();
 
   return (
     <div>
@@ -10,7 +10,7 @@ export const RadioGroupDemo = () => {
         name="demo"
         value={state}
         defaultValue="A"
-        onChange={setState}
+        onChange={value => setState(value)}
       >
         <div class="flex gap-4">
           <Radio value="A">A</Radio>

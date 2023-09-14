@@ -19,7 +19,6 @@ function handleError(error: unknown) {
     consola.error(chalk.red(error.message));
   } else {
     consola.error(chalk.red(error));
-    console.log(error);
   }
 
   process.exitCode = 1;
