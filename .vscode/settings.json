@@ -13,6 +13,7 @@
   "stylelint.customSyntax": "postcss-scss",
   "eslint.codeActionsOnSave.mode": "all",
   "cSpell.words": [
+    "clsx",
     "commitlint",
     "compat",
     "iconify",

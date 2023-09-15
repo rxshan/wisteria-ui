@@ -1,0 +1,44 @@
+@import '../../../styles/tokens/index';
+
+$badge-dot-size: 8px;
+
+.#{$prefix}-badge {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+%badge-mark-base {
+  position: absolute;
+  top: var(--wisteria-badge-offset-y, 0);
+  right: var(--wisteria-badge-offset-x, 0);
+  box-sizing: border-box;
+  display: inline-block;
+  background-color: var(--wisteria-badge-color, $color-error);
+  border-radius: $shape-corner-full;
+  transition: transform $motion-duration-short4 $motion-easing-emphasized;
+  transform: translate(50%, -50%) scale(1);
+
+  &[data-visible='false'] {
+    transform: translate(50%, -50%) scale(0);
+    transform-origin: center;
+  }
+}
+
+.#{$prefix}-badge-dot {
+  @extend %badge-mark-base;
+
+  width: $badge-dot-size;
+  height: $badge-dot-size;
+}
+
+.#{$prefix}-badge-standard {
+  @extend %badge-mark-base;
+
+  padding: 2px 6px;
+  font-size: $typography-label-medium-size;
+  font-weight: $typography-label-weight;
+  line-height: $typography-label-medium-line-height;
+  color: $color-on-error;
+  letter-spacing: $typography-label-medium-letter-spacing;
+}

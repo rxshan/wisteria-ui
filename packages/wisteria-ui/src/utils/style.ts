@@ -61,7 +61,7 @@ const createPrefixClasses = (
       if (isArray(cn)) {
         return cn.map(name => !!name && `${prefixClass}-${name}`);
       }
-      return Object.entries(cn).map((name, status) => {
+      return Object.entries(cn).map(([name, status]) => {
         if (!status) return '';
         return `${prefixClass}-${name}`;
       });

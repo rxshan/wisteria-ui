@@ -1,0 +1,64 @@
+import 'wisteria-ui/badge/style/index.scss';
+import { Badge } from 'wisteria-ui';
+import { Fieldset, ApiTable } from '../../components';
+import { BadgeToggleDemo } from '../../examples/Badge.tsx';
+
+# Badge
+
+```tsx
+import { Badge } from 'wisteria-ui';
+```
+
+## 示例
+
+<div class="mt-4">
+  <Fieldset line="dashed" label="Variant">
+    <div class="flex gap-8">
+      <Badge variant="dot">
+        <div class="w-16 h-16 flex items-center justify-center bg-violet-400 text-white rounded-md shadow-sm"></div>
+      </Badge>
+      <Badge count={9999} max={99}>
+        <div class="w-16 h-16 flex items-center justify-center bg-violet-400 text-white rounded-md shadow-sm"></div>
+      </Badge>
+    </div>
+  </Fieldset>
+</div>
+
+<div class="mt-4">
+  <Fieldset line="dashed" label="Invisible">
+    <BadgeToggleDemo />
+  </Fieldset>
+</div>
+
+<div class="mt-4">
+  <Fieldset line="dashed" label="Color">
+    <div class="flex gap-12">
+      <Badge color="orange" count={9} max={9}>
+        <div class="w-16 h-16 flex items-center justify-center bg-violet-400 text-white rounded-md shadow-sm"></div>
+      </Badge>
+      <Badge color="green" count={99} max={99}>
+        <div class="w-16 h-16 flex items-center justify-center bg-violet-400 text-white rounded-md shadow-sm"></div>
+      </Badge>
+      <Badge color="violet" count={999} max={999}>
+        <div class="w-16 h-16 flex items-center justify-center bg-violet-400 text-white rounded-md shadow-sm"></div>
+      </Badge>
+    </div>
+  </Fieldset>
+</div>
+
+## API
+
+<ApiTable
+  options={[
+    ['invisible', '是否隐藏', 'boolean', '-'],
+    ['variant', '变体类型', 'dot | standard', 'standard'],
+    ['color', '背景色', ' string', '-'],
+    ['max', '数字最多值，超过将采用 ' + ' 代替', 'number', '999'],
+    ['count', '显示的数字', 'number', '-'],
+    ['showZero', "当 'count' 为 0 时，是否展示", 'boolean', '-'],
+    ['offset', ' 设置偏移位置，[x, y]', '[number, number]', '-'],
+    ['className', '自定义样式类名', 'string', '-'],
+    ['style', '自定义样式对象', 'string | JSX.CSSProperties', '-'],
+    ['children', '-', 'ComponentChild', '-']
+  ]}
+/>
