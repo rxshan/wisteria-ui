@@ -1,10 +1,10 @@
-import type { FunctionComponent } from 'preact';
-import { createPrefixClass } from '../../utils';
-import type { SliderThumbProps } from './types';
 import { useRef } from 'preact/hooks';
+import type { FunctionComponent } from 'preact';
+import { createCssClass } from '../../utils';
 import { useEventListener } from '../../hooks';
+import type { SliderThumbProps } from './types';
 
-const classnames = createPrefixClass('slider-thumb');
+const [selfClass, classnames] = createCssClass('slider-thumb');
 
 export const SliderThumb: FunctionComponent<SliderThumbProps> = props => {
   const focused = useRef(false);
@@ -22,7 +22,7 @@ export const SliderThumb: FunctionComponent<SliderThumbProps> = props => {
     <div
       {...props}
       ref={ref}
-      className={classnames()}
+      className={selfClass}
       onMouseDown={() => {
         focused.current = true;
       }}

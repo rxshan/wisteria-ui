@@ -10,7 +10,7 @@ import { RadioMarker } from './RadioMarker';
 import { useRadioGroupContext } from './RadioContext';
 import { useForkRef, useMergeValue } from '../../hooks';
 
-const [classnames] = createCssClass('radio');
+const [selfClass, classnames] = createCssClass('radio');
 
 export const Radio = forwardRef<
   HTMLInputElement,
@@ -37,8 +37,7 @@ export const Radio = forwardRef<
 
   return (
     <label
-      htmlFor={props.id}
-      className={combineClassnames(classnames('root'), className)}
+      className={combineClassnames(selfClass, className)}
       style={combineStyles(style, {
         cursor: props.disabled ? 'default' : 'pointer',
         '--wisteria-radio-color': color

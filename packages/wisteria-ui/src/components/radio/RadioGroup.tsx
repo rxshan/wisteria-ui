@@ -4,7 +4,7 @@ import type { RadioGroupProps } from './types';
 import { RadioContextProvider } from './RadioContext';
 import { noop, combineClassnames, createCssClass } from '../../utils';
 
-const [classnames] = createCssClass('radio-group');
+const [selfClass] = createCssClass('radio-group');
 
 export const RadioGroup: FunctionalComponent<RadioGroupProps> = ({
   style,
@@ -25,7 +25,7 @@ export const RadioGroup: FunctionalComponent<RadioGroupProps> = ({
       <div
         role="radiogroup"
         style={style}
-        className={combineClassnames(className, classnames())}
+        className={combineClassnames(className, selfClass)}
       >
         {children}
       </div>

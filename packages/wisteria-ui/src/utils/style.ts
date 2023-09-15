@@ -1,7 +1,7 @@
 import { type JSX } from 'preact/jsx-runtime';
 import { isNumber, isObject, isString, isArray } from './is';
 
-type JSXStyleStyle =
+type JSXStyleType =
   | null
   | false
   | string
@@ -9,9 +9,7 @@ type JSXStyleStyle =
   | JSX.CSSProperties
   | JSX.SignalLike<string | JSX.CSSProperties | undefined>;
 
-export const combineStyles = (
-  ...styles: JSXStyleStyle[]
-): JSX.CSSProperties => {
+export const combineStyles = (...styles: JSXStyleType[]): JSX.CSSProperties => {
   const cssStyles = styles.map(style => {
     if (isObject(style) || !isString(style)) {
       return style ?? Object.create(null);
@@ -39,37 +37,6 @@ export const combineClassnames = (...classnames: unknown[]) => {
   return classnames.filter(Boolean).join(' ');
 };
 
-type BasicClassType = null | false | undefined | string;
-type JSXClassType =
-  | BasicClassType
-  | BasicClassType[]
-  | Record<string, BasicClassType>;
-
-/**
- * @deprecated
- */
-export const createPrefixClass = (prefix: string, identify = 'wisteria') => {
-  const prefixClass = `${identify}-${prefix}`;
-
-  return (...classnames: JSXClassType[]) => {
-    if (!classnames.length) return prefixClass;
-    const classes = classnames
-      .map(cn => {
-        if (!cn) return cn;
-        if (isString(cn)) return `${prefixClass}-${cn}`;
-        if (isArray(cn)) {
-          return cn.map(name => !!name && `${prefixClass}-${name}`);
-        }
-        return Object.entries(cn).map((name, status) => {
-          if (!status) return '';
-          return `${prefixClass}-${name}`;
-        });
-      })
-      .flat(1);
-    return combineClassnames(...classes);
-  };
-};
-
 export const suffixCssUnit = (cssValue: string | number, unit = 'px') => {
   if (isNumber(cssValue)) {
     return `${cssValue}${unit}`;
@@ -77,12 +44,17 @@ export const suffixCssUnit = (cssValue: string | number, unit = 'px') => {
   return cssValue.replace(/(\d+).*?/g, (_, size) => `${size}${unit}`);
 };
 
+type BasicClassType = null | false | undefined | string;
+type JSXClassType =
+  | BasicClassType
+  | BasicClassType[]
+  | Record<string, BasicClassType>;
+
 const createPrefixClasses = (
   prefixClass: string,
   ...classnames: JSXClassType[]
 ) => {
-  if (!classnames.length) return prefixClass;
-  const classes = classnames
+  return classnames
     .map(cn => {
       if (!cn) return cn;
       if (isString(cn)) return `${prefixClass}-${cn}`;
@@ -95,14 +67,14 @@ const createPrefixClasses = (
       });
     })
     .flat(1);
-  return combineClassnames(...classes);
 };
 
 export const createCssClass = (prefix: string, identify = 'wisteria') => {
   const prefixClass = `${identify}-${prefix}`;
   return [
-    (...classes: JSXClassType[]) =>
-      createPrefixClasses(prefixClass, ...classes),
-    prefixClass
+    prefixClass,
+    (...classes: JSXClassType[]) => {
+      return combineClassnames(...createPrefixClasses(prefixClass, ...classes));
+    }
   ] as const;
 };

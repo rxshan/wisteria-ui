@@ -4,13 +4,12 @@ import {
   isNullish,
   suffixCssUnit,
   combineStyles,
-  createPrefixClass,
+  createCssClass,
   combineClassnames
 } from '../../utils';
 import type { DividerProps } from './types';
 
-const classnames = createPrefixClass('divider');
-const selfClass = classnames();
+const [selfClass, classnames] = createCssClass('divider');
 
 export const Divider: FunctionComponent<DividerProps> = ({
   style,

@@ -1,8 +1,8 @@
 import type { FunctionComponent } from 'preact';
-import { createPrefixClass } from '../../utils';
+import { createCssClass } from '../../utils';
 
-const classnames = createPrefixClass('slider-track');
+const [selfClass] = createCssClass('slider-track');
 
 export const SliderTrack: FunctionComponent = () => {
-  return <span className={classnames()} />;
+  return <span className={selfClass} />;
 };

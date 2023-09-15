@@ -4,7 +4,7 @@ import { createCssClass } from '../../utils';
 import { RadioOutlineUnchecked } from '../../icons';
 import { SVGIconRoot } from '../../icons/SVGIconRoot';
 
-const [classnames] = createCssClass('radio');
+const [, classnames] = createCssClass('radio');
 
 const RadioIcon: FunctionalComponent<Pick<JSX.HTMLAttributes, 'checked'>> = ({
   checked
