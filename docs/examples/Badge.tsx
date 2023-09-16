@@ -10,7 +10,7 @@ export const BadgeToggleDemo: FunctionalComponent = () => {
         <Badge variant="dot" invisible={!visible}>
           <div class="w-16 h-16 flex items-center justify-center bg-violet-400 text-white rounded-md shadow-sm" />
         </Badge>
-        <Badge count={9} max={99} invisible={!visible}>
+        <Badge count={99} max={99} invisible={!visible}>
           <div class="w-16 h-16 flex items-center justify-center bg-violet-400 text-white rounded-md shadow-sm" />
         </Badge>
       </div>

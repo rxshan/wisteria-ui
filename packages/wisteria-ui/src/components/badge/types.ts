@@ -5,6 +5,8 @@ export enum BadgeVariant {
   Standard = 'standard'
 }
 
+type OffsetGap = number | string;
+
 export interface BadgeProps
   extends Pick<JSX.HTMLAttributes, 'style' | 'className'> {
   invisible?: boolean;
@@ -13,5 +15,5 @@ export interface BadgeProps
   count?: number;
   showZero?: boolean;
   variant?: `${BadgeVariant}`;
-  offset?: [number, number];
+  offset?: [OffsetGap, OffsetGap];
 }

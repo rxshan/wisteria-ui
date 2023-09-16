@@ -8,21 +8,21 @@ $badge-dot-size: 8px;
   display: inline-block;
 }
 
-%badge-mark-base {
+.#{$prefix}-badge-position {
   position: absolute;
   top: var(--wisteria-badge-offset-y, 0);
   right: var(--wisteria-badge-offset-x, 0);
+  display: inline-flex;
+  transform: translate(50%, -50%);
+}
+
+%badge-mark-base {
   box-sizing: border-box;
   display: inline-block;
+  font-size: 0;
   background-color: var(--wisteria-badge-color, $color-error);
   border-radius: $shape-corner-full;
-  transition: transform $motion-duration-short4 $motion-easing-emphasized;
-  transform: translate(50%, -50%) scale(1);
-
-  &[data-visible='false'] {
-    transform: translate(50%, -50%) scale(0);
-    transform-origin: center;
-  }
+  transform: translate(50%, -50%);
 }
 
 .#{$prefix}-badge-dot {

@@ -42,10 +42,8 @@ export const combineClassnames = (...classnames: unknown[]) => {
 };
 
 export const suffixCssUnit = (cssValue: string | number, unit = 'px') => {
-  if (isNumber(cssValue)) {
-    return `${cssValue}${unit}`;
-  }
-  return cssValue.replace(/(\d+).*?/g, (_, size) => `${size}${unit}`);
+  if (!isNumber(cssValue)) return cssValue;
+  return `${cssValue}${unit}`;
 };
 
 type BasicClassType = null | false | undefined | string;
