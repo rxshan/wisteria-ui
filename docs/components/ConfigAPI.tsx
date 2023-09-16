@@ -41,8 +41,6 @@ const ConfigAPIRow: FunctionalComponent<ConfigAPIOption> = props => {
     );
   }, [props]);
 
-  console.log(defaultValue);
-
   return (
     <tr className="border-b border-gray-100 dark:border-neutral-700/50">
       <Text className="text-violet-500 pl-0">{property}</Text>
