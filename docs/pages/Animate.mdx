@@ -1,7 +1,12 @@
 import 'wisteria-ui/animate/style/index.scss';
 import { Animate } from 'wisteria-ui';
 import { Fieldset } from '../components';
-import { ZoomDemo, FadeDemo } from '../examples/Transition.tsx';
+import {
+  ZoomDemo,
+  FadeDemo,
+  CollapseDemo,
+  AnimateDemo
+} from '../examples/Animate';
 
 # Animate
 
@@ -17,7 +22,7 @@ import { Animate } from 'wisteria-ui';
 
 <div class="mt-4">
   <Fieldset label="Zoom Transition">
-    <ZoomDemo />
+    <AnimateDemo defaultVisible TransitionComponent={Animate.Zoom} />
   </Fieldset>
 </div>
 
@@ -29,6 +34,18 @@ import { Animate } from 'wisteria-ui';
 
 <div class="mt-4">
   <Fieldset label="Fade Transition">
-    <FadeDemo />
+    <AnimateDemo TransitionComponent={Animate.Fade} />
+  </Fieldset>
+</div>
+
+# Collapse
+
+```tsx
+<Animate.Collapse in>Collapse</Animate.Collapse>
+```
+
+<div class="mt-4">
+  <Fieldset label="Collapse Transition">
+    <AnimateDemo defaultVisible TransitionComponent={Animate.Collapse} />
   </Fieldset>
 </div>

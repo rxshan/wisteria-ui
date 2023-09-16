@@ -1,18 +1,21 @@
 import './style/index.scss';
+import { Collapse } from './Collapse';
 import { withAnimate } from './withAnimate';
-import { Transition as _Transition } from './Transition';
+import { Animate as _Animate } from './Animate';
 
 const Zoom = withAnimate('zoom');
 const Fade = withAnimate('fade');
 
-const Animate = Object.assign(_Transition, {
+const Animate = Object.assign(_Animate, {
   Fade,
-  Zoom
+  Zoom,
+  Collapse
 });
 
 Fade.displayName = 'WisFade';
 Zoom.displayName = 'WisZoom';
 Animate.displayName = 'WisTransition';
+Collapse.displayName = 'WisCollapse';
 
 export { Animate };
-export type { AnimateProps } from './types';
+export type { AnimateProps, CollapseProps } from './types';

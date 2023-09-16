@@ -5,60 +5,50 @@ import {
   isValidElement,
   type FunctionalComponent
 } from 'preact';
-import { Transition as TransitionComponent } from 'preact-transitioning';
 import {
   combineStyles,
   suffixCssUnit,
   createCssClass,
   combineClassnames
 } from '../../utils';
+import { Animate } from './Animate';
 import type { AnimateProps } from './types';
 
-export const withAnimate = (ns: string): FunctionalComponent<AnimateProps> => {
+export const withAnimate = (
+  ns: string
+): FunctionalComponent<Omit<AnimateProps, 'className' | 'children'>> => {
   const [selfClass, clsx] = createCssClass(ns);
 
-  return ({
-    children,
-    appear = true,
-    duration = 200,
-    destoryOnClosed = true,
-    ...props
-  }) => {
+  return ({ children, duration = 200, ...props }) => {
     const innerStyle = {
       [`--wisteria-${ns}-duration`]: suffixCssUnit(duration, 'ms')
     };
 
     return (
-      <TransitionComponent
-        {...props}
-        appear={appear}
-        alwaysMounted={!destoryOnClosed}
-      >
-        {(_, phase) => {
-          const kebabCaseClass = clsx(
-            phase.replace(/([A-Z])/g, '-$1').toLowerCase()
-          );
+      <Animate {...props} duration={duration}>
+        {({ phaseClass }) => {
           if (!isValidElement(children)) {
             return createElement(
               'span',
               {
                 style: innerStyle,
-                className: combineClassnames(selfClass, kebabCaseClass)
+                className: combineClassnames(selfClass, clsx(phaseClass))
               },
               children
             );
           }
           const vnode = children as VNode<any>;
           return cloneElement(vnode, {
+            ...vnode.props,
             style: combineStyles(vnode.props.style, innerStyle),
             className: combineClassnames(
               selfClass,
-              kebabCaseClass,
+              clsx(phaseClass),
               vnode.props.className
             )
           });
         }}
-      </TransitionComponent>
+      </Animate>
     );
   };
 };
