@@ -9,7 +9,7 @@ export interface FieldsetProps {
 
 export const Fieldset: FunctionComponent<FieldsetProps> = ({
   label,
-  line = 'solid',
+  line = 'dashed',
   style = {},
   children
 }) => {
