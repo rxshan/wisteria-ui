@@ -1,8 +1,8 @@
 import 'wisteria-ui/badge/style/index.scss';
 import { Badge } from 'wisteria-ui';
 import { Callout } from 'nextra/components';
-import { Fieldset, ApiTable, CodeDemoArea } from '../../components';
 import { BadgeToggleDemo } from '../../examples/Badge.tsx';
+import { Fieldset, ApiTable, CodeDemoArea, ConfigAPI } from '../../components';
 
 # Badge
 
@@ -128,5 +128,61 @@ import { Badge } from 'wisteria-ui';
     ['className', '自定义样式类名', 'string', '-'],
     ['style', '自定义样式对象', 'string | JSX.CSSProperties', '-'],
     ['children', '-', 'ComponentChild', '-']
+  ]}
+/>
+
+<ConfigAPI
+  list={[
+    {
+      property: 'invisible',
+      description: '是否隐藏',
+      typedef: 'boolean'
+    },
+    {
+      property: 'variant',
+      description: '变体类型',
+      typedef: 'dot | standard',
+      defaultValue: 'standard'
+    },
+    {
+      property: 'color',
+      description: '背景色',
+      typedef: 'string'
+    },
+    {
+      property: 'max',
+      description: '数字最多值，超过将采用 ' + ' 代替',
+      typedef: 'number',
+      defaultValue: '999'
+    },
+    {
+      property: 'count',
+      description: '显示的数字',
+      typedef: 'number'
+    },
+    {
+      property: 'showZero',
+      description: "当 'count' 为 0 时，是否展示",
+      typedef: 'boolean'
+    },
+    {
+      property: 'offset',
+      description: ' 设置偏移位置，[x, y]',
+      typedef: '[number|string, number|string]'
+    },
+    {
+      property: 'className',
+      description: '自定义样式类名',
+      typedef: 'string'
+    },
+    {
+      property: 'style',
+      description: '自定义样式对象',
+      typedef: 'JSX.CSSProperties'
+    },
+    {
+      property: 'children',
+      typedef: 'ComponentChild'
+    }
   ]}
 />
