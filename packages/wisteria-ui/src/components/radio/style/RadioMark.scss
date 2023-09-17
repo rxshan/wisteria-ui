@@ -1,7 +1,7 @@
 @import '../../../styles/tokens/index';
 @import '../../../styles/mixins/index';
 
-.#{$prefix}-radio-marker {
+.#{$prefix}-radio-mark {
   position: relative;
   box-sizing: border-box;
   padding: 10px;
@@ -35,10 +35,8 @@
 .#{$prefix}-radio-icon {
   position: relative;
 
-  &-circle {
+  &-mark {
     position: absolute;
     inset: 0;
-    transition: transform $motion-duration-short4 $motion-easing-emphasized;
-    transform-origin: center;
   }
 }

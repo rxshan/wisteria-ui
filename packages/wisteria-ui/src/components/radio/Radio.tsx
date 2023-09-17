@@ -6,7 +6,7 @@ import {
   createCssClass
 } from '../../utils';
 import type { RadioProps } from './types';
-import { RadioMarker } from './RadioMarker';
+import { RadioMark } from './RadioMark';
 import { useRadioGroupContext } from './RadioContext';
 import { useForkRef, useMergeValue } from '../../hooks';
 
@@ -43,7 +43,7 @@ export const Radio = forwardRef<
         '--wisteria-radio-color': color
       })}
     >
-      <RadioMarker
+      <RadioMark
         {...props}
         ref={mergeRef as any}
         checked={checked}

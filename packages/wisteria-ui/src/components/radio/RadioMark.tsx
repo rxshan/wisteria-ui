@@ -3,34 +3,32 @@ import type { FunctionalComponent, JSX } from 'preact';
 import { createCssClass } from '../../utils';
 import { RadioOutlineUnchecked } from '../../icons';
 import { SVGIconRoot } from '../../icons/SVGIconRoot';
+import { Animate } from '../animate';
 
-const [, classnames] = createCssClass('radio');
+const [, clsx] = createCssClass('radio');
 
 const RadioIcon: FunctionalComponent<Pick<JSX.HTMLAttributes, 'checked'>> = ({
   checked
 }) => {
   return (
-    <span className={classnames('icon')}>
+    <span className={clsx('icon')}>
       <RadioOutlineUnchecked />
-      <SVGIconRoot
-        className={classnames('icon-circle')}
-        style={{
-          transform: `scale(${checked ? 1 : 0})`
-        }}
-      >
-        <circle cx="12" cy="12" r="5" fill="currentColor" />
-      </SVGIconRoot>
+      <Animate.Zoom in={!!checked} destoryOnClosed={false}>
+        <SVGIconRoot className={clsx('icon-mark')}>
+          <circle cx="12" cy="12" r="5" fill="currentColor" />
+        </SVGIconRoot>
+      </Animate.Zoom>
     </span>
   );
 };
 
-export const RadioMarker = forwardRef<
+export const RadioMark = forwardRef<
   HTMLInputElement,
   JSX.HTMLAttributes<HTMLInputElement>
 >(({ disabled, checked, ...props }, ref) => {
   return (
     <span
-      className={classnames('marker')}
+      className={clsx('mark')}
       aria-checked={!!checked}
       aria-disabled={!!disabled}
     >
@@ -40,10 +38,10 @@ export const RadioMarker = forwardRef<
         type="radio"
         checked={checked}
         disabled={disabled}
-        className={classnames('input')}
+        className={clsx('input')}
       />
       <RadioIcon checked={checked} />
-      {/* Ripple */}
+      {/* <Animate.Ripple /> */}
     </span>
   );
 });
