@@ -22,3 +22,9 @@ export const isFunc = (val: unknown): val is Function => {
 export const isNullish = (val: unknown): val is null | undefined => {
   return typeof val === 'undefined' || (typeof val === 'object' && !val);
 };
+
+export const isTouchEvent = (
+  event: TouchEvent | MouseEvent
+): event is TouchEvent => {
+  return !!(event as TouchEvent).touches?.length;
+};

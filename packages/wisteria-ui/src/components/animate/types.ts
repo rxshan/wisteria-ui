@@ -32,8 +32,8 @@ export interface CollapseProps
   children: VNode;
 }
 
-export interface RippleProps
-  extends Omit<AnimateProps, 'children' | 'className'> {
+export interface RippleProps {
   color?: string;
+  center?: boolean;
   disabled?: boolean;
 }

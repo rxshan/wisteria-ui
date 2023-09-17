@@ -38,12 +38,14 @@ export default {
       }
     ],
     'no-duplicate-imports': 'error',
+    'no-unsafe-optional-chaining': 'off',
     /* typescript rules */
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
     '@typescript-eslint/consistent-type-imports': [
       'error',
       {
