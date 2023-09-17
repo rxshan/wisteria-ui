@@ -1,9 +1,15 @@
 import 'wisteria-ui/divider/style/index.scss';
 import { Divider } from 'wisteria-ui';
 import { Tabs, Tab } from 'nextra/components';
-import { ApiTable, PreviewCode } from '../../components';
+import { ConfigAPI, CodeDemoArea } from '../../components';
 
 # Divider
+
+```tsx
+import { Divider } from 'wisteria-ui';
+```
+
+## 用法
 
 <Tabs items={['水平方向', '垂直方向']}>
   <Tab>
@@ -74,25 +80,50 @@ import { ApiTable, PreviewCode } from '../../components';
 
 ## API
 
-<ApiTable
-  options={[
-    ['dashed', '分割线采用虚线样式', 'boolean', '-'],
-    ['variant', '分割线的变体类型', 'inset | middle | fullWidth', 'fullWidth'],
-    ['direction', '水平方向或垂直方向', 'horizontal | vertical', 'horizontal'],
-    [
-      'textAlign',
-      '文字位置，当设置 children 时生效',
-      'left | center | right',
-      'center'
-    ],
-    [
-      'insetSize',
-      '缩进大小，当 vatiant 不为 fullWidth 时生效',
-      'number',
-      '16px'
-    ],
-    ['className', '自定义样式类名', 'string', '-'],
-    ['style', '自定义样式对象', 'string | JSX.CSSProperties', '-'],
-    ['children', '-', 'ComponentChild', '-']
+<ConfigAPI
+  list={[
+    {
+      property: 'dashed',
+      description: '是否采用虚线样式',
+      typedef: 'boolean'
+    },
+    {
+      property: 'variant',
+      description: '变体类型',
+      typedef: 'inset | middle | fullWidth',
+      defaultValue: 'fullWidth'
+    },
+    {
+      property: 'direction',
+      description: '水平方向或垂直方向',
+      typedef: 'horizontal | vertical',
+      defaultValue: 'horizontal'
+    },
+    {
+      property: 'textAlign',
+      description: '文字对齐方式',
+      typedef: 'left | center | right',
+      defaultValue: 'center'
+    },
+    {
+      property: 'insetSize',
+      description: '缩进大小，当 vatiant 不为 fullWidth 时生效',
+      typedef: 'number',
+      defaultValue: '16px'
+    },
+    {
+      property: 'className',
+      description: '自定义样式类名',
+      typedef: 'string'
+    },
+    {
+      property: 'style',
+      description: '自定义样式对象',
+      typedef: 'JSX.CSSProperties'
+    },
+    {
+      property: 'children',
+      typedef: 'ComponentChild'
+    }
   ]}
 />

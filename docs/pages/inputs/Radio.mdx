@@ -1,8 +1,14 @@
 import 'wisteria-ui/radio/style/index.scss';
 import { Radio } from 'wisteria-ui';
-import { useState } from 'preact/hooks';
-import { RadioGroupDemo } from '../../examples/Radio.tsx';
-import { ApiTable, Fieldset, PreviewCode } from '../../components';
+import { Callout } from 'nextra/components';
+import { RadioGroupDemo } from '../../examples/Radio';
+import {
+  ApiTable,
+  Fieldset,
+  PreviewCode,
+  ConfigAPI,
+  CodeDemoArea
+} from '../../components';
 
 # Radio
 
@@ -10,71 +16,133 @@ import { ApiTable, Fieldset, PreviewCode } from '../../components';
 import { Radio } from 'wisteria-ui';
 ```
 
-<Fieldset label="Radio" line="dashed">
-  <Fieldset label="Disabled" line="dashed">
-    <Radio>正常</Radio>
-    <Radio checked disabled>
-      禁用
-    </Radio>
-  </Fieldset>
-  <Fieldset label="Color" line="dashed">
-    <Radio checked color="violet">
-      紫罗兰色
-    </Radio>
-    <Radio checked color="orange">
-      橙色
-    </Radio>
-    <Radio checked color="pink">
-      粉色
-    </Radio>
-    <Radio checked color="red">
-      红色
-    </Radio>
-  </Fieldset>
-</Fieldset>
+## 用法
 
-<Fieldset label="Radio.Group" line="dashed">
+### 基本使用
+
+```tsx
+<Radio>单选框</Radio>
+<Radio disabled>禁用</Radio>
+```
+
+<CodeDemoArea label="Usage">
+  <Radio>单选框</Radio>
+  <Radio disabled>禁用</Radio>
+</CodeDemoArea>
+
+### 自定义颜色
+
+```tsx
+<Radio checked color="red">红色</Radio>
+<Radio checked color="orange">橙色</Radio>
+<Radio checked color="violet">紫罗兰色</Radio>
+```
+
+<CodeDemoArea label="Color">
+  <Radio checked color="red">
+    红色
+  </Radio>
+  <Radio checked color="orange">
+    橙色
+  </Radio>
+  <Radio checked color="violet">
+    紫罗兰色
+  </Radio>
+</CodeDemoArea>
+
+### 单选框组
+
+```tsx
+<Radio.Group name="demo" defaultValue="A">
+  <Radio value="A">A</Radio>
+  <Radio value="B">B</Radio>
+  <Radio value="C">C</Radio>
+  <Radio value="D">D</Radio>
+</Radio.Group>
+```
+
+<CodeDemoArea label="Radio.Group">
   <RadioGroupDemo />
-</Fieldset>
+</CodeDemoArea>
 
 ## API
 
+<Callout type="info">
+  **Radio** 组件支持原生 **HTMLInputElement** 属性。
+</Callout>
+
 ### Radio
 
-<ApiTable
-  options={[
-    ['color', '设置选中颜色', 'string', '-'],
-    ['checked', '是否选中', 'boolean', '-'],
-    ['disabeled', '禁用', 'boolean', '-'],
-    ['className', '样式类名', 'string', '-'],
-    ['style', '样式', 'CSSProperties', '-'],
-    ['ref', '-', 'Ref<HTMLInputElement>', '-'],
-    [
-      'onChange',
-      '回调事件',
-      '(event: TargetedEvent<HTMLInputElement>) => void',
-      '-'
-    ],
+<ConfigAPI
+  list={[
+    {
+      property: 'color',
+      description: '设置选中颜色',
+      typedef: 'string'
+    },
+    {
+      property: 'checked',
+      description: '是否选中',
+      typedef: 'boolean'
+    },
+    {
+      property: 'disabled',
+      description: '是否禁用',
+      typedef: 'boolean'
+    },
+    {
+      property: 'ref',
+      description: '-',
+      typedef: 'Ref<HTMLInputElement>'
+    },
+    {
+      property: 'onChange',
+      description: '回调事件',
+      typedef: '(event: TargetedEvent<HTMLInputElement>) => void'
+    }
 
 ]}
 />
 
 ### Radio.Group
 
-<ApiTable
-  options={[
-    ['name', '设置表单项名称', 'string', '-'],
-    ['disabeled', '禁用', 'boolean', '-'],
-    ['value', '是否选中', 'string | number', '-'],
-    ['defaultValue', '禁用', 'string | number', '-'],
-    ['className', '样式类名', 'string', '-'],
-    ['style', '样式', 'CSSProperties', '-'],
-    [
-      'onChange',
-      '回调事件',
-      '(selectedValue: string | number) => void',
-      '-'
-    ],
+<ConfigAPI
+  list={[
+    {
+      property: 'name',
+      description: '设置表单项名称',
+      typedef: 'string'
+    },
+    {
+      property: 'disabled',
+      description: '是否禁用',
+      typedef: 'boolean'
+    },
+    {
+      property: "value",
+      description: 'radio value',
+      typedef: 'string | number'
+    },
+    {
+      property: 'defaultValue',
+      description: "默认选中项",
+      typedef: 'string | number'
+    },
+    {
+      property: 'className',
+      description: '样式类名',
+      typedef: 'string'
+    },
+    {
+      property: 'style',
+      description: '样式',
+      typedef: 'CSSProperties'
+    },
+    {
+      property: 'onChange',
+      description: '回调事件',
+      typedef: 'function'
+    }
 
 ]}
 />

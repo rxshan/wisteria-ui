@@ -1,6 +1,7 @@
 import 'wisteria-ui/animate/style/index.scss';
 import { Animate } from 'wisteria-ui';
-import { Fieldset } from '../components';
+import { Callout } from 'nextra/components';
+import { CodeDemoArea, ConfigAPI } from '../components';
 import {
   ZoomDemo,
   FadeDemo,
@@ -14,38 +15,105 @@ import {
 import { Animate } from 'wisteria-ui';
 ```
 
-## Zoom
+<Callout type="info">
+  该组件基于第三方库
+  [preact-transitioning](https://www.npmjs.com/package/preact-transitioning)。
+</Callout>
+
+## 用法
+
+### Zoom
 
 ```tsx
 <Animate.Zoom in>Zoom</Animate.Zoom>
 ```
 
-<div class="mt-4">
-  <Fieldset label="Zoom Transition">
-    <AnimateDemo defaultVisible TransitionComponent={Animate.Zoom} />
-  </Fieldset>
-</div>
+<CodeDemoArea label="Zoom Transition">
+  <AnimateDemo defaultVisible TransitionComponent={Animate.Zoom} />
+</CodeDemoArea>
 
-## Fade
+### Fade
 
 ```tsx
 <Animate.Fade in>Fade</Animate.Fade>
 ```
 
-<div class="mt-4">
-  <Fieldset label="Fade Transition">
-    <AnimateDemo TransitionComponent={Animate.Fade} />
-  </Fieldset>
-</div>
+<CodeDemoArea label="Fade Transition">
+  <AnimateDemo defaultVisible TransitionComponent={Animate.Fade} />
+</CodeDemoArea>
 
-# Collapse
+### Collapse
+
+<Callout type="warning">TODO</Callout>
+
+### Ripple
+
+<Callout type="warning">TODO</Callout>
+
+## API
+
+### Animate
 
 ```tsx
-<Animate.Collapse in>Collapse</Animate.Collapse>
+type AimateChildren =
+  | VNode
+  | ((parameter: {
+      phase: Phase;
+      state: TransitionState;
+      phaseClass: PhaseClass;
+    }) => JSX.Element);
 ```
 
-<div class="mt-4">
-  <Fieldset label="Collapse Transition">
-    <AnimateDemo defaultVisible TransitionComponent={Animate.Collapse} />
-  </Fieldset>
-</div>
+<Callout type="warning">
+  当 **children** 是一个函数时，**className** 将不会起作用，可以通过
+  **phaseClass** 获取组件当前状态类名。
+</Callout>
+
+<ConfigAPI
+  list={[
+    {
+      property: 'in',
+      description: '是否可见',
+      typedef: 'boolean'
+    },
+    {
+      property: 'className',
+      description: '用于定义动画的类名',
+      typedef: 'string',
+      defaultValue: 'animate'
+    },
+    {
+      property: 'destoryOnClosed',
+      description: '关闭后是否销毁节点',
+      typedef: 'boolean',
+      defaultValue: 'true'
+    },
+    {
+      property: 'children',
+      description: '子组件',
+      typedef: 'AimateChildren'
+    },
+    {
+      property: 'appear',
+      description: '组件首次渲染状态',
+      typedef: 'boolean',
+      defaultValue: 'true'
+    },
+    {
+      property: 'enter',
+      description: '组件渲染状态',
+      typedef: 'boolean'
+    },
+    {
+      property: ' exit',
+      description: '组件隐藏状态',
+      typedef: 'boolean'
+    },
+    {
+      property: 'duration',
+      description: '动画持续时间',
+      typedef: 'number',
+    }
+
+]}
+/>

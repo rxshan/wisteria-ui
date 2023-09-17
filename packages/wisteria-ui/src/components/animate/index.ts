@@ -1,4 +1,5 @@
 import './style/index.scss';
+import { Ripple } from './Ripple';
 import { Collapse } from './Collapse';
 import { withAnimate } from './withAnimate';
 import { Animate as _Animate } from './Animate';
@@ -9,6 +10,7 @@ const Fade = withAnimate('fade');
 const Animate = Object.assign(_Animate, {
   Fade,
   Zoom,
+  Ripple,
   Collapse
 });
 

@@ -15,16 +15,29 @@ const Text: FunctionalComponent<JSX.HTMLAttributes<HTMLElement>> = ({
   children,
   className = ''
 }) => {
-  const classes = [
-    'py-2',
-    'pl-6',
-    'text-xs',
-    'leading-6',
-    'font-mono',
-    'font-semibold',
-    className
-  ];
-  return <td class={classes.join(' ')}>{children}</td>;
+  const classes = useMemo(() => {
+    const defaultClasses = [
+      'py-2',
+      'pl-6',
+      'text-xs',
+      'leading-6',
+      'font-mono',
+      'font-semibold'
+    ];
+    const inputClasses = (className as string)
+      .split(' ')
+      .map(cls => cls.split('-')[0]);
+
+    return defaultClasses
+      .filter(cls => !inputClasses.includes(cls.split('-')[0]))
+      .concat(className as string);
+  }, [className]);
+  return (
+    <td
+      class={classes.join(' ')}
+      dangerouslySetInnerHTML={{ __html: children as string }}
+    />
+  );
 };
 
 const ConfigAPIRow: FunctionalComponent<ConfigAPIOption> = props => {

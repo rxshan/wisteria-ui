@@ -1,10 +1,7 @@
 import { ConfigProvider } from 'wisteria-ui';
 import { Callout } from 'nextra/components';
-import { ApiTable, Fieldset } from '../components';
-import {
-  SwitchThemeDemo,
-  ColorPickerDemo
-} from '../examples/ConfigProvider.tsx';
+import { CodeDemoArea, ConfigAPI } from '../components';
+import { SwitchThemeDemo, ColorPickerDemo } from '../examples/ConfigProvider';
 
 # ConfigProvider
 
@@ -12,19 +9,23 @@ import {
 import { ConfigProvider } from 'wisteria-ui';
 ```
 
-## 主题切换
+## 用法
+
+### 主题切换
 
 ```tsx
 <ConfigProvider theme="light" />
 ```
 
-<Fieldset line="dashed" label="Theme">
+<Callout type="info">组件库内置 **亮色** 和 **暗色** 主题。</Callout>
+
+<CodeDemoArea label="Theme">
   <SwitchThemeDemo />
-</Fieldset>
+</CodeDemoArea>
 
-## 动态主题
+### 动态主题
 
-> 通过 CSS 变量实现
+<Callout type="info">动态主题切换基于 **CSS 变量** 实现。</Callout>
 
 ```tsx
 <ConfigProvider
@@ -40,9 +41,9 @@ import { ConfigProvider } from 'wisteria-ui';
 />
 ```
 
-<Fieldset label="Dynamic Color" line="dashed">
+<CodeDemoArea label="Dynamic Color">
   <ColorPickerDemo />
-</Fieldset>
+</CodeDemoArea>
 
 <Callout>
   当前代码仅为示例，更多样式设置请查看 **CSSColorVars** 类型，具体详情可在
@@ -52,14 +53,22 @@ import { ConfigProvider } from 'wisteria-ui';
 
 ## API
 
-<ApiTable
-  options={[
-    ['cssVars', '自定义样式', 'object', '-'],
-    ['theme', '主题', 'light | dark | auto', 'auto'],
-    ['children', '', 'ComponentChild', '-']
-  ]}
-/>
-
 <Callout type="info">
   **theme** 为 `auto` 时，会根据系统主题自动切换主题。
 </Callout>
+
+<ConfigAPI
+  list={[
+    {
+      property: 'theme',
+      description: '主题',
+      typedef: 'auto | light | dark',
+      defaultValue: 'auto'
+    },
+    {
+      property: 'cssVars',
+      description: '自定义样式',
+      typedef: 'CSSColorVars'
+    }
+  ]}
+/>
