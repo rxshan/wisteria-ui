@@ -19,10 +19,8 @@ $badge-dot-size: 8px;
 %badge-mark-base {
   box-sizing: border-box;
   display: inline-block;
-  font-size: 0;
   background-color: var(--wisteria-badge-color, $color-error);
   border-radius: $shape-corner-full;
-  transform: translate(50%, -50%);
 }
 
 .#{$prefix}-badge-dot {
