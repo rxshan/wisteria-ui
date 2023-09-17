@@ -1,12 +1,12 @@
+import type { FunctionalComponent } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import {
   Radio,
-  useWisteriaConfig,
   type Theme,
-  type CSSColorVars
+  type CSSColorVars,
+  useWisteriaConfig
 } from 'wisteria-ui';
-import { Fieldset } from '../components';
-import type { FunctionalComponent } from 'preact';
+import { CodeDemoArea } from '../components';
 
 const textMap = {
   light: '亮色',
@@ -84,7 +84,7 @@ export const ColorPickerDemo = () => {
 
   return (
     <div class="flex flex-col justify-center gap-8">
-      <Fieldset label="Radio Primary Color" line="dashed">
+      <CodeDemoArea label="Radio Primary Color">
         <label class="inline-flex flex-row items-center gap-16">
           <p>
             <strong>Radio 颜色</strong>:&nbsp;
@@ -96,8 +96,8 @@ export const ColorPickerDemo = () => {
             onChange={setPrimaryColor}
           />
         </label>
-      </Fieldset>
-      <Fieldset label="Radio Text Color" line="dashed">
+      </CodeDemoArea>
+      <CodeDemoArea label="Radio Text Color">
         <label class="inline-flex flex-row items-center gap-16">
           <span>
             <strong>Radio 字体颜色</strong>:&nbsp;
@@ -109,7 +109,7 @@ export const ColorPickerDemo = () => {
             onChange={setTextColor}
           />
         </label>
-      </Fieldset>
+      </CodeDemoArea>
     </div>
   );
 };
