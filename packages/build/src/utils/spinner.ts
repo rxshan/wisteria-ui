@@ -24,4 +24,4 @@ const promisify = async (
   }
 };
 
-export default Object.assign({}, spinner, { promisify });
+export default Object.assign(spinner, { promisify });

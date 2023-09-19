@@ -3,12 +3,6 @@ import { consola } from 'consola';
 import { isAbsolute, join } from 'node:path';
 import { readFileSync, existsSync } from 'node:fs';
 
-export type CompileModule = 'es' | 'cjs' | 'umd' | 'amd' | 'systemjs';
-
-export const resolveModule = (module: string) => {
-  return require.resolve(module);
-};
-
 export const readConfig = <Config extends Record<string, any> = any>(
   path: string,
   cwd = process.cwd()

@@ -1,19 +1,17 @@
 import fs from 'node:fs';
-import { readConfig, type CompileModule } from './helper';
+import { readConfig } from './readConfig';
 import type { Globs } from 'gulp';
 
 export type BuildConfig = {
   entry: Globs;
   output?: string;
   clean?: boolean;
-  modules?: CompileModule[];
-  alias?: Record<string, string>;
 };
 
 export const defineBuildConfig = (config: BuildConfig) => config;
 
 export const loadConfig = <Config extends Record<string, any> = any>(
-  filename = 'violetx.config'
+  filename = 'wisteria.config'
 ): Config => {
   const filepath = fs.readdirSync(process.cwd(), 'utf8').find(item => {
     const stat = fs.statSync(item);

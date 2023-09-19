@@ -1,6 +1,8 @@
 {
-  "name": "@wisteria-ui/cli",
+  "name": "@wisteria-ui/build",
   "version": "0.0.1",
+  "private": true,
+  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
