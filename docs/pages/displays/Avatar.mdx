@@ -1,0 +1,145 @@
+import 'wisteria-ui/avatar/style/index.scss';
+import { Avatar } from 'wisteria-ui';
+import { Callout } from 'nextra/components';
+import { ConfigAPI, CodeDemoArea } from '../../components';
+import { AvatarWithImage } from '../../examples/Avatar';
+
+# Avatar
+
+```tsx
+import { Avatar } from 'wisteria-ui';
+```
+
+## 用法
+
+### 形状
+
+```tsx
+<Avatar variant="square"  />
+<Avatar variant="rounded" />
+<Avatar variant="circle"  />
+```
+
+<CodeDemoArea label="Variant">
+  <AvatarWithImage variant="square" size="large" />
+  <AvatarWithImage variant="rounded" size="large" />
+  <AvatarWithImage variant="circle" size="large" />
+</CodeDemoArea>
+
+### 尺寸
+
+```tsx
+<Avatar size="small"  />
+<Avatar size="normal" />
+<Avatar size="large"  />
+<Avatar size={72}  />
+```
+
+<CodeDemoArea label="Size">
+  <AvatarWithImage size="small" />
+  <AvatarWithImage size="normal" />
+  <AvatarWithImage size="large" />
+  <AvatarWithImage size={72} />
+</CodeDemoArea>
+
+### 文字
+
+```tsx
+<Avatar>L</Avatar>
+<Avatar size="large">LA</Avatar>
+```
+
+<CodeDemoArea label="Letter">
+  <Avatar>L</Avatar>
+  <Avatar size="large">LA</Avatar>
+</CodeDemoArea>
+
+### AvatarGroup
+
+```tsx
+<Avatar.Group maxCount={3}>
+  <Avatar>A</Avatar>
+  <Avatar>B</Avatar>
+  <Avatar>C</Avatar>
+  <Avatar>D</Avatar>
+  <Avatar>E</Avatar>
+</Avatar.Group>
+```
+
+<CodeDemoArea label="AvatarGroup">
+  <Avatar.Group maxCount={3}>
+    <Avatar>A</Avatar>
+    <Avatar>B</Avatar>
+    <Avatar>C</Avatar>
+    <Avatar>D</Avatar>
+    <Avatar>E</Avatar>
+  </Avatar.Group>
+</CodeDemoArea>
+
+## API
+
+### Avatar
+
+<Callout type="info">
+  **Avatar** 组件支持原生 **HTMLImageElement** 属性。
+</Callout>
+<Callout type="info">
+  如果加载图片链接失败，**Avatar** 组件将会渲染 **children** 或 **alt**
+  属性内容。
+</Callout>
+
+<ConfigAPI
+  list={[
+    {
+      property: 'variant',
+      typedef: 'square | rounded | circle',
+      description: '设置形状',
+      defaultValue: 'circle'
+    },
+    {
+      property: 'size',
+      typedef: 'small | normal | large | number',
+      description: '尺寸大小',
+      defaultValue: 'normal'
+    },
+    {
+      property: 'color',
+      typedef: 'string',
+      description: '设置背景色'
+    },
+    {
+      property: 'src',
+      typedef: 'string',
+      description: '图片链接'
+    }
+  ]}
+/>
+
+### Avatar.Group
+
+<ConfigAPI
+  list={[
+    {
+      property: 'variant',
+      typedef: 'square | rounded | circle',
+      description: '设置形状',
+      defaultValue: 'circle'
+    },
+    {
+      property: 'size',
+      typedef: 'small | normal | large | number',
+      description: '尺寸大小',
+      defaultValue: 'normal'
+    },
+    {
+      property: 'total',
+      typedef: 'number',
+      description: '设置头像总量，默认获取 Avatar 组件数量'
+    },
+    {
+      property: 'maxCount',
+      typedef: 'number',
+      description: '显示最大数量'
+    }
+  ]}
+/>

@@ -20,7 +20,7 @@ export const CodeDemoArea: FunctionComponent<CodeDemoAreaProps> = ({
       <legend hidden={!label} class="px-2 font-bold italic">
         {label}
       </legend>
-      <div>{children}</div>
+      <div class="flex justify-center gap-6">{children}</div>
     </fieldset>
   );
 };
