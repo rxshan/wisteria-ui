@@ -1,7 +1,4 @@
 :root.dark {
-  --wisteria-color-scheme: #000;
-
-  // M3 color stystem
   --wisteria-color-primary: #cfbcff;
   --wisteria-color-on-primary: #381e72;
   --wisteria-color-primary-container: #4f378a;
@@ -20,19 +17,24 @@
   --wisteria-color-on-error-container: #ffdad6;
   --wisteria-color-background: #1c1b1e;
   --wisteria-color-on-background: #e6e1e6;
-  --wisteria-color-surface: #1c1b1e;
-  --wisteria-color-on-surface: #e6e1e6;
-  --wisteria-color-surface-variant: #49454e;
-  --wisteria-color-on-surface-variant: #cac4cf;
-  --wisteria-color-outline: #948f99;
-  --wisteria-color-inverse-on-surface: #1c1b1e;
-  --wisteria-color-inverse-surface: #e6e1e6;
-  --wisteria-color-inverse-primary: #6750a4;
-  --wisteria-color-shadow: #000;
-  --wisteria-color-surface-tint: #cfbcff;
-  --wisteria-color-outline-variant: #49454e;
-  --wisteria-color-scrim: #000;
-
-  // new colors
+  --wisteria-color-surface-dim: #141218;
+  --wisteria-color-surface: #141218;
+  --wisteria-color-surface-bright: #3b383e;
+  --wisteria-color-surface-container-lowest: #0f0d13;
+  --wisteria-color-surface-container-low: #1d1b20;
+  --wisteria-color-surface-container: #211f26;
+  --wisteria-color-surface-container-high: #2b2930;
   --wisteria-color-surface-container-highest: #36343b;
+  --wisteria-color-on-surface: #e6e0e9;
+  --wisteria-color-surface-variant: #cac4d0;
+  --wisteria-color-on-surface-variant: #cac4d0;
+  --wisteria-color-outline: #938f99;
+  --wisteria-color-outline-variant: #49454f;
+  --wisteria-color-inverse-surface: #e6e0e9;
+  --wisteria-color-inverse-on-surface: #322f35;
+  --wisteria-color-inverse-primary: #6750a4;
+  --wisteria-color-scrim: #000;
+  --wisteria-color-shadow: #000;
+  --wisteria-color-scheme: #000;
+  --wisteria-color-surface-tint: #cfbcff;
 }
