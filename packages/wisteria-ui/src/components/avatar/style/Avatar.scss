@@ -15,7 +15,7 @@ $avatar-offset: var(--wisteria-avatar-offset, 0);
   border: 2px solid white;
 
   &:not(:first-of-type) {
-    margin-left: $avatar-offset;
+    margin-inline-start: $avatar-offset;
   }
 
   &-square {

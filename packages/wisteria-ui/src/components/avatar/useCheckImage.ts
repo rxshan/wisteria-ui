@@ -17,7 +17,12 @@ export const useCheckImage = ({
     active.current = true;
     const image = new Image();
 
-    Object.assign(image, { src, srcSet, crossOrigin, referrerpolicy });
+    Object.assign(image, {
+      src,
+      srcSet,
+      crossOrigin,
+      referrerpolicy
+    });
     image.onload = () => active.current && setLoadStatus('loaded');
     image.onerror = () => active.current && setLoadStatus('error');
 

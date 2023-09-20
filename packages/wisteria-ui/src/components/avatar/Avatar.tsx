@@ -7,8 +7,8 @@ import {
   createCssClass,
   combineClassnames
 } from '../../utils';
-import { AvatarSize, type AvatarProps } from './types';
 import { useCheckImage } from './useCheckImage';
+import { AvatarSize, type AvatarProps } from './types';
 import { useAvatarGroupContext } from './AvatarContext';
 
 const [selfClass, clsx] = createCssClass('avatar');
@@ -36,7 +36,7 @@ export const Avatar: FunctionComponent<AvatarProps> = ({
   const avatarSize = useMemo(() => {
     const _size = context?.size ?? size;
     if (isNumber(_size)) return _size;
-    return AVATAR_SIZE_MAP[_size];
+    return AVATAR_SIZE_MAP[_size] ?? AVATAR_SIZE_MAP['normal'];
   }, [size, context?.size]);
 
   useEffect(() => {
@@ -59,15 +59,13 @@ export const Avatar: FunctionComponent<AvatarProps> = ({
         selfClass,
         clsx(avatarShape, !isRenderTextOrNode && 'with-image')
       )}
-      style={combineStyles(style, context?.style, {
+      style={combineStyles(style, {
         '--wisteria-avatar-color': color,
         '--wisteria-avatar-size': suffixCssUnit(avatarSize),
         '--wisteria-avatar-offset': context && suffixCssUnit(-avatarSize / 4)
       })}
     >
-      {!!isRenderImage && (
-        <img {...props} loading="lazy" className={clsx('image')} />
-      )}
+      {!!isRenderImage && <img {...props} className={clsx('image')} />}
       {!!isRenderTextOrNode && (
         <span ref={childRef} className={clsx('with-child')}>
           {children ?? props.alt}

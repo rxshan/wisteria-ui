@@ -33,18 +33,8 @@ export const AvatarGroup: FunctionComponent<AvatarGroupProps> = ({
   }
 
   return (
-    <div className={selfClass}>
-      {renderAvatars.map((item, key) => {
-        const zIndex = key + 1;
-        return (
-          <AvatarContext.Provider
-            key={key}
-            value={{ size, variant, style: { zIndex } }}
-          >
-            {item}
-          </AvatarContext.Provider>
-        );
-      })}
-    </div>
+    <AvatarContext.Provider value={{ size, variant }}>
+      <div className={selfClass}>{renderAvatars}</div>
+    </AvatarContext.Provider>
   );
 };
