@@ -1,6 +1,3 @@
-$color-scheme: var(--wisteria-color-scheme);
-
-// M3 color stystem
 $color-primary: var(--wisteria-color-primary);
 $color-on-primary: var(--wisteria-color-on-primary);
 $color-primary-container: var(--wisteria-color-primary-container);
@@ -19,20 +16,25 @@ $color-on-error: var(--wisteria-color-on-error);
 $color-on-error-container: var(--wisteria-color-on-error-container);
 $color-background: var(--wisteria-color-background);
 $color-on-background: var(--wisteria-color-on-background);
+$color-surface-dim: var(--wisteria-color-surface-dim);
 $color-surface: var(--wisteria-color-surface);
+$color-surface-bright: var(--wisteria-color-surface-bright);
+$color-surface-container-lowest: var(--wisteria-color-surface-container-lowest);
+$color-surface-container-low: var(--wisteria-color-surface-container-low);
+$color-surface-container: var(--wisteria-color-surface-container);
+$color-surface-container-high: var(--wisteria-color-surface-container-high);
+$color-surface-container-highest: var(
+  --wisteria-color-surface-container-highest
+);
 $color-on-surface: var(--wisteria-color-on-surface);
 $color-surface-variant: var(--wisteria-color-surface-variant);
 $color-on-surface-variant: var(--wisteria-color-on-surface-variant);
 $color-outline: var(--wisteria-color-outline);
-$color-inverse-on-surface: var(--wisteria-color-inverse-on-surface);
-$color-inverse-surface: var(--wisteria-color-inverse-surface);
-$color-inverse-primary: var(--wisteria-color-inverse-primary);
-$color-shadow: var(--wisteria-color-shadow);
-$color-surface-tint: var(--wisteria-color-surface-tint);
 $color-outline-variant: var(--wisteria-color-outline-variant);
+$color-inverse-surface: var(--wisteria-color-inverse-surface);
+$color-inverse-on-surface: var(--wisteria-color-inverse-on-surface);
+$color-inverse-primary: var(--wisteria-color-inverse-primary);
 $color-scrim: var(--wisteria-color-scrim);
-
-// new
-$color-surface-container-highest: var(
-  --wisteria-color-surface-container-highest
-);
+$color-shadow: var(--wisteria-color-shadow);
+$color-scheme: var(--wisteria-color-scheme);
+$color-surface-tint: var(--wisteria-color-surface-tint);
