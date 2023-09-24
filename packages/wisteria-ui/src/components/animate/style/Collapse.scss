@@ -1,6 +1,10 @@
 @import '../../../styles/tokens/index';
 
+$transition-duration: var(--wisteria-collapse-duration);
+
 .#{$prefix}-collapse {
-  width: auto;
-  height: auto;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  transition: height $transition-duration $motion-easing-emphasized;
 }

@@ -5,8 +5,8 @@ import { CodeDemoArea, ConfigAPI } from '../components';
 import {
   ZoomDemo,
   FadeDemo,
-  CollapseDemo,
-  AnimateDemo
+  AnimateDemo,
+  CollapseDemo
 } from '../examples/Animate';
 
 # Animate
@@ -39,12 +39,16 @@ import { Animate } from 'wisteria-ui';
 ```
 
 <CodeDemoArea label="Fade Transition">
-  <AnimateDemo defaultVisible TransitionComponent={Animate.Fade} />
+  <AnimateDemo TransitionComponent={Animate.Fade} />
 </CodeDemoArea>
 
 ### Collapse
 
 <Callout type="warning">TODO</Callout>
+
+<CodeDemoArea label="Collapse Transition">
+  <CollapseDemo />
+</CodeDemoArea>
 
 ### Ripple
 

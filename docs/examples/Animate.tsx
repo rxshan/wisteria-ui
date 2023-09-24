@@ -1,8 +1,8 @@
-import { Divider } from 'wisteria-ui';
+import { Animate, Divider } from 'wisteria-ui';
 import { useState } from 'preact/hooks';
-import { type FunctionalComponent } from 'preact';
+import { type FunctionComponent, type FunctionalComponent } from 'preact';
 
-export const AnimateDemo: FunctionalComponent<{
+export const AnimateDemo: FunctionComponent<{
   TransitionComponent: FunctionalComponent<any>;
   defaultVisible?: boolean;
 }> = ({ defaultVisible, TransitionComponent }) => {
@@ -31,6 +31,29 @@ export const AnimateDemo: FunctionalComponent<{
         }}
       >
         {!visible ? 'Show Left' : 'Show Right'}
+      </button>
+    </div>
+  );
+};
+
+export const CollapseDemo: FunctionComponent = () => {
+  const [visible, setVisible] = useState(false);
+  return (
+    <div class="flex flex-col gap-12 items-center">
+      <div class="h-20">
+        <Animate.Collapse in={visible}>
+          <div class="w-20 h-20 bg-violet-300 rounded" />
+        </Animate.Collapse>
+      </div>
+      <button
+        class={`py-2 box-border w-48  rounded-full text-white font-bold ${
+          visible ? 'bg-emerald-300' : 'bg-violet-300'
+        }`}
+        onClick={() => {
+          setVisible(v => !v);
+        }}
+      >
+        {!visible ? 'Show' : 'Close'}
       </button>
     </div>
   );

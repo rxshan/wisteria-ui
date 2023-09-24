@@ -30,6 +30,7 @@ export interface AnimateProps
 export interface CollapseProps
   extends Omit<AnimateProps, 'className' | 'children'> {
   children: VNode;
+  direction?: 'vertical' | 'horizontal';
 }
 
 export interface RippleProps {
