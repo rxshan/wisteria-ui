@@ -40,8 +40,11 @@ export const CollapseDemo: FunctionComponent = () => {
   const [visible, setVisible] = useState(false);
   return (
     <div class="flex flex-col gap-12 items-center">
-      <div class="h-20">
-        <Animate.Collapse in={visible}>
+      <div class="h-20 w-20">
+        {/* <Animate.Collapse in={visible}>
+          <div class="w-20 h-20 bg-violet-300 rounded" />
+        </Animate.Collapse> */}
+        <Animate.Collapse in={visible} direction="vertical">
           <div class="w-20 h-20 bg-violet-300 rounded" />
         </Animate.Collapse>
       </div>

@@ -44,7 +44,11 @@ import { Animate } from 'wisteria-ui';
 
 ### Collapse
 
-<Callout type="warning">TODO</Callout>
+```tsx
+<Animate.Collapse in>
+  <div>Collapse</div>
+</Animate.Collapse>
+```
 
 <CodeDemoArea label="Collapse Transition">
   <CollapseDemo />
@@ -64,6 +68,8 @@ import { Animate } from 'wisteria-ui';
 ## API
 
 ### Animate
+
+<Callout type="info">**Zoom**、**Fade** 组件属性。</Callout>
 
 ```tsx
 type AimateChildren =
@@ -127,4 +133,18 @@ type AimateChildren =
     }
 
 ]}
+/>
+
+### Collpase
+
+<Callout type="info">基于 **Animate** 组件，下面为额外新增属性。</Callout>
+
+<ConfigAPI
+  list={[
+    {
+      property: 'direction',
+      description: '收缩方向',
+      typedef: 'horizontal | vertical'
+    }
+  ]}
 />

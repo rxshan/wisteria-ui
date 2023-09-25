@@ -1,10 +1,8 @@
 import { useRef } from 'preact/hooks';
 import { Animate } from './Animate';
 import type { CollapseProps } from './types';
-import type { FunctionalComponent, JSX } from 'preact';
-import { combineStyles, createCssClass, suffixCssUnit } from '../../utils';
-
-const [selfClass, clsx] = createCssClass('collapse');
+import type { FunctionalComponent } from 'preact';
+import { combineStyles, suffixCssUnit } from '../../utils';
 
 const COLLAPSE_SIZE = 0;
 
@@ -12,63 +10,84 @@ export const Collapse: FunctionalComponent<CollapseProps> = ({
   children,
   duration = 250,
   direction = 'vertical',
-  destoryOnClosed = false,
   ...props
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const elementSizeRef = useRef<number>(0);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const innerStyle = {
-    [`--wisteria-collapse-duration`]: suffixCssUnit(duration, 'ms')
+
+  const isVertical = direction === 'vertical';
+  const dimension = isVertical ? 'height' : 'width';
+
+  const getElementRectBound = () => {
+    if (!wrapperRef.current) return 0;
+    return isVertical
+      ? wrapperRef.current.clientHeight
+      : wrapperRef.current.clientWidth;
   };
 
-  const updateCollapseStyle = (cssStyle: JSX.CSSProperties) => {
+  const updateCollpaseSize = (collpase: number | string) => {
     if (!ref.current) return;
-    Object.assign(ref.current.style, cssStyle);
+    ref.current.style[dimension] = suffixCssUnit(collpase);
+  };
+
+  const hackWrapperSize = (enter?: boolean) => {
+    if (!wrapperRef.current) return;
+    Object.assign(wrapperRef.current.style, {
+      position: enter ? 'absolute' : ''
+    });
   };
 
   return (
     <Animate
       {...props}
-      className={selfClass}
-      destoryOnClosed={destoryOnClosed}
       onEnter={node => {
         props.onEnter?.(node);
-        elementSizeRef.current = wrapperRef.current?.clientHeight ?? 0;
-        console.log(elementSizeRef.current);
-
-        updateCollapseStyle({
-          visibility: 'visible',
-          width: suffixCssUnit(wrapperRef.current?.clientWidth ?? 0),
-          height: suffixCssUnit(COLLAPSE_SIZE)
-        });
+        updateCollpaseSize(COLLAPSE_SIZE);
+        if (!isVertical) {
+          hackWrapperSize(true);
+        }
       }}
       onEntering={node => {
-        updateCollapseStyle({
-          height: suffixCssUnit(elementSizeRef.current)
-        });
+        props.onEntering?.(node);
+        updateCollpaseSize(getElementRectBound());
+        if (!isVertical) {
+          hackWrapperSize();
+        }
+      }}
+      onEntered={node => {
+        props.onEntered?.(node);
+        updateCollpaseSize('auto');
+      }}
+      onExit={node => {
+        props.onExit?.(node);
+        updateCollpaseSize(getElementRectBound());
       }}
       onExiting={node => {
-        updateCollapseStyle({
-          height: suffixCssUnit(COLLAPSE_SIZE)
-        });
-      }}
-      onExited={node => {
-        updateCollapseStyle({
-          height: suffixCssUnit(COLLAPSE_SIZE),
-          visibility: 'hidden'
-        });
+        props.onExiting?.(node);
+        updateCollpaseSize(COLLAPSE_SIZE);
       }}
     >
       {({ state }) => {
-        const isEnter = state.enter || state.appear;
-        console.log(isEnter);
+        const isExited = state.exitDone;
+        const isEnter = state.appear || state.enter;
 
         return (
-          <div ref={ref} style={innerStyle}>
+          <div
+            ref={ref}
+            style={combineStyles({
+              position: 'relative',
+              overflow: 'hidden',
+              transitionProperty: dimension,
+              visibility: isEnter || isExited ? 'hidden' : 'visible',
+              transitionDuration: suffixCssUnit(duration, 'ms'),
+              transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
+            })}
+          >
             <div
               ref={wrapperRef}
-              style={combineStyles({ position: isEnter ? 'absolute' : '' })}
+              style={combineStyles({
+                display: 'flex'
+              })}
             >
               {children}
             </div>

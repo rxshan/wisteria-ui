@@ -15,8 +15,11 @@ type JSXStyleType =
 
 export const combineStyles = (...styles: JSXStyleType[]): JSX.CSSProperties => {
   const cssStyles = styles.map(style => {
-    if (isObject(style) || !isString(style)) {
-      return style ?? Object.create(null);
+    if (!isString(style)) {
+      if (isObject(style)) {
+        return Object.fromEntries(Object.entries(style).filter(([, v]) => !!v));
+      }
+      return Object.create(null);
     }
 
     const matchStyles = Array.from(style.matchAll(/^[a-z-]*:\s*\w+;?/g)).map(
