@@ -1,0 +1,22 @@
+{
+  "name": "@wisteria-ui/shared",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "main": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild"
+  },
+  "devDependencies": {
+    "preact": "^10.15.1"
+  },
+  "peerDependencies": {
+    "preact": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

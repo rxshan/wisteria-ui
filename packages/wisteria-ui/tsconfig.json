@@ -4,6 +4,9 @@
     "jsx": "preserve",
     "jsxFactory": "h",
     "jsxImportSource": "preact",
-    "jsxFragmentFactory": "Fragment"
+    "jsxFragmentFactory": "Fragment",
+    "paths": {
+      "@wisteria/shared": ["../shared/src/index.ts"]
+    }
   }
 }

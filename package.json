@@ -60,6 +60,7 @@
     "@commitlint/cz-commitlint": "^17.6.7",
     "@wisteria-ui/build": "workspace:*",
     "@wisteria-ui/eslint-config": "workspace:*",
+    "@wisteria-ui/shared": "workspace:*",
     "@wisteria-ui/stylelint-config": "workspace:*",
     "all-contributors-cli": "^6.26.1",
     "commitizen": "^4.3.0",
@@ -72,6 +73,7 @@
     "prettier": "^3.0.0",
     "sort-package-json": "^2.5.1",
     "stylelint": "^15.10.2",
+    "tsup": "^7.2.0",
     "typescript": "^5.1.6",
     "unbuild": "^1.2.1"
   },
