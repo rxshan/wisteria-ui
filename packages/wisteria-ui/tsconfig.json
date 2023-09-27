@@ -6,7 +6,7 @@
     "jsxImportSource": "preact",
     "jsxFragmentFactory": "Fragment",
     "paths": {
-      "@wisteria/shared": ["../shared/src/index.ts"]
+      "@wisteria-ui/shared": ["../shared/src/index.ts"]
     }
   }
 }

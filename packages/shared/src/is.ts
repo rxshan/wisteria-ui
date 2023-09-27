@@ -18,6 +18,12 @@ export const isNullish = (value: unknown): value is null | undefined => {
   return typeof value === 'undefined' || (typeof value === 'object' && !value);
 };
 
+export const isCallback = (
+  value: unknown
+): value is (...args: any[]) => any => {
+  return typeof value === 'function';
+};
+
 export const isTouchEvent = (
   event: TouchEvent | MouseEvent
 ): event is TouchEvent => {

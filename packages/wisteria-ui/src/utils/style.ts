@@ -1,5 +1,5 @@
 import { type JSX } from 'preact/jsx-runtime';
-import { isNumber, isObject, isString, isArray } from './is';
+import { isNumber, isObject, isString, isArray } from '@wisteria-ui/shared';
 
 /**
  * TODO: typedef

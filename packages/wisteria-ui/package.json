@@ -11,7 +11,7 @@
     ".": {
       "import": "./src/index.ts"
     },
-    "./*": "./src/components/*",
+    "./*": "./src/*",
     "./style.scss": "./src/styles/theme/index.scss"
   },
   "files": [

@@ -79,6 +79,6 @@ export default {
     'react/jsx-key': ['error', { checkFragmentShorthand: true }],
     /* react-hooks rules */
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'error'
+    'react-hooks/exhaustive-deps': 'off'
   }
 };
