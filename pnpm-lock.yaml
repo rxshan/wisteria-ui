@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 importers:
 
@@ -18,13 +22,13 @@ importers:
         version: link:packages/build
       '@wisteria-ui/eslint-config':
         specifier: workspace:*
-        version: link:packages/eslint-config
+        version: link:packages/config/eslint
       '@wisteria-ui/shared':
         specifier: workspace:*
         version: link:packages/shared
       '@wisteria-ui/stylelint-config':
         specifier: workspace:*
-        version: link:packages/stylelint-config
+        version: link:packages/config/stylelint
       all-contributors-cli:
         specifier: ^6.26.1
         version: 6.26.1
@@ -214,7 +218,7 @@ importers:
         specifier: ^2.0.39
         version: 2.0.39
 
-  packages/eslint-config:
+  packages/config/eslint:
     dependencies:
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.2.0
@@ -238,13 +242,7 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0(@typescript-eslint/eslint-plugin@6.2.0)(eslint@8.45.0)
 
-  packages/shared:
-    devDependencies:
-      preact:
-        specifier: ^10.15.1
-        version: 10.15.1
-
-  packages/stylelint-config:
+  packages/config/stylelint:
     dependencies:
       postcss-scss:
         specifier: ^4.0.6
@@ -261,6 +259,12 @@ importers:
       stylelint-config-standard-scss:
         specifier: ^10.0.0
         version: 10.0.0(postcss@8.4.27)(stylelint@15.10.2)
+
+  packages/shared:
+    devDependencies:
+      preact:
+        specifier: ^10.15.1
+        version: 10.15.1
 
   packages/wisteria-ui:
     dependencies:
@@ -11836,7 +11840,3 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: false
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false

@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm run -r --filter=./packages/* build",
+    "build": "pnpm run -r --filter=./packages/**/* build",
     "cz": "npx git-cz",
     "docs:build": "pnpm run --filter @wisteria-ui/docs docs:build",
     "docs:dev": "pnpm run --filter @wisteria-ui/docs docs:dev",
@@ -11,8 +11,8 @@
     "generate-contributors": "npx all-contributors generate",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "npx husky install && pnpm stub",
-    "sorted": "npx sort-package-json ./package.json **/package.json ./packages/*/package.json",
-    "stub": "pnpm run -r --parallel --filter=./packages/* stub"
+    "sorted": "npx sort-package-json ./package.json ./docs/package.json ./packages/**/package.json",
+    "stub": "pnpm run -r --parallel --filter=./packages/**/* stub"
   },
   "commitlint": {
     "extends": [

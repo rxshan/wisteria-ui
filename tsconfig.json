@@ -16,11 +16,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "preserve",
-    "jsxFactory": "h",
-    "jsxImportSource": "preact",
-    "jsxFragmentFactory": "Fragment"
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": ["**/dist/**", "**/node_modules/**"]
 }
