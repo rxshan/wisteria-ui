@@ -1,8 +1,7 @@
+import { isCallback, combineClassnames } from '@wisteria-ui/shared';
 import { Transition as TransitionComponent } from 'preact-transitioning';
 import { type VNode, cloneElement, type FunctionalComponent } from 'preact';
 import type { AnimateProps, PhaseClass } from './types';
-import { combineClassnames } from '../utils';
-import { isCallback } from '@wisteria-ui/shared';
 
 export const Animate: FunctionalComponent<AnimateProps> = ({
   children,

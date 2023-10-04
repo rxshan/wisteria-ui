@@ -1,12 +1,12 @@
+import { useDefaultState } from './useDefaultState';
 import { useContext, useEffect } from 'preact/hooks';
 import { createContext, type FunctionalComponent } from 'preact';
+import { isNullish, isObject, noop } from '@wisteria-ui/shared';
 import type {
   ConfigProviderProps,
   WisteriaConfigState,
   WisteriaGlobalState
 } from './types';
-import { useDefaultState } from './useDefaultState';
-import { isNullish, isObject, noop } from '@wisteria-ui/shared';
 
 const CSS_VAR_PREFIX = '--wisteria-color-';
 

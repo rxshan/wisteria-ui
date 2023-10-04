@@ -1,6 +1,6 @@
 import type { JSX } from 'preact/jsx-runtime';
 import type { FunctionalComponent } from 'preact';
-import { combineStyles } from '../utils';
+import { combineStyles } from '@wisteria-ui/shared';
 
 export interface SVGIconRootProps
   extends Omit<JSX.SVGAttributes, 'viewBox' | 'xmlns'> {

@@ -10,7 +10,7 @@ import {
   suffixCssUnit,
   createCssClass,
   combineClassnames
-} from '../utils';
+} from '@wisteria-ui/shared';
 import { Animate } from './Animate';
 import type { AnimateProps } from './types';
 

@@ -1,12 +1,13 @@
+import type { DividerProps } from './types';
 import { isValidElement, type FunctionComponent } from 'preact';
 import {
+  isNullish,
+  isNumber,
   suffixCssUnit,
   combineStyles,
   createCssClass,
   combineClassnames
-} from '../utils';
-import type { DividerProps } from './types';
-import { isNullish, isNumber } from '@wisteria-ui/shared';
+} from '@wisteria-ui/shared';
 
 const [selfClass, classnames] = createCssClass('divider');
 

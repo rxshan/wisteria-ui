@@ -1,9 +1,8 @@
-import { toChildArray, type FunctionComponent, isValidElement } from 'preact';
 import { Avatar } from './Avatar';
 import { AvatarContext } from './AvatarContext';
 import type { AvatarGroupProps } from './types';
-import { createCssClass } from '../utils';
-import { isNumber, isString } from '@wisteria-ui/shared';
+import { isNumber, isString, createCssClass } from '@wisteria-ui/shared';
+import { toChildArray, type FunctionComponent, isValidElement } from 'preact';
 
 const [selfClass] = createCssClass('avatar-group');
 

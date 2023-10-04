@@ -1,6 +1,6 @@
-import { createContext, type FunctionalComponent } from 'preact';
-import type { RadioContextState } from './types';
 import { useContext } from 'preact/hooks';
+import type { RadioContextState } from './types';
+import { createContext, type FunctionalComponent } from 'preact';
 
 const INITIAL_STATE = {};
 

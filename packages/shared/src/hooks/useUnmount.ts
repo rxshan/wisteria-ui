@@ -1,8 +1,7 @@
 import useLatest from './useLatest';
 import { useEffect } from 'preact/hooks';
-import type { VoidCallback } from '../typedef';
 
-export default function useUnmount(callback: VoidCallback) {
+export default function useUnmount(callback: VoidFunction) {
   const funcRef = useLatest(callback);
 
   useEffect(() => {

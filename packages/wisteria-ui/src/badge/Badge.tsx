@@ -1,13 +1,14 @@
-import { forwardRef, useMemo, type PropsWithChildren } from 'preact/compat';
-import { BadgeVariant, type BadgeProps } from './types';
-import {
-  combineStyles,
-  createCssClass,
-  combineClassnames,
-  suffixCssUnit
-} from '../utils';
 import { Animate } from '../animate';
-import { isArray, isNullish } from '@wisteria-ui/shared';
+import { BadgeVariant, type BadgeProps } from './types';
+import { forwardRef, useMemo, type PropsWithChildren } from 'preact/compat';
+import {
+  isArray,
+  isNullish,
+  combineStyles,
+  suffixCssUnit,
+  createCssClass,
+  combineClassnames
+} from '@wisteria-ui/shared';
 
 const [selfClass, clsx] = createCssClass('badge');
 

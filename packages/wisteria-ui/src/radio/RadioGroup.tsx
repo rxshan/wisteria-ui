@@ -1,8 +1,12 @@
-import { type FunctionalComponent } from 'preact';
-import { noop, useLatest } from '@wisteria-ui/shared';
 import type { RadioGroupProps } from './types';
+import { type FunctionalComponent } from 'preact';
 import { RadioContextProvider } from './RadioContext';
-import { combineClassnames, createCssClass } from '../utils';
+import {
+  noop,
+  useLatest,
+  createCssClass,
+  combineClassnames
+} from '@wisteria-ui/shared';
 
 const [selfClass] = createCssClass('radio-group');
 

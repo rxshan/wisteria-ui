@@ -1,6 +1,6 @@
 import { useEffect } from 'preact/hooks';
 
-export default function useMount(callback: () => void) {
+export default function useMount(callback: VoidFunction) {
   useEffect(() => {
     callback();
   }, []);

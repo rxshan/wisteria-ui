@@ -1,10 +1,14 @@
+import { Animate } from './Animate';
+import type { RippleProps } from './types';
 import { useRef, useState } from 'preact/hooks';
 import { type FunctionalComponent } from 'preact';
 import { TransitionGroup } from 'preact-transitioning';
-import { isTouchEvent } from '@wisteria-ui/shared';
-import { Animate } from './Animate';
-import type { RippleProps } from './types';
-import { combineStyles, createCssClass, suffixCssUnit } from '../utils';
+import {
+  isTouchEvent,
+  combineStyles,
+  suffixCssUnit,
+  createCssClass
+} from '@wisteria-ui/shared';
 
 type RippleKey = string | number;
 type RippleAttrs = {

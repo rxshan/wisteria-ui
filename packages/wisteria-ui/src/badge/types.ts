@@ -1,4 +1,5 @@
 import type { JSX } from 'preact/jsx-runtime';
+import type { EnumType } from '@wisteria-ui/shared';
 
 export enum BadgeVariant {
   Dot = 'dot',
@@ -14,6 +15,6 @@ export interface BadgeProps
   max?: number;
   count?: number;
   showZero?: boolean;
-  variant?: `${BadgeVariant}`;
+  variant?: EnumType<BadgeVariant>;
   offset?: [OffsetGap, OffsetGap];
 }

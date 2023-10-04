@@ -1,9 +1,15 @@
-import { useRef, forwardRef, type PropsWithChildren } from 'preact/compat';
-import { combineStyles, combineClassnames, createCssClass } from '../utils';
-import type { RadioProps } from './types';
 import { RadioMark } from './RadioMark';
+import type { RadioProps } from './types';
 import { useRadioGroupContext } from './RadioContext';
-import { isNullish, useForkRef, useMergeValue } from '@wisteria-ui/shared';
+import { useRef, forwardRef, type PropsWithChildren } from 'preact/compat';
+import {
+  isNullish,
+  useForkRef,
+  useMergeValue,
+  combineStyles,
+  createCssClass,
+  combineClassnames
+} from '@wisteria-ui/shared';
 
 const [selfClass, classnames] = createCssClass('radio');
 

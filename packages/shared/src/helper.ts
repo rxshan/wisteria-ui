@@ -1,4 +1,11 @@
+import { isNumber } from './is';
+
 export const noop = () => {};
+
+export const suffixCssUnit = (cssValue: string | number, unit = 'px') => {
+  if (!isNumber(cssValue)) return cssValue;
+  return `${cssValue}${unit}`;
+};
 
 export const stringToColor = (str: string) => {
   let hash = 0;

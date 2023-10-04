@@ -1,9 +1,9 @@
+import { Animate } from '../animate';
 import { forwardRef } from 'preact/compat';
-import type { FunctionalComponent, JSX } from 'preact';
-import { createCssClass } from '../utils';
 import { RadioOutlineUnchecked } from '../icons';
 import { SVGIconRoot } from '../icons/SVGIconRoot';
-import { Animate } from '../animate';
+import type { FunctionalComponent, JSX } from 'preact';
+import { createCssClass } from '@wisteria-ui/shared';
 
 const [, clsx] = createCssClass('radio');
 

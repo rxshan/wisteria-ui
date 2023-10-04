@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'preact';
-import { createCssClass } from '../utils';
+import { createCssClass } from '@wisteria-ui/shared';
 
 const [selfClass] = createCssClass('slider-track');
 

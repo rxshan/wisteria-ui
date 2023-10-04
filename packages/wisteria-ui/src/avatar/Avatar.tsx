@@ -1,15 +1,15 @@
+import { useCheckImage } from './useCheckImage';
 import { type FunctionComponent } from 'preact';
+import { AvatarSize, type AvatarProps } from './types';
+import { useAvatarGroupContext } from './AvatarContext';
 import { useEffect, useMemo, useRef } from 'preact/hooks';
 import {
+  isNumber,
   suffixCssUnit,
   combineStyles,
   createCssClass,
   combineClassnames
-} from '../utils';
-import { useCheckImage } from './useCheckImage';
-import { AvatarSize, type AvatarProps } from './types';
-import { useAvatarGroupContext } from './AvatarContext';
-import { isNumber } from '@wisteria-ui/shared';
+} from '@wisteria-ui/shared';
 
 const [selfClass, clsx] = createCssClass('avatar');
 
