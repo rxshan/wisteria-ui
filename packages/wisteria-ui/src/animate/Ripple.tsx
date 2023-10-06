@@ -1,12 +1,11 @@
 import { Animate } from './Animate';
-import type { RippleProps } from './types';
+import type { AnimateProps, RippleProps } from './types';
 import { useRef, useState } from 'preact/hooks';
-import { type FunctionalComponent } from 'preact';
+import { type FunctionComponent } from 'preact';
 import { TransitionGroup } from 'preact-transitioning';
 import {
   isTouchEvent,
   combineStyles,
-  suffixCssUnit,
   createCssClass
 } from '@wisteria-ui/shared';
 
@@ -16,11 +15,66 @@ type RippleAttrs = {
   coords: Record<'x' | 'y', number>;
 };
 
-const RIPPLE_DURATION = 300;
+const RIPPLE_DURATION = 500;
 
 const [selfClass, clsx] = createCssClass('ripple');
 
-export const Ripple: FunctionalComponent<RippleProps> = ({
+interface RippleEffectProps extends Omit<AnimateProps, 'children'> {
+  top: number;
+  left: number;
+  size: number;
+  color?: string;
+}
+
+const RippleEffect: FunctionComponent<RippleEffectProps> = ({
+  top,
+  left,
+  size,
+  ...props
+}) => {
+  const [state, setState] = useState<Record<'enter' | 'exit', boolean>>({
+    exit: false,
+    enter: false
+  });
+  return (
+    <Animate
+      {...props}
+      appear
+      onEnter={() => {
+        console.log('enter');
+
+        setState(prev => ({ ...prev, enter: true }));
+      }}
+      onExit={() => {
+        console.log('exit');
+
+        setState(prev => ({ ...prev, exit: true }));
+      }}
+      onEntered={() => {
+        console.log('enter done');
+      }}
+    >
+      {() => {
+        return (
+          <span
+            className={clsx('effect', {
+              'effect-exit': state.exit
+            })}
+          >
+            <span
+              style={{ top, left, width: size, height: size }}
+              className={clsx('effect-child', {
+                'effect-child-enter': state.enter
+              })}
+            />
+          </span>
+        );
+      }}
+    </Animate>
+  );
+};
+
+export const Ripple: FunctionComponent<RippleProps> = ({
   color,
   center,
   disabled
@@ -65,7 +119,7 @@ export const Ripple: FunctionalComponent<RippleProps> = ({
   };
 
   const removeRipple = () => {
-    setRipples(prev => prev.slice(1));
+    setRipples(ripples.slice(1));
   };
 
   return (
@@ -77,29 +131,21 @@ export const Ripple: FunctionalComponent<RippleProps> = ({
         pointerEvents: disabled && 'none'
       })}
       onMouseDown={createRipple}
-      onTouchStart={createRipple}
       onMouseUp={removeRipple}
-      onTouchEnd={removeRipple}
+      onMouseLeave={removeRipple}
     >
-      <TransitionGroup exit appear duration={RIPPLE_DURATION}>
+      <TransitionGroup exit enter duration={RIPPLE_DURATION}>
         {ripples.map(([key, { radius, coords }]) => {
-          const offsetX = suffixCssUnit(coords.x - radius);
-          const offsetY = suffixCssUnit(coords.y - radius);
-
-          const rippleSize = suffixCssUnit(radius * 2 + 1);
+          const offsetX = coords.x - radius;
+          const offsetY = coords.y - radius;
 
           return (
-            <Animate key={key} className={clsx('effect')}>
-              <span
-                style={combineStyles({
-                  top: offsetY,
-                  left: offsetX,
-                  width: rippleSize,
-                  height: rippleSize,
-                  transitionDuration: suffixCssUnit(RIPPLE_DURATION, 'ms')
-                })}
-              />
-            </Animate>
+            <RippleEffect
+              key={key}
+              top={offsetY}
+              left={offsetX}
+              size={radius * 2}
+            />
           );
         })}
       </TransitionGroup>

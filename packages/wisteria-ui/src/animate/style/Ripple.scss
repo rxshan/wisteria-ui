@@ -11,29 +11,47 @@
 }
 
 .#{$prefix}-ripple-effect {
-  position: absolute;
   display: inline-block;
-  background: currentcolor;
-  border-radius: 50%;
-  transition: all cubic-bezier(0.68, 0.01, 0.62, 0.6);
+  pointer-events: none;
+  opacity: 1;
 
-  &-appear {
-    opacity: 0.1;
+  &-exit {
+    opacity: 0;
+    animation: ripple-exit 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &-child {
+    position: absolute;
+    display: inline-block;
+    pointer-events: none;
+    background: currentcolor;
+    border-radius: 50%;
+    opacity: 0;
+
+    &-enter {
+      opacity: 0.3;
+      transform: scale(1);
+      animation: ripple-enter 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+}
+
+@keyframes ripple-enter {
+  0% {
     transform: scale(0);
   }
 
-  &-appear-active,
-  &-appear-done {
-    opacity: 0.3;
+  100% {
     transform: scale(1);
   }
+}
 
-  &-exit {
-    opacity: 1;
+@keyframes ripple-exit {
+  0% {
+    opacity: 0.3;
   }
 
-  &-exit-active,
-  &-exit-done {
+  100% {
     opacity: 0;
   }
 }

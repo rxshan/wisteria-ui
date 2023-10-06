@@ -29,3 +29,5 @@ export const isTouchEvent = (
 ): event is TouchEvent => {
   return event.constructor.name === 'TouchEvent';
 };
+
+export const isBrowser = typeof window !== 'undefined';

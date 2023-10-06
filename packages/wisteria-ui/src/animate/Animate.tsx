@@ -3,6 +3,11 @@ import { Transition as TransitionComponent } from 'preact-transitioning';
 import { type VNode, cloneElement, type FunctionalComponent } from 'preact';
 import type { AnimateProps, PhaseClass } from './types';
 
+/**
+ *
+ * TODO: rewrite Transition component
+ * @returns
+ */
 export const Animate: FunctionalComponent<AnimateProps> = ({
   children,
   appear = true,
