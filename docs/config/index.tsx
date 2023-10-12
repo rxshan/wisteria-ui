@@ -4,7 +4,7 @@ const config: DocsThemeConfig = {
   // @ts-ignore
   logo: <strong>Wisteria</strong>,
   project: {
-    link: 'https://github.com/wisteria-ui/wisteria-ui'
+    link: 'https://github.com/rxshan/wisteria-ui'
   },
   primaryHue: {
     dark: 185,
@@ -13,8 +13,7 @@ const config: DocsThemeConfig = {
   useNextSeoProps: () => {
     return { titleTemplate: '%s - wisteria' };
   },
-  docsRepositoryBase:
-    'https://github.com/wisteria-ui/wisteria-ui/tree/main/docs',
+  docsRepositoryBase: 'https://github.com/rxshan/wisteria-ui/tree/main/docs',
   search: {
     placeholder: 'Search...'
   },

@@ -1,0 +1,10 @@
+{
+  "Provider": "Provider",
+  "Animate": "过渡动画",
+  "displays": {
+    "title": "数据展示"
+  },
+  "inputs": {
+    "title": "数据输入"
+  }
+}

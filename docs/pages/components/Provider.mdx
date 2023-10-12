@@ -1,6 +1,6 @@
 import { Callout } from 'nextra/components';
 import { WisteriaProvider } from 'wisteria-ui';
-import { CodeDemoArea, ConfigAPI } from '../components';
+import { CodeDemoArea, ConfigAPI } from '@/components';
 
 # Provider
 
@@ -16,6 +16,8 @@ import { WisteriaProvider } from 'wisteria-ui';
 <WisteriaProvider theme={{ scheme: 'light' }} />
 ```
 
+<Callout type="info">组件库内置 **亮色** 和 **暗色** 主题。</Callout>
+
 ### 获取当前主题
 
 ```tsx
@@ -27,8 +29,6 @@ const App = () => {
   return <main>App</main>;
 };
 ```
-
-<Callout type="info">组件库内置 **亮色** 和 **暗色** 主题。</Callout>
 
 ### 动态主题
 

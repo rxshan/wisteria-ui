@@ -1,0 +1,60 @@
+import { Callout, Steps } from 'nextra/components';
+
+# 开发指南
+
+<Callout emoji="👾">
+  欢迎体验 **[Wisteria-UI](https://github.com/rxshan/wisteria-ui)**。
+</Callout>
+
+## 目录结构
+
+<Callout type="info">
+  文档基于 **[Nextra](https://nextra.site/)**，使用 **mdx** 撰写。
+</Callout>
+
+```txt
+.
+├── docs                  # 文档
+└── packages
+    ├── config            # 配置
+    ├── shared            # 工具
+    └── wisteria-ui       # 组件
+```
+
+## 组件结构
+
+```txt
+button
+├── index.ts              # 导出组件、类型，并引入样式
+├── Button.tsx            # 组件
+├── interface.ts          # 类型定义
+└── style/index.scss      # 组件样式
+```
+
+## 本地运行
+
+<Callout type="warning">
+  项目结构基于 **[pnpm workspace](https://pnpm.io/zh/workspaces)**，请使用
+  **pnpm** 安装依赖。
+</Callout>
+
+<Steps>
+### 克隆项目
+
+```bash
+git clone https://github.com/rxshan/wisteria-ui.git
+```
+
+### 安装依赖
+
+```bash
+cd wisteria-ui && pnpm install
+```
+
+### 预览页面
+
+```bash
+pnpm docs:dev
+```
+
+</Steps>

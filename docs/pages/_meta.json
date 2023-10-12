@@ -1,14 +1,15 @@
 {
   "index": {
     "display": "hidden",
-    "title": "指南"
+    "title": "指南",
+    "type": "page"
   },
-  "Provider": "Provider",
-  "Animate": "Animate",
-  "displays": {
-    "title": "数据展示"
+  "docs": {
+    "title": "文档",
+    "type": "page"
   },
-  "inputs": {
-    "title": "数据输入"
+  "components": {
+    "title": "组件",
+    "type": "page"
   }
 }

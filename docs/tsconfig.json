@@ -8,7 +8,8 @@
     "jsxImportSource": "preact",
     "jsxFragmentFactory": "Fragment",
     "paths": {
-      "wisteria-ui": ["../packages/wisteria-ui/src/index.ts"]
+      "wisteria-ui": ["../packages/wisteria-ui/src/index.ts"],
+      "@/*": ["./*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
