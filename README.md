@@ -42,4 +42,4 @@
 
 ## 状态
 
-![Alt](https://repobeats.axiom.co/api/embed/3f26eab41c4367a0e2f362681b547231a8253640.svg 'Repobeats analytics image')
+![Alt](https://repobeats.axiom.co/api/embed/5930f616975e4435321ad69eb95695e8452393a2.svg 'Repobeats analytics image')
