@@ -1,0 +1,88 @@
+import { Callout } from 'nextra/components';
+import { WisteriaProvider } from 'wisteria-ui';
+import { CodeDemoArea, ConfigAPI } from '../components';
+
+# Provider
+
+```tsx
+import { WisteriaProvider } from 'wisteria-ui';
+```
+
+## 用法
+
+### 主题切换
+
+```tsx
+<WisteriaProvider theme={{ scheme: 'light' }} />
+```
+
+### 获取当前主题
+
+```tsx
+import { useTheme } from 'wisteria-ui';
+
+const App = () => {
+  const theme = useTheme();
+
+  return <main>App</main>;
+};
+```
+
+<Callout type="info">组件库内置 **亮色** 和 **暗色** 主题。</Callout>
+
+### 动态主题
+
+<Callout type="info">动态主题切换基于 **CSS 变量** 实现。</Callout>
+
+```tsx
+<WisteriaProvider
+  theme={{
+    scheme: 'light',
+    colors: {
+      primary: '#6750a4',
+      primaryContainer: '#e9ddff',
+      secondary: '#625b71',
+      secondaryContainer: '#e8def8',
+      tertiary: '#7e5260',
+      tertoaryContainer: '#ffd9e3'
+    }
+  }}
+/>
+```
+
+<Callout>
+  当前代码仅为示例，更多样式设置请查看 **ThemeColors** 类型，具体含义可在
+  [Material Design](https://m3.material.io/styles/color/the-color-system/tokens)
+  文档中查看
+</Callout>
+
+## API
+
+<Callout type="info">
+  **theme** 为 `undefined` 时，会根据系统主题自动切换主题。
+</Callout>
+
+<ConfigAPI
+  list={[
+    {
+      property: 'theme.scheme',
+      description: '主题',
+      typedef: 'light | dark'
+    },
+    {
+      property: 'theme.colors',
+      description: '自定义样式',
+      typedef: 'ThemeColors'
+    },
+    {
+      property: 'fallback',
+      description: '页面异常时显示',
+      typedef: 'VNode'
+    },
+    {
+      property: 'onError',
+      description: '页面异常回调',
+      typedef: 'Function'
+    }
+  ]}
+/>

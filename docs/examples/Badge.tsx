@@ -4,6 +4,7 @@ import { useState } from 'preact/hooks';
 
 export const BadgeToggleDemo: FunctionalComponent = () => {
   const [visible, setVisible] = useState(true);
+
   return (
     <div class="flex items-center gap-16">
       <div class="flex gap-8">

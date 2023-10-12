@@ -1,11 +1,10 @@
-import type { StateUpdater } from 'preact/hooks';
 import type { ComponentChild, ErrorInfo } from 'preact';
 
-export type Theme = 'light' | 'dark' | 'auto';
+export type ColorScheme = 'light' | 'dark';
 
 type ColorTokens<Color extends string> = `${Color}` | `on${Capitalize<Color>}`;
 
-export type CSSColorVars = Record<
+export type ThemeColors = Record<
   | 'scrim'
   | 'shadow'
   | 'outline'
@@ -26,19 +25,14 @@ export type CSSColorVars = Record<
 
 export interface ErrorBoundaryProps {
   fallback?: ComponentChild;
-  children?: ComponentChild;
   onError?: (error: any, errorInfo: ErrorInfo) => void;
 }
 
-export interface ConfigProviderProps {
-  theme?: Theme;
-  cssVars?: Partial<CSSColorVars>;
-}
+export type Theme = {
+  scheme: ColorScheme;
+  colors: ThemeColors;
+};
 
-export type WisteriaGlobalState = Omit<ConfigProviderProps, 'theme'> &
-  Required<Pick<ConfigProviderProps, 'theme'>>;
-
-export interface WisteriaConfigState {
-  globalState: WisteriaGlobalState;
-  dispathConfig: StateUpdater<WisteriaGlobalState>;
+export interface WisteriaProviderProps extends ErrorBoundaryProps {
+  theme?: Partial<Theme>;
 }
