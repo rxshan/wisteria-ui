@@ -1,0 +1,44 @@
+import 'wisteria-ui/space/style/index.scss';
+import { Space } from 'wisteria-ui';
+import { SpaceDemo } from '@/examples/Space';
+import { Box, CodeDemoArea, ConfigAPI } from '@/components';
+
+# Space
+
+```tsx
+import { Space } from 'wisteria-ui';
+```
+
+<SpaceDemo />
+
+## API
+
+<ConfigAPI
+  list={[
+    { property: 'wrap', description: '是否换行', typedef: 'boolean' },
+    {
+      property: 'split',
+      description: '分割线',
+      typedef: 'boolean | JSX.Element'
+    },
+    {
+      property: 'size',
+      description: '间隙大小',
+      typedef: 'number | [number, number]',
+      defaultValue: '6px'
+    },
+    {
+      property: 'direction',
+      description: '排列方向',
+      typedef: 'horizontal | vertical',
+      defaultValue: "horizontal"
+    },
+    {
+      property: 'align',
+      description: '对齐方式',
+      typedef: 'start | end | center | baseline',
+      defaultValue: "center"
+    },
+
+]}
+/>

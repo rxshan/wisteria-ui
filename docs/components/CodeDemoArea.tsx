@@ -15,12 +15,17 @@ export const CodeDemoArea: FunctionComponent<CodeDemoAreaProps> = ({
     <fieldset
       {...props}
       class="rounded-lg p-4 border my-4"
-      style={{ borderStyle: line }}
+      style={{
+        borderStyle: line,
+        ...((props.style ?? {}) as JSX.CSSProperties)
+      }}
     >
       <legend hidden={!label} class="px-2 font-bold italic">
         {label}
       </legend>
-      <div class="flex justify-center gap-6">{children}</div>
+      <div class="flex justify-center gap-6" style={{ width: '100%' }}>
+        {children}
+      </div>
     </fieldset>
   );
 };

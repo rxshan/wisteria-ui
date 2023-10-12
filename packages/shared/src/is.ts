@@ -6,6 +6,10 @@ export const isNumber = (value: unknown): value is number => {
   return typeof value === 'number' && !isNaN(value);
 };
 
+export const isBoolean = (value: unknown): value is boolean => {
+  return typeof value === 'boolean';
+};
+
 export const isArray = (value: unknown): value is Array<unknown> => {
   return Array.isArray(value);
 };

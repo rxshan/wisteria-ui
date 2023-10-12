@@ -5,3 +5,4 @@ export * from './divider';
 export * from './provider';
 export * from './radio';
 export * from './slider';
+export * from './space';
