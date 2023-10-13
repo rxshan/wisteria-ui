@@ -1,4 +1,3 @@
-import 'wisteria-ui/paper/style/index.scss';
 import { Paper, Space } from 'wisteria-ui';
 import { Tabs, Tab } from 'nextra/components';
 import { Box, ConfigAPI, CodeDemoArea } from '@/components';
@@ -29,7 +28,8 @@ import { Paper } from 'wisteria-ui';
       <Box
         width={180}
         height={80}
-        className="bg-transparent dark:text-white text-black"
+        style={{ backgroundColor: 'transparent' }}
+        className="dark:text-white text-black"
       >
         Outlined
       </Box>
@@ -38,11 +38,13 @@ import { Paper } from 'wisteria-ui';
       <Box
         width={180}
         height={80}
-        className="bg-transparent dark:text-white text-black"
+        style={{ backgroundColor: 'transparent' }}
+        className="dark:text-white text-black"
       >
         Elevation
       </Box>
     </Paper>
+
   </Space>
 </CodeDemoArea>
 
@@ -54,7 +56,8 @@ Array.from({ length: 6 }, (_, index) => index).map(elevation => (
     <Box
       width={180}
       height={80}
-      className="bg-transparent dark:text-white text-black"
+      style={{ backgroundColor: 'transparent' }}
+      className="dark:text-white text-black"
     >
       {`elevation-${elevation}`}
     </Box>
@@ -69,7 +72,8 @@ Array.from({ length: 6 }, (_, index) => index).map(elevation => (
         <Box
           width={180}
           height={80}
-          className="bg-transparent dark:text-white text-black"
+          style={{ backgroundColor: 'transparent' }}
+          className="dark:text-white text-black"
         >
           {`elevation-${elevation}`}
         </Box>
@@ -92,7 +96,8 @@ Array.from({ length: 6 }, (_, index) => index).map(elevation => (
       <Box
         width={180}
         height={80}
-        className="bg-transparent dark:text-white text-black"
+        style={{ backgroundColor: 'transparent' }}
+        className="dark:text-white text-black"
       >
         Corner - None
       </Box>
@@ -101,7 +106,8 @@ Array.from({ length: 6 }, (_, index) => index).map(elevation => (
       <Box
         width={180}
         height={80}
-        className="bg-transparent dark:text-white text-black"
+        style={{ backgroundColor: 'transparent' }}
+        className="dark:text-white text-black"
       >
         Corner - 16px
       </Box>
@@ -110,7 +116,8 @@ Array.from({ length: 6 }, (_, index) => index).map(elevation => (
       <Box
         width={180}
         height={80}
-        className="bg-transparent dark:text-white text-black"
+        style={{ backgroundColor: 'transparent' }}
+        className="dark:text-white text-black"
       >
         Corner - Full
       </Box>
