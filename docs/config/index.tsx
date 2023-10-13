@@ -1,11 +1,8 @@
+import { navbarConfig } from './navbar';
 import type { DocsThemeConfig } from 'nextra-theme-docs';
 
 const config: DocsThemeConfig = {
-  // @ts-ignore
-  logo: <strong>Wisteria</strong>,
-  project: {
-    link: 'https://github.com/rxshan/wisteria-ui'
-  },
+  ...navbarConfig,
   primaryHue: {
     dark: 185,
     light: 200

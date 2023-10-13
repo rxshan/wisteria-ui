@@ -18,7 +18,9 @@ import { WisteriaProvider } from 'wisteria-ui';
 
 <Callout type="info">组件库内置 **亮色** 和 **暗色** 主题。</Callout>
 
-### 获取当前主题
+### 获取主题
+
+组件库提供 **`useTheme`** hook 来获取当前主题。
 
 ```tsx
 import { useTheme } from 'wisteria-ui';
@@ -50,16 +52,10 @@ const App = () => {
 />
 ```
 
-<Callout>
-  当前代码仅为示例，更多样式设置请查看 **ThemeColors** 类型，具体含义可在
-  [Material Design](https://m3.material.io/styles/color/the-color-system/tokens)
-  文档中查看
-</Callout>
-
 ## API
 
 <Callout type="info">
-  **theme** 为 `undefined` 时，会根据系统主题自动切换主题。
+  **theme.scheme** 为 `undefined` 时，会根据系统主题自动切换主题。
 </Callout>
 
 <ConfigAPI
