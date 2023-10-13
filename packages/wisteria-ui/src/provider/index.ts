@@ -1,3 +1,4 @@
+import '../theme/colors/index.css';
 import { WisteriaProvider } from './WisteriaProvider';
 
 WisteriaProvider.displayName = 'WisteriaProvider';

@@ -8,7 +8,7 @@ declare global {
   }
 }
 
-const COLOR_VAR_PREFIX = '--wisteria-color-';
+const COLOR_VAR_PREFIX = '--m3-color-';
 
 const getDefaultStaticColors = () => {
   if (!isBrowser) return Object.create(null);
