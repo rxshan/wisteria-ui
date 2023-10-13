@@ -1,10 +1,9 @@
-@import '../../styles/tokens/index';
-@import '../../styles/mixins/index';
+@import '../../styles/index';
 
 $slider-track-size: 4px;
 
 .#{$prefix}-slider-track {
-  @include elevation-level-0;
+  @extend %elevation-level-0;
 
   display: inline-block;
   width: 100%;

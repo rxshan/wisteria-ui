@@ -1,0 +1,153 @@
+import 'wisteria-ui/paper/style/index.scss';
+import { Paper, Space } from 'wisteria-ui';
+import { Tabs, Tab } from 'nextra/components';
+import { Box, ConfigAPI, CodeDemoArea } from '@/components';
+
+# Paper
+
+```tsx
+import { Paper } from 'wisteria-ui';
+```
+
+## 用法
+
+### Variant
+
+```tsx
+<Paper variant="outlined">
+  <Box width={180} height={80}>Outlined</Box>
+</Paper>
+
+<Paper variant="elevation" elevation={3}>
+  <Box width={180} height={80}>Elevation</Box>
+</Paper>
+```
+
+<CodeDemoArea label="预览">
+  <Space size={24}>
+    <Paper variant="outlined" corner={12}>
+      <Box
+        width={180}
+        height={80}
+        className="bg-transparent dark:text-white text-black"
+      >
+        Outlined
+      </Box>
+    </Paper>
+    <Paper variant="elevation" elevation={3} corner={12}>
+      <Box
+        width={180}
+        height={80}
+        className="bg-transparent dark:text-white text-black"
+      >
+        Elevation
+      </Box>
+    </Paper>
+  </Space>
+</CodeDemoArea>
+
+### Elevation
+
+```tsx
+Array.from({ length: 6 }, (_, index) => index).map(elevation => (
+  <Paper elevation={elevation}>
+    <Box
+      width={180}
+      height={80}
+      className="bg-transparent dark:text-white text-black"
+    >
+      {`elevation-${elevation}`}
+    </Box>
+  </Paper>
+));
+```
+
+<CodeDemoArea label="预览">
+  <Space wrap size={24}>
+    {Array.from({ length: 6 }, (_, index) => index).map(elevation => (
+      <Paper elevation={elevation}>
+        <Box
+          width={180}
+          height={80}
+          className="bg-transparent dark:text-white text-black"
+        >
+          {`elevation-${elevation}`}
+        </Box>
+      </Paper>
+    ))}
+  </Space>
+</CodeDemoArea>
+
+### Corner
+
+```tsx
+<Paper corner="999px" elevation={3}>
+  <Box>Corner - Full</Box>
+</Paper>
+```
+
+<CodeDemoArea label="预览">
+  <Space size={24}>
+    <Paper corner="0" elevation={3}>
+      <Box
+        width={180}
+        height={80}
+        className="bg-transparent dark:text-white text-black"
+      >
+        Corner - None
+      </Box>
+    </Paper>
+    <Paper corner="16px" elevation={3}>
+      <Box
+        width={180}
+        height={80}
+        className="bg-transparent dark:text-white text-black"
+      >
+        Corner - 16px
+      </Box>
+    </Paper>
+    <Paper corner="999px" elevation={3}>
+      <Box
+        width={180}
+        height={80}
+        className="bg-transparent dark:text-white text-black"
+      >
+        Corner - Full
+      </Box>
+    </Paper>
+  </Space>
+</CodeDemoArea>
+
+## API
+
+<ConfigAPI
+  list={[
+    {
+      property: 'width',
+      description: '指定容器宽度',
+      typedef: 'number | string'
+    },
+    {
+      property: 'height',
+      description: '指定容器高度',
+      typedef: 'number | string'
+    },
+    {
+      property: 'corner',
+      description: '指定圆角大小',
+      typedef: 'number | string'
+    },
+    {
+      property: 'elevation',
+      description: '指定阴影层级，0～5',
+      typedef: 'number',
+      defaultValue: '1'
+    },
+    {
+      property: 'variant',
+      description: '变体类型',
+      typedef: 'elevation | outlined',
+      defaultValue: 'elevation'
+    }
+  ]}
+/>

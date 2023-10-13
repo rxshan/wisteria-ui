@@ -13,7 +13,10 @@ export const Box: FunctionComponent<BoxProps> = ({ size = 64, ...props }) => {
   return (
     <div
       {...props}
-      class="bg-violet-500 text-white font-bold text-base rounded-md cursor-pointer"
+      className={[
+        'bg-violet-500 text-white font-bold text-base rounded-md cursor-pointer flex items-center justify-center',
+        props.className
+      ].join(' ')}
       style={{
         ...externalStyle,
         width: props.width ?? size,

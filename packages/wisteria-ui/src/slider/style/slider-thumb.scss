@@ -1,4 +1,4 @@
-@import '../../styles/tokens/index';
+@import '../../styles/index';
 
 $slider-thumb-size: 20px;
 $slider-thumb-label-size: 28px;
@@ -13,7 +13,7 @@ $slider-thumb-label-size: 28px;
 }
 
 .#{$prefix}-slider-thumb {
-  @include elevation-level-1;
+  @extend %elevation-level-1;
 
   position: absolute;
   top: 0;
@@ -55,7 +55,7 @@ $slider-thumb-label-size: 28px;
 }
 
 .#{$prefix}-slider-thumb-label {
-  @include elevation-level-0;
+  @extend %elevation-level-0;
 
   position: absolute;
   bottom: $slider-thumb-label-size;
