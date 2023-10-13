@@ -1,5 +1,5 @@
 {
-  "name": "@wisteria-ui/shared",
+  "name": "@wisteria-ui/utilities",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",

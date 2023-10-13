@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from 'preact/hooks';
 import useLatest from './useLatest';
-import { isNullish } from '../is';
+import { isNullish } from '../utils/is';
 
 export default function useTimeout(func: VoidFunction, delay?: number) {
   const timer = useRef<NodeJS.Timeout>();

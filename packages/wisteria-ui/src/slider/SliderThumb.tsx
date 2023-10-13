@@ -1,7 +1,7 @@
 import { useRef } from 'preact/hooks';
 import type { SliderThumbProps } from './types';
 import type { FunctionComponent } from 'preact';
-import { createCssClass } from '@wisteria-ui/shared';
+import { createCssClass } from '@wisteria-ui/utilities';
 
 const [selfClass, classnames] = createCssClass('slider-thumb');
 

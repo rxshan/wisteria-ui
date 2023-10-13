@@ -1,4 +1,4 @@
-import { isCallback, combineClassnames } from '@wisteria-ui/shared';
+import { isCallback, combineClassnames } from '@wisteria-ui/utilities';
 import { Transition as TransitionComponent } from 'preact-transitioning';
 import { type VNode, cloneElement, type FunctionalComponent } from 'preact';
 import type { AnimateProps, PhaseClass } from './types';

@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 importers:
 
@@ -19,12 +23,12 @@ importers:
       '@wisteria-ui/eslint-config':
         specifier: workspace:*
         version: link:packages/config/eslint
-      '@wisteria-ui/shared':
-        specifier: workspace:*
-        version: link:packages/shared
       '@wisteria-ui/stylelint-config':
         specifier: workspace:*
         version: link:packages/config/stylelint
+      '@wisteria-ui/utilities':
+        specifier: workspace:*
+        version: link:packages/utilities
       all-contributors-cli:
         specifier: ^6.26.1
         version: 6.26.1
@@ -256,7 +260,7 @@ importers:
         specifier: ^10.0.0
         version: 10.0.0(postcss@8.4.27)(stylelint@15.10.2)
 
-  packages/shared:
+  packages/utilities:
     devDependencies:
       preact:
         specifier: ^10.15.1
@@ -264,9 +268,9 @@ importers:
 
   packages/wisteria-ui:
     dependencies:
-      '@wisteria-ui/shared':
+      '@wisteria-ui/utilities':
         specifier: workspace:*
-        version: link:../shared
+        version: link:../utilities
       lodash.merge:
         specifier: ^4.6.2
         version: 4.6.2
@@ -11836,7 +11840,3 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: false
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false

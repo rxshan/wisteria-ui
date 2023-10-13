@@ -1,7 +1,7 @@
 import { createContext } from 'preact';
 import { useContext } from 'preact/hooks';
 import type { Theme } from './interface';
-import type { Nullable } from '@wisteria-ui/shared';
+import type { Nullable } from '@wisteria-ui/utilities';
 
 export const WisteriaProviderContext =
   createContext<Nullable<{ theme: Theme }>>(null);

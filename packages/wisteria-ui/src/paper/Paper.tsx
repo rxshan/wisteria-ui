@@ -4,7 +4,7 @@ import {
   suffixCssUnit,
   createCssClass,
   combineClassnames
-} from '@wisteria-ui/shared';
+} from '@wisteria-ui/utilities';
 import type { PaperProps } from './interface';
 
 const [rootClass, clsx] = createCssClass('paper');

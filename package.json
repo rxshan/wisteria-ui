@@ -60,7 +60,7 @@
     "@commitlint/cz-commitlint": "^17.6.7",
     "@wisteria-ui/build": "workspace:*",
     "@wisteria-ui/eslint-config": "workspace:*",
-    "@wisteria-ui/shared": "workspace:*",
+    "@wisteria-ui/utilities": "workspace:*",
     "@wisteria-ui/stylelint-config": "workspace:*",
     "all-contributors-cli": "^6.26.1",
     "commitizen": "^4.3.0",

@@ -9,7 +9,7 @@ import {
   combineStyles,
   createCssClass,
   combineClassnames
-} from '@wisteria-ui/shared';
+} from '@wisteria-ui/utilities';
 
 const [selfClass, classnames] = createCssClass('radio');
 

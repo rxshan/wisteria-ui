@@ -1,4 +1,4 @@
-import { isNullish } from '../is';
+import { isNullish } from '../utils/is';
 import { useState, useEffect, type StateUpdater } from 'preact/hooks';
 
 type DefaultProps<T> = {

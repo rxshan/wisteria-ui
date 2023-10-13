@@ -8,7 +8,7 @@ import {
   combineStyles,
   createCssClass,
   combineClassnames
-} from '@wisteria-ui/shared';
+} from '@wisteria-ui/utilities';
 
 const [rootClass, clsx] = createCssClass('space');
 

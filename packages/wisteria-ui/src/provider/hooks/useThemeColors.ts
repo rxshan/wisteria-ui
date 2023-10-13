@@ -1,4 +1,4 @@
-import { isBrowser } from '@wisteria-ui/shared';
+import { isBrowser } from '@wisteria-ui/utilities';
 import { useMemo, useState } from 'preact/hooks';
 import type { ColorScheme, ThemeColors } from '../interface';
 

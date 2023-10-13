@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'preact/hooks';
-import type { BasicTarget } from '../typedef';
-import { getTargetElement } from '../getTargetElement';
+import type { BasicTarget } from '../utils/typedef';
+import { getTargetElement } from '../utils/getTargetElement';
 
 type EventTarget = BasicTarget<Element | HTMLElement | Document | Window>;
 

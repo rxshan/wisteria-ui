@@ -3,7 +3,7 @@ import { forwardRef } from 'preact/compat';
 import { RadioOutlineUnchecked } from '../icons';
 import { SVGIconRoot } from '../icons/SVGIconRoot';
 import type { FunctionalComponent, JSX } from 'preact';
-import { createCssClass } from '@wisteria-ui/shared';
+import { createCssClass } from '@wisteria-ui/utilities';
 
 const [, clsx] = createCssClass('radio');
 

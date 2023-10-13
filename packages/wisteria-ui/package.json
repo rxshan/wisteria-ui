@@ -21,7 +21,7 @@
     "build": "wisteria build --bundle"
   },
   "dependencies": {
-    "@wisteria-ui/shared": "workspace:*",
+    "@wisteria-ui/utilities": "workspace:*",
     "lodash.merge": "^4.6.2",
     "preact-transitioning": "^1.4.0"
   },

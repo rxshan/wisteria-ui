@@ -2,7 +2,7 @@ import { useRef } from 'preact/hooks';
 import { Animate } from './Animate';
 import type { CollapseProps } from './types';
 import type { FunctionalComponent } from 'preact';
-import { combineStyles, suffixCssUnit } from '@wisteria-ui/shared';
+import { combineStyles, suffixCssUnit } from '@wisteria-ui/utilities';
 
 const COLLAPSE_SIZE = 0;
 

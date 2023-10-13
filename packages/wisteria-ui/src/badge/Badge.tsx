@@ -8,7 +8,7 @@ import {
   suffixCssUnit,
   createCssClass,
   combineClassnames
-} from '@wisteria-ui/shared';
+} from '@wisteria-ui/utilities';
 
 const [selfClass, clsx] = createCssClass('badge');
 

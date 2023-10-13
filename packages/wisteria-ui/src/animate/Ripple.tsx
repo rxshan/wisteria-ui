@@ -7,7 +7,7 @@ import {
   isTouchEvent,
   combineStyles,
   createCssClass
-} from '@wisteria-ui/shared';
+} from '@wisteria-ui/utilities';
 
 type RippleKey = string | number;
 type RippleAttrs = {

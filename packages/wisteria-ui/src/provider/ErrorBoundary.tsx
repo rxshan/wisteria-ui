@@ -1,4 +1,4 @@
-import { isNullish } from '@wisteria-ui/shared';
+import { isNullish } from '@wisteria-ui/utilities';
 import { Component, type ErrorInfo } from 'preact';
 import type { ErrorBoundaryProps } from './interface';
 

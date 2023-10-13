@@ -6,7 +6,7 @@ import {
   useLatest,
   createCssClass,
   combineClassnames
-} from '@wisteria-ui/shared';
+} from '@wisteria-ui/utilities';
 
 const [selfClass] = createCssClass('radio-group');
 

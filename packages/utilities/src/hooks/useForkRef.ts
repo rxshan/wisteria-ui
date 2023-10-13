@@ -1,6 +1,6 @@
 import { useMemo } from 'preact/hooks';
 import type { Ref, RefCallback } from 'preact';
-import { isCallback, isNullish } from '../is';
+import { isCallback, isNullish } from '../utils/is';
 
 export default function useForkRef<T>(
   ...refs: Array<Ref<T> | null>

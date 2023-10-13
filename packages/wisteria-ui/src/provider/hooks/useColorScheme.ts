@@ -1,5 +1,5 @@
 import type { ColorScheme } from '../interface';
-import { isBrowser } from '@wisteria-ui/shared';
+import { isBrowser } from '@wisteria-ui/utilities';
 import { useEffect, useState } from 'preact/hooks';
 
 const MEDIA_QUERY_RULE = '(prefers-color-scheme: light)';

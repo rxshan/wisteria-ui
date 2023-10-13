@@ -1,5 +1,5 @@
 import type { JSX } from 'preact/jsx-runtime';
-import type { EnumType } from '@wisteria-ui/shared';
+import type { EnumType } from '@wisteria-ui/utilities';
 
 export enum BadgeVariant {
   Dot = 'dot',
