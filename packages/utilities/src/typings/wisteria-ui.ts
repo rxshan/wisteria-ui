@@ -15,7 +15,7 @@ export namespace WisteriaUI {
   export type ComponentProps<T extends object> = T & Readonly<Attributes>;
 
   export interface Component<Props extends object> {
-    (props: ComponentProps<Props>, content?: any): VNode<Props> | null;
+    (props: ComponentProps<Props>, content?: any): VNode<any> | null;
     defaultProps?: Partial<Props>;
     displayName?: `${Identifier}.${string}`;
   }
