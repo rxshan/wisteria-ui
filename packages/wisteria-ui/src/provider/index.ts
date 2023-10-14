@@ -1,4 +1,4 @@
-import '../theme/colors/index.css';
+import '@wisteria-ui/theme/colors';
 import { WisteriaProvider } from './WisteriaProvider';
 
 WisteriaProvider.displayName = 'WisteriaUI.Provider';

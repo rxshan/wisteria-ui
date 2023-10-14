@@ -1,0 +1,11 @@
+{
+  "name": "@wisteria-ui/theme",
+  "exports": {
+    ".": {
+      "import": "./src/index.scss"
+    },
+    "./colors": "./src/colors/index.css"
+  },
+  "main": "./src/index.scss",
+  "sideEffect": true
+}
