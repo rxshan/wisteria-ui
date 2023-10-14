@@ -1,5 +1,5 @@
 import { isBrowser, isObject } from './is';
-import type { BasicTarget, Nullable, TargetElement } from './typedef';
+import type { BasicTarget, Nullable, TargetElement } from '../typings/typedef';
 
 export const getTargetElement = <Target extends TargetElement>(
   target?: BasicTarget<Target>,

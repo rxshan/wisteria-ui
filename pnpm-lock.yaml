@@ -1,8 +1,4 @@
-lockfileVersion: '6.1'
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
+lockfileVersion: '6.0'
 
 importers:
 
@@ -2844,13 +2840,13 @@ packages:
   /@types/gulp-babel@6.1.30:
     resolution: {integrity: sha512-tMs5xeU3iZy0eXwMudKtLonhMrvZLj804lL68Sv+IofA9bReGWFukPYXxWVGWlw7vXdVloP10Fycs5ecrx+eMA==}
     dependencies:
-      '@types/node': 20.8.5
+      '@types/node': 20.8.3
     dev: true
 
   /@types/gulp-postcss@8.0.3:
     resolution: {integrity: sha512-q2GfSYrXA+YEP2fuH+LNr/c9HnPuqMf4qOWlSXgwckBBeT2mX3vsjuPFkm6H03ahTuc2qRrkSFKMz5i0NYSEng==}
     dependencies:
-      '@types/node': 20.8.5
+      '@types/node': 20.8.3
       '@types/vinyl': 2.0.7
     dev: true
 
@@ -2906,7 +2902,7 @@ packages:
   /@types/merge2@1.4.1:
     resolution: {integrity: sha512-Gc3dKjzK0WRdcqBNIEKM1NtCs4RPZBUIugPrdIoEw53RWCbmfu81HuhDZmnjdsftuSJvQiwoV2/vPJAto2+Pfg==}
     dependencies:
-      '@types/node': 20.8.5
+      '@types/node': 20.8.3
     dev: true
 
   /@types/minimist@1.2.2:
@@ -2915,6 +2911,10 @@ packages:
   /@types/ms@0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: false
+
+  /@types/node@20.8.3:
+    resolution: {integrity: sha512-jxiZQFpb+NlH5kjW49vXxvxTjeeqlbsnTAdBTKpzEdPs9itay7MscYXz3Fo9VYFEsfQ6LJFitHad3faerLAjCw==}
+    dev: true
 
   /@types/node@20.8.5:
     resolution: {integrity: sha512-SPlobFgbidfIeOYlzXiEjSYeIJiOCthv+9tSQVpvk4PAdIIc+2SmjNVzWXk9t0Y7dl73Zdf+OgXKHX9XtkqUpw==}
@@ -2961,7 +2961,7 @@ packages:
   /@types/through2@2.0.38:
     resolution: {integrity: sha512-YFu+nHmjxMurkH1BSzA0Z1WrKDAY8jUKPZctNQn7mc+/KKtp2XxnclHFXxdB1m7Iqnzb5aywgP8TMK283LezGQ==}
     dependencies:
-      '@types/node': 20.8.5
+      '@types/node': 20.8.3
     dev: true
 
   /@types/undertaker-registry@1.0.1:
@@ -2996,7 +2996,7 @@ packages:
     resolution: {integrity: sha512-4UqPv+2567NhMQuMLdKAyK4yzrfCqwaTt6bLhHEs8PFcxbHILsrxaY63n4wgE/BRLDWDQeI+WcTmkXKExh9hQg==}
     dependencies:
       '@types/expect': 1.20.4
-      '@types/node': 20.8.5
+      '@types/node': 20.8.3
     dev: true
 
   /@typescript-eslint/eslint-plugin@6.2.0(@typescript-eslint/parser@6.2.0)(eslint@8.45.0)(typescript@5.1.6):
@@ -11848,3 +11848,7 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: false
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

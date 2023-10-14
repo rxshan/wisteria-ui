@@ -1,6 +1,6 @@
 import { type JSX } from 'preact/jsx-runtime';
 import { isArray, isObject, isString } from './is';
-import type { CssClassType, CssStyleType } from './typedef';
+import type { CssClassType, CssStyleType } from '../typings/typedef';
 
 const _createPrefixClasses = (
   prefixClass: string,

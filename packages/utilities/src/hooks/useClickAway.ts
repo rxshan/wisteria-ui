@@ -1,6 +1,6 @@
 import useLatest from './useLatest';
 import { useEffect } from 'preact/hooks';
-import type { BasicTarget } from '../utils/typedef';
+import type { BasicTarget } from '../typings/typedef';
 import { getTargetElement } from '../utils/getTargetElement';
 
 export default function useClickAway(
