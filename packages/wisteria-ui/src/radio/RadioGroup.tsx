@@ -1,4 +1,4 @@
-import type { RadioGroupProps } from './types';
+import type { RadioGroupProps } from './interface';
 import { type FunctionalComponent } from 'preact';
 import { RadioContextProvider } from './RadioContext';
 import {

@@ -1,22 +1,23 @@
 import { RadioMark } from './RadioMark';
-import type { RadioProps } from './types';
+import type { RadioProps } from './interface';
 import { useRadioGroupContext } from './RadioContext';
-import { useRef, forwardRef, type PropsWithChildren } from 'preact/compat';
+import { useRef, forwardRef } from 'preact/compat';
 import {
   isNullish,
   useForkRef,
   useMergeValue,
   combineStyles,
   createCssClass,
-  combineClassnames
+  combineClassnames,
+  type WisteriaUI
 } from '@wisteria-ui/utilities';
 
-const [selfClass, classnames] = createCssClass('radio');
+const [rootClass, classnames] = createCssClass('radio');
 
 export const Radio = forwardRef<
   HTMLInputElement,
-  PropsWithChildren<RadioProps>
->(({ style, color, children, className, ...props }, ref) => {
+  WisteriaUI.PropsWithHTMLAttrs<RadioProps>
+>(({ color, style, className, children, ...props }, ref) => {
   const innerRef = useRef<HTMLInputElement>(null);
   const mergeRef = useForkRef(ref, innerRef);
 
@@ -38,7 +39,7 @@ export const Radio = forwardRef<
 
   return (
     <label
-      className={combineClassnames(selfClass, className)}
+      className={combineClassnames(rootClass, className)}
       style={combineStyles(style, {
         cursor: props.disabled ? 'default' : 'pointer',
         '--wisteria-radio-color': color

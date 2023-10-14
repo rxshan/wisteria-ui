@@ -2,12 +2,11 @@ import { Animate } from '../animate';
 import { forwardRef } from 'preact/compat';
 import { RadioOutlineUnchecked } from '../icons';
 import { SVGIconRoot } from '../icons/SVGIconRoot';
-import type { FunctionalComponent, JSX } from 'preact';
-import { createCssClass } from '@wisteria-ui/utilities';
+import { createCssClass, type WisteriaUI } from '@wisteria-ui/utilities';
 
 const [, clsx] = createCssClass('radio');
 
-const RadioIcon: FunctionalComponent<Pick<JSX.HTMLAttributes, 'checked'>> = ({
+const RadioIcon: WisteriaUI.Component<{ checked?: boolean }> = ({
   checked
 }) => {
   return (
@@ -24,7 +23,7 @@ const RadioIcon: FunctionalComponent<Pick<JSX.HTMLAttributes, 'checked'>> = ({
 
 export const RadioMark = forwardRef<
   HTMLInputElement,
-  JSX.HTMLAttributes<HTMLInputElement>
+  WisteriaUI.PropsWithHTMLAttrs<object, HTMLInputElement>
 >(({ disabled, checked, ...props }, ref) => {
   return (
     <span

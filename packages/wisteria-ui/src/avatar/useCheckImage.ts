@@ -1,12 +1,12 @@
-import type { JSX } from 'preact/jsx-runtime';
 import { useEffect, useRef, useState } from 'preact/hooks';
+import type { WisteriaUI } from '@wisteria-ui/utilities';
 
 export const useCheckImage = ({
   src,
   srcSet,
   crossOrigin,
   referrerpolicy
-}: JSX.HTMLAttributes<HTMLImageElement>) => {
+}: WisteriaUI.ElementAttrs<HTMLImageElement>) => {
   const hasImageSrc = !!src || !!srcSet;
 
   const active = useRef(false);

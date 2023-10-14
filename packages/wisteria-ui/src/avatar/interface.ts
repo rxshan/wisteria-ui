@@ -1,5 +1,5 @@
-import type { JSX } from 'preact/jsx-runtime';
 import type { EnumType } from '@wisteria-ui/utilities';
+import type { ComponentChild } from 'preact';
 
 export enum AvatarSize {
   Small = 'small',
@@ -7,15 +7,16 @@ export enum AvatarSize {
   Large = 'large'
 }
 
-export interface AvatarProps
-  extends Omit<JSX.HTMLAttributes<HTMLImageElement>, 'size'> {
-  size?: EnumType<AvatarSize> | number;
+export interface AvatarProps {
   color?: string;
+  size?: EnumType<AvatarSize> | number;
   variant?: 'square' | 'rounded' | 'circle';
+  children?: ComponentChild;
 }
 
 export interface AvatarGroupProps
   extends Pick<AvatarProps, 'size' | 'variant'> {
   total?: number;
   maxCount?: number;
+  children?: ComponentChild;
 }

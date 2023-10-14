@@ -1,6 +1,8 @@
+import { createContext } from 'preact';
 import { useContext } from 'preact/hooks';
-import type { RadioContextState } from './types';
-import { createContext, type FunctionalComponent } from 'preact';
+import type { RadioContextState } from './interface';
+import type { PropsWithChildren } from 'preact/compat';
+import type { WisteriaUI } from '@wisteria-ui/utilities';
 
 const INITIAL_STATE = {};
 
@@ -13,9 +15,11 @@ export const useRadioGroupContext = () => {
   return useContext(RadioContext);
 };
 
-export const RadioContextProvider: FunctionalComponent<{
-  state?: RadioContextState;
-}> = ({ children, state = INITIAL_STATE }) => {
+export const RadioContextProvider: WisteriaUI.Component<
+  PropsWithChildren<{
+    state?: RadioContextState;
+  }>
+> = ({ children, state = INITIAL_STATE }) => {
   return (
     <RadioContext.Provider value={{ state, group: true }}>
       {children}

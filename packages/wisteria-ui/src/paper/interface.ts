@@ -1,4 +1,4 @@
-import type { JSX } from 'preact/jsx-runtime';
+import type { ComponentChild } from 'preact';
 
 export interface PaperProps {
   width?: number | string;
@@ -6,5 +6,5 @@ export interface PaperProps {
   corner?: number | string;
   elevation?: number;
   variant?: 'elevation' | 'outlined';
-  style?: JSX.CSSProperties;
+  children?: ComponentChild;
 }

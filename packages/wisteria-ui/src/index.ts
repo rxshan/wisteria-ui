@@ -3,7 +3,6 @@ export * from './avatar';
 export * from './badge';
 export * from './divider';
 export * from './paper';
-export * from './Provider';
+export * from './provider';
 export * from './radio';
-export * from './slider';
 export * from './space';

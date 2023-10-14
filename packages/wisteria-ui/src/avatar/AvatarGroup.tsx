@@ -1,12 +1,17 @@
-import { Avatar } from './Avatar';
+import { Avatar } from '.';
 import { AvatarContext } from './AvatarContext';
-import type { AvatarGroupProps } from './types';
-import { isNumber, isString, createCssClass } from '@wisteria-ui/utilities';
-import { toChildArray, type FunctionComponent, isValidElement } from 'preact';
+import type { AvatarGroupProps } from './interface';
+import {
+  isNumber,
+  isString,
+  createCssClass,
+  type WisteriaUI
+} from '@wisteria-ui/utilities';
+import { toChildArray, isValidElement } from 'preact';
 
 const [selfClass] = createCssClass('avatar-group');
 
-export const AvatarGroup: FunctionComponent<AvatarGroupProps> = ({
+export const AvatarGroup: WisteriaUI.Component<AvatarGroupProps> = ({
   total,
   size,
   variant,
@@ -17,7 +22,7 @@ export const AvatarGroup: FunctionComponent<AvatarGroupProps> = ({
     item =>
       isValidElement(item) &&
       !isString(item.type) &&
-      item.type.displayName === 'WisAvatar'
+      item.type.displayName === 'WisAvatarUI.Avatar'
   );
   const totalAvatar = total ?? childrenArray.length;
   const isOverMaxCount = isNumber(maxCount) && totalAvatar > maxCount;

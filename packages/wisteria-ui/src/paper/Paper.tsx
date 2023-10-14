@@ -1,30 +1,32 @@
-import type { FunctionComponent } from 'preact';
+import { forwardRef } from 'preact/compat';
+import type { PaperProps } from './interface';
 import {
   combineStyles,
   suffixCssUnit,
   createCssClass,
-  combineClassnames
+  combineClassnames,
+  type WisteriaUI
 } from '@wisteria-ui/utilities';
-import type { PaperProps } from './interface';
 
 const [rootClass, clsx] = createCssClass('paper');
 
-export const Paper: FunctionComponent<PaperProps> = ({
-  corner = 6,
-  elevation = 1,
-  variant = 'elevation',
-  ...props
-}) => {
+export const Paper = forwardRef<
+  HTMLDivElement,
+  WisteriaUI.PropsWithHTMLAttrs<PaperProps>
+>(({ corner = 6, elevation = 1, variant = 'elevation', ...props }, ref) => {
   return (
     <div
+      {...props}
+      ref={ref}
       style={combineStyles(props.style, {
         width: props.width,
         height: props.height,
         borderRadius: corner && suffixCssUnit(corner)
       })}
       className={combineClassnames(
+        props.className,
         rootClass,
-        clsx(variant, {
+        clsx({
           [`elevation-${elevation}`]: variant === 'elevation'
         })
       )}
@@ -32,4 +34,4 @@ export const Paper: FunctionComponent<PaperProps> = ({
       {props.children}
     </div>
   );
-};
+});

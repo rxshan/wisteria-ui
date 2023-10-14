@@ -1,4 +1,3 @@
-import type { JSX } from 'preact/jsx-runtime';
 import type { EnumType } from '@wisteria-ui/utilities';
 
 export enum BadgeVariant {
@@ -8,8 +7,7 @@ export enum BadgeVariant {
 
 type OffsetGap = number | string;
 
-export interface BadgeProps
-  extends Pick<JSX.HTMLAttributes, 'style' | 'className'> {
+export interface BadgeProps {
   invisible?: boolean;
   color?: string;
   max?: number;

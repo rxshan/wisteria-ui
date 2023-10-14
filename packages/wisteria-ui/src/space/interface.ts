@@ -1,3 +1,4 @@
+import type { ComponentChild } from 'preact';
 import type { JSX } from 'preact/jsx-runtime';
 
 export interface SpaceProps {
@@ -6,4 +7,5 @@ export interface SpaceProps {
   size?: number | [number, number];
   direction?: 'horizontal' | 'vertical';
   align?: 'start' | 'center' | 'end' | 'baseline';
+  children?: ComponentChild;
 }

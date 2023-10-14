@@ -1,4 +1,4 @@
-import type { ComponentChild, ErrorInfo } from 'preact';
+import type { ComponentChild, ErrorInfo, VNode } from 'preact';
 
 export type ColorScheme = 'light' | 'dark';
 
@@ -25,6 +25,7 @@ export type ThemeColors = Record<
 
 export interface ErrorBoundaryProps {
   fallback?: ComponentChild;
+  children: VNode<HTMLElement>;
   onError?: (error: any, errorInfo: ErrorInfo) => void;
 }
 

@@ -4,8 +4,8 @@ import { RadioGroup } from './RadioGroup';
 
 const Radio = Object.assign(_Radio, { Group: RadioGroup });
 
-Radio.displayName = 'WisRadio';
-RadioGroup.displayName = 'WisRadioGroup';
+Radio.displayName = 'WisteriaUI.Radio';
+RadioGroup.displayName = 'WisteriaUI.RadioGroup';
 
 export { Radio };
-export type { RadioValue, RadioProps, RadioGroupProps } from './types';
+export type { RadioValue, RadioProps, RadioGroupProps } from './interface';

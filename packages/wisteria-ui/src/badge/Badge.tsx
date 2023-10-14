@@ -1,30 +1,33 @@
 import { Animate } from '../animate';
-import { BadgeVariant, type BadgeProps } from './types';
-import { forwardRef, useMemo, type PropsWithChildren } from 'preact/compat';
+import { forwardRef, useMemo } from 'preact/compat';
+import { BadgeVariant, type BadgeProps } from './interface';
 import {
   isArray,
   isNullish,
   combineStyles,
   suffixCssUnit,
   createCssClass,
-  combineClassnames
+  combineClassnames,
+  type WisteriaUI
 } from '@wisteria-ui/utilities';
 
-const [selfClass, clsx] = createCssClass('badge');
+const [rootClass, clsx] = createCssClass('badge');
 
-export const Badge = forwardRef<HTMLElement, PropsWithChildren<BadgeProps>>(
+export const Badge = forwardRef<
+  HTMLSpanElement,
+  WisteriaUI.PropsWithHTMLAttrs<BadgeProps>
+>(
   (
     {
       count,
-      style,
       color,
+      offset,
       invisible,
       showZero,
       children,
-      className,
       max = 999,
-      offset,
-      variant = BadgeVariant.Standard
+      variant = BadgeVariant.Standard,
+      ...props
     },
     ref
   ) => {
@@ -53,9 +56,10 @@ export const Badge = forwardRef<HTMLElement, PropsWithChildren<BadgeProps>>(
 
     return (
       <span
+        {...props}
         ref={ref}
-        className={combineClassnames(selfClass, className)}
-        style={combineStyles(style, {
+        className={combineClassnames(rootClass, props.className)}
+        style={combineStyles(props.style, {
           '--wisteria-badge-color': color,
           '--wisteria-badge-offset-x': offsetX,
           '--wisteria-badge-offset-y': offsetY

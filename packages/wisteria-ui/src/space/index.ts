@@ -1,7 +1,7 @@
 import './style/index.scss';
 import { Space } from './Space';
 
-Space.displayName = 'WisteriaSpace';
+Space.displayName = 'WisteriaUI.Space';
 
 export { Space };
 export type { SpaceProps } from './interface';

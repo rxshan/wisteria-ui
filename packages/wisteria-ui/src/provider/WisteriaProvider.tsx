@@ -1,11 +1,11 @@
 import { ErrorBoundary } from './ErrorBoundary';
-import type { FunctionComponent } from 'preact';
 import { useThemeColors } from './hooks/useThemeColors';
 import { useColorScheme } from './hooks/useColorScheme';
 import type { WisteriaProviderProps } from './interface';
 import { WisteriaProviderContext } from './ProviderContext';
+import type { WisteriaUI } from '@wisteria-ui/utilities';
 
-export const WisteriaProvider: FunctionComponent<WisteriaProviderProps> = ({
+export const WisteriaProvider: WisteriaUI.Component<WisteriaProviderProps> = ({
   theme,
   ...props
 }) => {

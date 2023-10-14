@@ -1,6 +1,6 @@
 import { createContext } from 'preact';
 import { useContext } from 'preact/hooks';
-import type { AvatarGroupProps } from './types';
+import type { AvatarGroupProps } from './interface';
 
 export const AvatarContext = createContext<Pick<
   AvatarGroupProps,
