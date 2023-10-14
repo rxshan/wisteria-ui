@@ -1,4 +1,4 @@
-import { Divider } from '../divider';
+import { Divider } from '../Divider';
 import { useMemo } from 'preact/hooks';
 import { forwardRef } from 'preact/compat';
 import type { SpaceProps } from './interface';

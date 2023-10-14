@@ -1,5 +1,4 @@
-@import '../../styles/tokens/index';
-@import '../../styles/mixins/index';
+@import '@wisteria-ui/theme';
 
 .#{$prefix}-radio-mark {
   position: relative;

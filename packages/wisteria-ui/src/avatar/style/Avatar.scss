@@ -1,4 +1,4 @@
-@import '../../styles/tokens/index';
+@import '@wisteria-ui/theme';
 
 $avatar-size: var(--wisteria-avatar-size, 40px);
 $avatar-color: var(--wisteria-avatar-color, $color-primary);

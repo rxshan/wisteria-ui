@@ -26,7 +26,7 @@ export const Paper = forwardRef<
       className={combineClassnames(
         props.className,
         rootClass,
-        clsx({
+        clsx(variant, {
           [`elevation-${elevation}`]: variant === 'elevation'
         })
       )}

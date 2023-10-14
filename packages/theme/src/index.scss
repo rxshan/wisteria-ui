@@ -1,7 +1,5 @@
-@forward './tokens/colors.scss';
-@forward './tokens/motion.scss';
-@forward './tokens/shape.scss';
-@forward './tokens/state.scss';
-@forward './tokens/typography.scss';
+@forward './mixins/index.scss';
+@forward './tokens/index.scss';
+@forward './elevation.scss';
 
 $prefix: wisteria;

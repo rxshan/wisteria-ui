@@ -1,0 +1,30 @@
+@use '../tokens/state' as state;
+
+@mixin element-state-layer($color, $color-alpha: 0) {
+  &::after {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: '';
+    background: $color;
+    border-radius: inherit;
+    opacity: $color-alpha;
+    transition: inherit;
+  }
+
+  &:hover::after {
+    opacity: if(
+      $color-alpha > calc(3 * state.$state-layer-hovered-alpha),
+      calc($color-alpha - state.$state-layer-hovered-alpha),
+      calc(state.$state-layer-hovered-alpha + $color-alpha)
+    );
+  }
+
+  &:active::after {
+    opacity: if(
+      $color-alpha > calc(3 * state.$state-layer-pressed-alpha),
+      calc($color-alpha - state.$state-layer-pressed-alpha),
+      calc(state.$state-layer-pressed-alpha + $color-alpha)
+    );
+  }
+}
