@@ -1,0 +1,17 @@
+@import '@wisteria-ui/theme';
+
+.#{$prefix}-paper {
+  display: inline-block;
+  overflow: hidden;
+  background-color: $color-surface;
+
+  @for $level from 0 through 5 {
+    &-elevation-#{$level} {
+      @extend %elevation-level-#{$level};
+    }
+  }
+
+  &-outlined {
+    border: 1px solid $color-outline-variant;
+  }
+}

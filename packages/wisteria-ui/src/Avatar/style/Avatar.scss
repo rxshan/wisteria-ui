@@ -1,0 +1,51 @@
+@import '@wisteria-ui/theme';
+
+$avatar-size: var(--wisteria-avatar-size, 40px);
+$avatar-color: var(--wisteria-avatar-color, $color-primary);
+$avatar-offset: var(--wisteria-avatar-offset, 0);
+
+.#{$prefix}-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $avatar-size;
+  height: $avatar-size;
+  overflow: hidden;
+  color: $color-on-primary;
+  border: 2px solid $color-scheme;
+
+  &:not(:first-of-type) {
+    margin-inline-start: $avatar-offset;
+  }
+
+  &-square {
+    border-radius: $shape-corner-none;
+  }
+
+  &-rounded {
+    border-radius: $shape-corner-extra-small;
+  }
+
+  &-circle {
+    border-radius: $shape-corner-full;
+  }
+
+  &:not(&-with-image) {
+    background-color: $avatar-color;
+  }
+}
+
+.#{$prefix}-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.#{$prefix}-avatar-with-child {
+  display: inline-block;
+  font-size: calc($avatar-size / 2);
+  line-height: 1;
+  text-wrap: nowrap;
+  user-select: none;
+}

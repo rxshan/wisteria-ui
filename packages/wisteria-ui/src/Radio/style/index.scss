@@ -1,0 +1,19 @@
+@import './RadioMark';
+@import '@wisteria-ui/theme';
+
+.#{$prefix}-radio {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.#{$prefix}-radio-text {
+  font-weight: $typography-label-weight;
+  color: $color-on-surface-variant;
+  letter-spacing: $typography-label-large-letter-spacing;
+
+  &-disabled {
+    user-select: none;
+    opacity: $text-disabled-alpha;
+  }
+}
