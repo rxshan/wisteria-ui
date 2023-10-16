@@ -1,6 +1,6 @@
 import { useRef } from 'preact/hooks';
-import { Animate } from './Animate';
-import type { CollapseProps } from './types';
+import { Transition } from './Transition';
+import type { CollapseProps } from './interface';
 import type { FunctionalComponent } from 'preact';
 import { combineStyles, suffixCssUnit } from '@wisteria-ui/utilities';
 
@@ -38,7 +38,7 @@ export const Collapse: FunctionalComponent<CollapseProps> = ({
   };
 
   return (
-    <Animate
+    <Transition
       {...props}
       onEnter={node => {
         props.onEnter?.(node);
@@ -94,6 +94,6 @@ export const Collapse: FunctionalComponent<CollapseProps> = ({
           </div>
         );
       }}
-    </Animate>
+    </Transition>
   );
 };

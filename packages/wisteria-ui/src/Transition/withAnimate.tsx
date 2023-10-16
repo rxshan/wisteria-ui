@@ -11,12 +11,12 @@ import {
   createCssClass,
   combineClassnames
 } from '@wisteria-ui/utilities';
-import { Animate } from './Animate';
-import type { AnimateProps } from './types';
+import { Transition } from './Transition';
+import type { TransitionProps } from './interface';
 
 export const withAnimate = (
   ns: string
-): FunctionalComponent<Omit<AnimateProps, 'className' | 'children'>> => {
+): FunctionalComponent<Omit<TransitionProps, 'className' | 'children'>> => {
   const [selfClass, clsx] = createCssClass(ns);
 
   return ({ children, duration = 200, ...props }) => {
@@ -25,7 +25,7 @@ export const withAnimate = (
     };
 
     return (
-      <Animate {...props} duration={duration}>
+      <Transition {...props} duration={duration}>
         {({ phaseClass }) => {
           if (!isValidElement(children)) {
             return createElement(
@@ -48,7 +48,7 @@ export const withAnimate = (
             )
           });
         }}
-      </Animate>
+      </Transition>
     );
   };
 };

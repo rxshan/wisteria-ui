@@ -1,5 +1,5 @@
-import { Animate } from './Animate';
-import type { AnimateProps, RippleProps } from './types';
+import { Transition } from './Transition';
+import type { TransitionProps, RippleProps } from './interface';
 import { useRef, useState } from 'preact/hooks';
 import { type FunctionComponent } from 'preact';
 import { TransitionGroup } from 'preact-transitioning';
@@ -19,7 +19,7 @@ const RIPPLE_DURATION = 500;
 
 const [selfClass, clsx] = createCssClass('ripple');
 
-interface RippleEffectProps extends Omit<AnimateProps, 'children'> {
+interface RippleEffectProps extends Omit<TransitionProps, 'children'> {
   top: number;
   left: number;
   size: number;
@@ -37,7 +37,7 @@ const RippleEffect: FunctionComponent<RippleEffectProps> = ({
     enter: false
   });
   return (
-    <Animate
+    <Transition
       {...props}
       appear
       onEnter={() => {
@@ -70,7 +70,7 @@ const RippleEffect: FunctionComponent<RippleEffectProps> = ({
           </span>
         );
       }}
-    </Animate>
+    </Transition>
   );
 };
 

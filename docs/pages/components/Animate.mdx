@@ -1,5 +1,5 @@
-import 'wisteria-ui/animate/style/index.scss';
-import { Animate } from 'wisteria-ui';
+import 'wisteria-ui/Transition/style/index.scss';
+import { Transition } from 'wisteria-ui';
 import { Callout } from 'nextra/components';
 import { CodeDemoArea, ConfigAPI } from '@/components';
 import {
@@ -9,10 +9,10 @@ import {
   CollapseDemo
 } from '@/examples/Animate';
 
-# Animate
+# Transition
 
 ```tsx
-import { Animate } from 'wisteria-ui';
+import { Transition } from 'wisteria-ui';
 ```
 
 <Callout type="info">
@@ -25,29 +25,29 @@ import { Animate } from 'wisteria-ui';
 ### Zoom
 
 ```tsx
-<Animate.Zoom in>Zoom</Animate.Zoom>
+<Transition.Zoom in>Zoom</Transition.Zoom>
 ```
 
 <CodeDemoArea label="Zoom Transition">
-  <AnimateDemo defaultVisible TransitionComponent={Animate.Zoom} />
+  <AnimateDemo defaultVisible TransitionComponent={Transition.Zoom} />
 </CodeDemoArea>
 
 ### Fade
 
 ```tsx
-<Animate.Fade in>Fade</Animate.Fade>
+<Transition.Fade in>Fade</Transition.Fade>
 ```
 
 <CodeDemoArea label="Fade Transition">
-  <AnimateDemo TransitionComponent={Animate.Fade} />
+  <AnimateDemo TransitionComponent={Transition.Fade} />
 </CodeDemoArea>
 
 ### Collapse
 
 ```tsx
-<Animate.Collapse in>
+<Transition.Collapse in>
   <div>Collapse</div>
-</Animate.Collapse>
+</Transition.Collapse>
 ```
 
 <CodeDemoArea label="Collapse Transition">
@@ -61,18 +61,18 @@ import { Animate } from 'wisteria-ui';
 <CodeDemoArea label="Ripple Transition">
   <div class="text-white cursor-pointer bg-violet-400 w-56 h-24 rounded relative flex items-center justify-center">
     <span class="font-bold text-2xl italic">Ripple</span>
-    <Animate.Ripple />
+    <Transition.Ripple />
   </div>
 </CodeDemoArea>
 
 ## API
 
-### Animate
+### Transition
 
 <Callout type="info">**Zoom**、**Fade** 组件属性。</Callout>
 
 ```tsx
-type AimateChildren =
+type TransitionChildren =
   | VNode
   | ((parameter: {
       phase: Phase;
@@ -97,7 +97,7 @@ type AimateChildren =
       property: 'className',
       description: '用于定义动画的类名',
       typedef: 'string',
-      defaultValue: 'animate'
+      defaultValue: 'transition'
     },
     {
       property: 'destoryOnClosed',
@@ -137,7 +137,7 @@ type AimateChildren =
 
 ### Collpase
 
-<Callout type="info">基于 **Animate** 组件，下面为额外新增属性。</Callout>
+<Callout type="info">基于 **Transition** 组件，下面为额外新增属性。</Callout>
 
 <ConfigAPI
   list={[

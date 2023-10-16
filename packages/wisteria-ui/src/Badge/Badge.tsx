@@ -1,4 +1,4 @@
-import { Animate } from '../animate';
+import { Transition } from '../Transition';
 import { forwardRef, useMemo } from 'preact/compat';
 import { BadgeVariant, type BadgeProps } from './interface';
 import {
@@ -67,9 +67,9 @@ export const Badge = forwardRef<
       >
         {children}
         <span className={clsx('position')}>
-          <Animate.Zoom in={badgeVisible} destoryOnClosed={false}>
+          <Transition.Zoom in={badgeVisible} destoryOnClosed={false}>
             <span className={clsx(variant)}>{content}</span>
-          </Animate.Zoom>
+          </Transition.Zoom>
         </span>
       </span>
     );

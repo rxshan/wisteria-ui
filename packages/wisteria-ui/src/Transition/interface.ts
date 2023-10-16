@@ -1,7 +1,7 @@
 import type { JSX, VNode } from 'preact';
 import type {
   Phase,
-  TransitionProps,
+  TransitionProps as TransitionComponentProps,
   TransitionState
 } from 'preact-transitioning/lib/types/Transition';
 
@@ -14,8 +14,8 @@ type CamelCaseToKebabCase<T extends string> =
 
 export type PhaseClass = CamelCaseToKebabCase<Phase>;
 
-export interface AnimateProps
-  extends Omit<TransitionProps, 'children' | 'alwaysMounted'> {
+export interface TransitionProps
+  extends Omit<TransitionComponentProps, 'children' | 'alwaysMounted'> {
   className?: string;
   destoryOnClosed?: boolean;
   children:
@@ -28,7 +28,7 @@ export interface AnimateProps
 }
 
 export interface CollapseProps
-  extends Omit<AnimateProps, 'className' | 'children'> {
+  extends Omit<TransitionProps, 'className' | 'children'> {
   children: VNode;
   direction?: 'vertical' | 'horizontal';
 }

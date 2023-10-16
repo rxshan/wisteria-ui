@@ -1,4 +1,4 @@
-import { Animate, Divider } from 'wisteria-ui';
+import { Transition, Divider } from 'wisteria-ui';
 import { useState } from 'preact/hooks';
 import { type FunctionComponent, type FunctionalComponent } from 'preact';
 
@@ -41,12 +41,12 @@ export const CollapseDemo: FunctionComponent = () => {
   return (
     <div class="flex flex-col gap-12 items-center">
       <div class="h-20 w-20">
-        {/* <Animate.Collapse in={visible}>
+        {/* <Transition.Collapse in={visible}>
           <div class="w-20 h-20 bg-violet-300 rounded" />
-        </Animate.Collapse> */}
-        <Animate.Collapse in={visible} direction="vertical">
+        </Transition.Collapse> */}
+        <Transition.Collapse in={visible} direction="vertical">
           <div class="w-20 h-20 bg-violet-300 rounded" />
-        </Animate.Collapse>
+        </Transition.Collapse>
       </div>
       <button
         class={`py-2 box-border w-48  rounded-full text-white font-bold ${

@@ -1,17 +1,17 @@
 import { isCallback, combineClassnames } from '@wisteria-ui/utilities';
 import { Transition as TransitionComponent } from 'preact-transitioning';
 import { type VNode, cloneElement, type FunctionalComponent } from 'preact';
-import type { AnimateProps, PhaseClass } from './types';
+import type { TransitionProps, PhaseClass } from './interface';
 
 /**
  *
  * TODO: rewrite Transition component
  * @returns
  */
-export const Animate: FunctionalComponent<AnimateProps> = ({
+export const Transition: FunctionalComponent<TransitionProps> = ({
   children,
   appear = true,
-  className = 'animate',
+  className = 'transition',
   destoryOnClosed = true,
   ...props
 }) => {
