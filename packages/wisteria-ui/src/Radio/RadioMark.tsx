@@ -12,7 +12,7 @@ const RadioIcon: WisteriaUI.Component<{ checked?: boolean }> = ({
   return (
     <span className={clsx('icon')}>
       <RadioOutlineUnchecked />
-      <Transition.Zoom in={!!checked} destoryOnClosed={false}>
+      <Transition.Zoom in={!!checked} unmountOnExit={false}>
         <SVGIconRoot className={clsx('icon-mark')}>
           <circle cx="12" cy="12" r="5" fill="currentColor" />
         </SVGIconRoot>

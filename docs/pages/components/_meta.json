@@ -1,6 +1,6 @@
 {
   "Provider": "Provider",
-  "Animate": "过渡动画",
+  "Transition": "Transition",
   "layouts": "布局",
   "displays": {
     "title": "数据展示"

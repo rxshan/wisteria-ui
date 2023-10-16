@@ -1,5 +1,5 @@
-import { Transition, Divider } from 'wisteria-ui';
 import { useState } from 'preact/hooks';
+import { Transition, Divider } from 'wisteria-ui';
 import { type FunctionComponent, type FunctionalComponent } from 'preact';
 
 export const AnimateDemo: FunctionComponent<{

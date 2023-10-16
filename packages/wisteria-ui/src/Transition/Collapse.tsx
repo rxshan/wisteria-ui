@@ -40,6 +40,7 @@ export const Collapse: FunctionalComponent<CollapseProps> = ({
   return (
     <Transition
       {...props}
+      timeout={timeout}
       onEnter={() => {
         props.onEnter?.();
         updateCollpaseSize(COLLAPSE_SIZE);

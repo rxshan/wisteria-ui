@@ -67,7 +67,7 @@ export const Badge = forwardRef<
       >
         {children}
         <span className={clsx('position')}>
-          <Transition.Zoom in={badgeVisible} destoryOnClosed={false}>
+          <Transition.Zoom in={badgeVisible} unmountOnExit={false}>
             <span className={clsx(variant)}>{content}</span>
           </Transition.Zoom>
         </span>

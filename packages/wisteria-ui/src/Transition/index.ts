@@ -1,7 +1,7 @@
 import './style/index.scss';
 import { Ripple } from './Ripple';
 import { Collapse } from './Collapse';
-import { withTransition } from './withAnimate';
+import { withTransition } from './withTransition';
 import { Transition as Animate } from './Transition';
 
 const Zoom = withTransition('zoom');
@@ -14,10 +14,21 @@ const Transition = Object.assign(Animate, {
   Collapse
 });
 
+Transition.defaultProps = {
+  exit: true,
+  enter: true,
+  appear: true
+};
+
 Fade.displayName = 'WisteriaUI.Fade';
 Zoom.displayName = 'WisteriaUI.Zoom';
-Transition.displayName = 'WisteriaUI.Transition';
 Collapse.displayName = 'WisteriaUI.Collapse';
+Transition.displayName = 'WisteriaUI.Transition';
 
 export { Transition };
-export type { PhaseStatus, TransitionProps, CollapseProps } from './interface';
+export type {
+  PhaseStatus,
+  CollapseProps,
+  TransitionProps,
+  TransitionTimeout
+} from './interface';

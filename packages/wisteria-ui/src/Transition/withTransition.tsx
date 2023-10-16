@@ -31,7 +31,7 @@ export const withTransition = (
     };
 
     return (
-      <Transition enter appear exit {...props} timeout={timeout}>
+      <Transition {...props} timeout={timeout}>
         {state => {
           if (!isValidElement(children)) {
             return createElement(
