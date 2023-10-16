@@ -1,38 +1,44 @@
+import { Transition } from './Transition';
+import type { TransitionProps } from './interface';
 import {
-  type VNode,
   cloneElement,
   createElement,
   isValidElement,
-  type FunctionalComponent
+  type ComponentChild,
+  type VNode
 } from 'preact';
 import {
   combineStyles,
   suffixCssUnit,
   createCssClass,
-  combineClassnames
+  combineClassnames,
+  type WisteriaUI
 } from '@wisteria-ui/utilities';
-import { Transition } from './Transition';
-import type { TransitionProps } from './interface';
 
-export const withAnimate = (
-  ns: string
-): FunctionalComponent<Omit<TransitionProps, 'className' | 'children'>> => {
-  const [selfClass, clsx] = createCssClass(ns);
+export const withTransition = (
+  namespace: string
+): WisteriaUI.Component<
+  Omit<TransitionProps, 'timeout'> & {
+    children: ComponentChild;
+    timeout?: number;
+  }
+> => {
+  const [rootClass, clsx] = createCssClass(namespace);
 
-  return ({ children, duration = 200, ...props }) => {
+  return ({ children, timeout = 200, ...props }) => {
     const innerStyle = {
-      [`--wisteria-${ns}-duration`]: suffixCssUnit(duration, 'ms')
+      [`--${namespace}-duration`]: suffixCssUnit(timeout, 'ms')
     };
 
     return (
-      <Transition {...props} duration={duration}>
-        {({ phaseClass }) => {
+      <Transition enter appear exit {...props} timeout={timeout}>
+        {state => {
           if (!isValidElement(children)) {
             return createElement(
               'span',
               {
                 style: innerStyle,
-                className: combineClassnames(selfClass, clsx(phaseClass))
+                className: combineClassnames(rootClass, clsx(state))
               },
               children
             );
@@ -42,8 +48,8 @@ export const withAnimate = (
             ...vnode.props,
             style: combineStyles(vnode.props.style, innerStyle),
             className: combineClassnames(
-              selfClass,
-              clsx(phaseClass),
+              rootClass,
+              clsx(state),
               vnode.props.className
             )
           });

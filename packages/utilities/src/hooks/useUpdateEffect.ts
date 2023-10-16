@@ -12,7 +12,7 @@ export default function useUpdateEffect(
     if (firstRender.current) {
       firstRender.current = false;
     } else {
-      effectCallback.current();
+      return effectCallback.current();
     }
   }, deps);
 }

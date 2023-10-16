@@ -1,14 +1,14 @@
 import { useRef } from 'preact/hooks';
 import { Transition } from './Transition';
-import type { CollapseProps } from './interface';
 import type { FunctionalComponent } from 'preact';
+import { PhaseStatus, type CollapseProps } from './interface';
 import { combineStyles, suffixCssUnit } from '@wisteria-ui/utilities';
 
 const COLLAPSE_SIZE = 0;
 
 export const Collapse: FunctionalComponent<CollapseProps> = ({
   children,
-  duration = 250,
+  timeout = 250,
   direction = 'vertical',
   ...props
 }) => {
@@ -40,36 +40,35 @@ export const Collapse: FunctionalComponent<CollapseProps> = ({
   return (
     <Transition
       {...props}
-      onEnter={node => {
-        props.onEnter?.(node);
+      onEnter={() => {
+        props.onEnter?.();
         updateCollpaseSize(COLLAPSE_SIZE);
         if (!isVertical) {
           hackWrapperSize(true);
         }
       }}
-      onEntering={node => {
-        props.onEntering?.(node);
+      onEntering={() => {
+        props.onEntering?.();
         updateCollpaseSize(getElementRectBound());
         if (!isVertical) {
           hackWrapperSize();
         }
       }}
-      onEntered={node => {
-        props.onEntered?.(node);
+      onEntered={() => {
+        props.onEntered?.();
         updateCollpaseSize('auto');
       }}
-      onExit={node => {
-        props.onExit?.(node);
+      onExit={() => {
+        props.onExit?.();
         updateCollpaseSize(getElementRectBound());
       }}
-      onExiting={node => {
-        props.onExiting?.(node);
+      onExiting={() => {
+        props.onExiting?.();
         updateCollpaseSize(COLLAPSE_SIZE);
       }}
     >
-      {({ state }) => {
-        const isExited = state.exitDone;
-        const isEnter = state.appear || state.enter;
+      {state => {
+        const isExited = state === PhaseStatus.EXITED;
 
         return (
           <div
@@ -78,8 +77,8 @@ export const Collapse: FunctionalComponent<CollapseProps> = ({
               position: 'relative',
               overflow: 'hidden',
               transitionProperty: dimension,
-              visibility: isEnter || isExited ? 'hidden' : 'visible',
-              transitionDuration: suffixCssUnit(duration, 'ms'),
+              visibility: isExited ? 'hidden' : 'visible',
+              transitionDuration: suffixCssUnit(timeout, 'ms'),
               transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
             })}
           >

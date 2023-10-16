@@ -1,21 +1,19 @@
 @import '@wisteria-ui/theme';
 
+$zoom-duration: var(--zoom-duration);
+
 .#{$prefix}-zoom {
-  transition: transform var(--wisteria-zoom-duration) $motion-easing-emphasized;
+  transition: transform $zoom-duration $motion-easing-emphasized;
+  transform: scale(1);
   transform-origin: center;
 
-  &-appear,
-  &-enter,
-  &-exit-active,
-  &-exit-done {
-    transform: scale(0);
+  &-entering,
+  &-entered {
+    transform: scale(1);
   }
 
-  &-appear-active,
-  &-appear-done,
-  &-enter-active,
-  &-enter-done,
-  &-exit {
-    transform: scale(1);
+  &-exiting,
+  &-exited {
+    transform: scale(0);
   }
 }

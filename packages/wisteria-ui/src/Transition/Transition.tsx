@@ -1,45 +1,86 @@
-import { isCallback, combineClassnames } from '@wisteria-ui/utilities';
-import { Transition as TransitionComponent } from 'preact-transitioning';
-import { type VNode, cloneElement, type FunctionalComponent } from 'preact';
-import type { TransitionProps, PhaseClass } from './interface';
+import { cloneElement } from 'preact';
+import { useSafeSetState } from './hooks/useSafeSetState';
+import { useEffect, useMemo, useRef } from 'preact/hooks';
+import { PhaseStatus, type TransitionProps } from './interface';
+import {
+  isObject,
+  isCallback,
+  useUpdateEffect,
+  type WisteriaUI
+} from '@wisteria-ui/utilities';
 
-/**
- *
- * TODO: rewrite Transition component
- * @returns
- */
-export const Transition: FunctionalComponent<TransitionProps> = ({
-  children,
-  appear = true,
-  className = 'transition',
-  destoryOnClosed = true,
-  ...props
-}) => {
-  return (
-    <TransitionComponent
-      {...props}
-      appear={appear}
-      alwaysMounted={!destoryOnClosed}
-    >
-      {(state, phase) => {
-        const phaseClass = phase.replace(/([A-Z])/g, word => {
-          return `-${word.toLowerCase()}`;
-        }) as PhaseClass;
+export const Transition: WisteriaUI.Component<TransitionProps> = props => {
+  const timerRef = useRef<NodeJS.Timeout>();
 
-        if (isCallback(children)) {
-          return children({ state, phase, phaseClass });
-        }
-        const vnode = children as VNode<any>;
+  const [status, setStatus] = useSafeSetState<PhaseStatus>(() => {
+    return props.in
+      ? props.appear
+        ? PhaseStatus.EXITED
+        : PhaseStatus.ENTERED
+      : PhaseStatus.EXITED;
+  });
 
-        return cloneElement(vnode, {
-          ...vnode.props,
-          className: combineClassnames(
-            className,
-            `${className}-${phaseClass}`,
-            vnode.props.className
-          )
-        });
-      }}
-    </TransitionComponent>
-  );
+  const timeouts = useMemo(() => {
+    if (isObject(props.timeout)) {
+      return Object.assign(props.timeout, {
+        appear: props.timeout.appear ?? props.timeout.enter
+      });
+    }
+    let appear, exit, enter;
+    // eslint-disable-next-line prefer-const
+    appear = exit = enter = props.timeout;
+    return { appear, exit, enter };
+  }, [props.timeout]);
+
+  const performEnter = (mounting?: boolean) => {
+    if (!mounting && !props.enter) {
+      return setStatus(PhaseStatus.ENTERED, props.onEntered);
+    }
+    props.onEnter?.();
+
+    const duration = mounting ? timeouts.appear : timeouts.enter;
+
+    setStatus(PhaseStatus.ENTERING, props.onEntering);
+    timerRef.current = setTimeout(() => {
+      setStatus(PhaseStatus.ENTERED, props.onEntered);
+    }, duration);
+  };
+
+  const performExit = () => {
+    if (!props.exit) {
+      return setStatus(PhaseStatus.EXITED, props.onExited);
+    }
+
+    props.onExit?.();
+
+    setStatus(PhaseStatus.EXITING, props.onExiting);
+    timerRef.current = setTimeout(() => {
+      setStatus(PhaseStatus.EXITED, props.onExited);
+    }, timeouts.exit);
+  };
+
+  useEffect(() => {
+    if (props.in && props.appear) {
+      performEnter(true);
+    }
+    return () => {
+      clearTimeout(timerRef.current);
+    };
+  }, []);
+
+  useUpdateEffect(() => {
+    if (props.in) {
+      performEnter();
+    } else {
+      performExit();
+    }
+    return () => {
+      clearTimeout(timerRef.current);
+    };
+  }, [props.in]);
+
+  if (props.unmountOnExit && status === PhaseStatus.EXITED) return null;
+  return isCallback(props.children)
+    ? props.children(status)
+    : cloneElement(props.children);
 };

@@ -1,23 +1,16 @@
 @import '@wisteria-ui/theme';
 
 .#{$prefix}-fade {
-  transition: opacity var(--wisteria-fade-duration)
-    $motion-easing-emphasized-accelerate;
+  opacity: 0;
+  transition: opacity var(--fade-duration) $motion-easing-emphasized-accelerate;
 
-  &-appear,
-  &-enter {
-    opacity: 0;
-  }
-
-  &-appear-active,
-  &-appear-done,
-  &-enter-active,
-  &-enter-done {
+  &-entering,
+  &-entered {
     opacity: 1;
   }
 
-  &-exit-active,
-  &-exit-done {
+  &-exiting,
+  &-exited {
     opacity: 0;
   }
 }

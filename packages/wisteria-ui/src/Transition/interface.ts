@@ -1,35 +1,37 @@
+import type { EnumType } from '@wisteria-ui/utilities';
 import type { JSX, VNode } from 'preact';
-import type {
-  Phase,
-  TransitionProps as TransitionComponentProps,
-  TransitionState
-} from 'preact-transitioning/lib/types/Transition';
 
-type CamelCaseToKebabCase<T extends string> =
-  T extends `${infer S}${infer Rest}`
-    ? S extends Uppercase<S>
-      ? `-${Lowercase<S>}${CamelCaseToKebabCase<Rest>}`
-      : `${S}${CamelCaseToKebabCase<Rest>}`
-    : T;
+export enum PhaseStatus {
+  EXITED = 'exited',
+  EXITING = 'exiting',
+  ENTERED = 'entered',
+  ENTERING = 'entering'
+}
 
-export type PhaseClass = CamelCaseToKebabCase<Phase>;
+export type TransitionTimeout =
+  | number
+  | Partial<Record<'exit' | 'enter' | 'appear', number>>;
 
-export interface TransitionProps
-  extends Omit<TransitionComponentProps, 'children' | 'alwaysMounted'> {
-  className?: string;
-  destoryOnClosed?: boolean;
-  children:
-    | VNode
-    | ((parameter: {
-        phase: Phase;
-        state: TransitionState;
-        phaseClass: PhaseClass;
-      }) => JSX.Element);
+export interface TransitionProps {
+  in?: boolean;
+  exit?: boolean;
+  enter?: boolean;
+  appear?: boolean;
+  unmountOnExit?: boolean;
+  timeout?: TransitionTimeout;
+  onEnter?: () => void;
+  onEntering?: () => void;
+  onEntered?: () => void;
+  onExit?: () => void;
+  onExiting?: () => void;
+  onExited?: () => void;
+  children: VNode | ((status: EnumType<PhaseStatus>) => JSX.Element);
 }
 
 export interface CollapseProps
-  extends Omit<TransitionProps, 'className' | 'children'> {
+  extends Omit<TransitionProps, 'children' | 'timeout'> {
   children: VNode;
+  timeout?: number;
   direction?: 'vertical' | 'horizontal';
 }
 
