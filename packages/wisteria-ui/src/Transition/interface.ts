@@ -38,6 +38,5 @@ export interface CollapseProps
 
 export interface RippleProps {
   color?: string;
-  center?: boolean;
   disabled?: boolean;
 }
