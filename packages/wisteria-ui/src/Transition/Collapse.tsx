@@ -41,30 +41,30 @@ export const Collapse: FunctionalComponent<CollapseProps> = ({
     <Transition
       {...props}
       timeout={timeout}
-      onEnter={() => {
-        props.onEnter?.();
+      onEnter={(node, isAppearing) => {
+        props.onEnter?.(node, isAppearing);
         updateCollpaseSize(COLLAPSE_SIZE);
         if (!isVertical) {
           hackWrapperSize(true);
         }
       }}
-      onEntering={() => {
-        props.onEntering?.();
+      onEntering={(node, isAppearing) => {
+        props.onEntering?.(node, isAppearing);
         updateCollpaseSize(getElementRectBound());
         if (!isVertical) {
           hackWrapperSize();
         }
       }}
-      onEntered={() => {
-        props.onEntered?.();
+      onEntered={(node, isAppearing) => {
+        props.onEntered?.(node, isAppearing);
         updateCollpaseSize('auto');
       }}
-      onExit={() => {
-        props.onExit?.();
+      onExit={node => {
+        props.onExit?.(node);
         updateCollpaseSize(getElementRectBound());
       }}
-      onExiting={() => {
-        props.onExiting?.();
+      onExiting={node => {
+        props.onExiting?.(node);
         updateCollpaseSize(COLLAPSE_SIZE);
       }}
     >

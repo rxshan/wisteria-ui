@@ -4,12 +4,14 @@ import { useEffect, useMemo, useRef } from 'preact/hooks';
 import { PhaseStatus, type TransitionProps } from './interface';
 import {
   isObject,
+  mergeRefs,
   isCallback,
   useUpdateEffect,
   type WisteriaUI
 } from '@wisteria-ui/utilities';
 
 export const Transition: WisteriaUI.Component<TransitionProps> = props => {
+  const nodeRef = useRef(props.nodeRef?.current);
   const timerRef = useRef<NodeJS.Timeout>();
 
   const [status, setStatus] = useSafeSetState<PhaseStatus>(() => {
@@ -34,28 +36,40 @@ export const Transition: WisteriaUI.Component<TransitionProps> = props => {
 
   const performEnter = (mounting?: boolean) => {
     if (!mounting && !props.enter) {
-      return setStatus(PhaseStatus.ENTERED, props.onEntered);
+      return setStatus(PhaseStatus.ENTERED, () => {
+        props.onEntered?.(nodeRef.current);
+      });
     }
-    props.onEnter?.();
-
+    // TODO: test appearing status
+    const isAppearing = !!(mounting || (props.appear && props.unmountOnExit));
     const duration = mounting ? timeouts.appear : timeouts.enter;
+    props.onEnter?.(nodeRef.current, isAppearing);
 
-    setStatus(PhaseStatus.ENTERING, props.onEntering);
+    setStatus(PhaseStatus.ENTERING, () => {
+      props.onEntering?.(nodeRef.current, isAppearing);
+    });
     timerRef.current = setTimeout(() => {
-      setStatus(PhaseStatus.ENTERED, props.onEntered);
+      setStatus(PhaseStatus.ENTERED, () => {
+        props.onEntered?.(nodeRef.current, isAppearing);
+      });
     }, duration);
   };
 
   const performExit = () => {
     if (!props.exit) {
-      return setStatus(PhaseStatus.EXITED, props.onExited);
+      return setStatus(PhaseStatus.EXITED, () => {
+        props.onExited?.(nodeRef.current);
+      });
     }
+    props.onExit?.(nodeRef.current);
 
-    props.onExit?.();
-
-    setStatus(PhaseStatus.EXITING, props.onExiting);
+    setStatus(PhaseStatus.EXITING, () => {
+      props.onExiting?.(nodeRef.current);
+    });
     timerRef.current = setTimeout(() => {
-      setStatus(PhaseStatus.EXITED, props.onExited);
+      setStatus(PhaseStatus.EXITED, () => {
+        props.onExited?.(nodeRef.current);
+      });
     }, timeouts.exit);
   };
 
@@ -79,8 +93,15 @@ export const Transition: WisteriaUI.Component<TransitionProps> = props => {
     };
   }, [props.in]);
 
-  if (props.unmountOnExit && status === PhaseStatus.EXITED) return null;
-  return isCallback(props.children)
+  if (!props.in && props.unmountOnExit && status === PhaseStatus.EXITED) {
+    return null;
+  }
+
+  const childNode = isCallback(props.children)
     ? props.children(status)
-    : cloneElement(props.children);
+    : props.children;
+
+  return cloneElement(childNode, {
+    ref: mergeRefs([childNode.ref, nodeRef])
+  });
 };

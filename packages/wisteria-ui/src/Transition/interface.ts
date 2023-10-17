@@ -1,5 +1,5 @@
-import type { EnumType } from '@wisteria-ui/utilities';
-import type { JSX, VNode } from 'preact';
+import type { JSX, RefObject, VNode } from 'preact';
+import type { EnumType, Nullable } from '@wisteria-ui/utilities';
 
 export enum PhaseStatus {
   EXITED = 'exited',
@@ -19,12 +19,13 @@ export interface TransitionProps {
   appear?: boolean;
   unmountOnExit?: boolean;
   timeout?: TransitionTimeout;
-  onEnter?: () => void;
-  onEntering?: () => void;
-  onEntered?: () => void;
-  onExit?: () => void;
-  onExiting?: () => void;
-  onExited?: () => void;
+  nodeRef?: RefObject<Element>;
+  onEnter?: (node: Nullable<Element>, isAppearing?: boolean) => void;
+  onEntering?: (node: Nullable<Element>, isAppearing?: boolean) => void;
+  onEntered?: (node: Nullable<Element>, isAppearing?: boolean) => void;
+  onExit?: (node: Nullable<Element>) => void;
+  onExiting?: (node: Nullable<Element>) => void;
+  onExited?: (node: Nullable<Element>) => void;
   children: VNode | ((status: EnumType<PhaseStatus>) => JSX.Element);
 }
 
