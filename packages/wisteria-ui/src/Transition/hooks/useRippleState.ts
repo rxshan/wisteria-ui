@@ -1,18 +1,16 @@
 import { useCallback, useRef, useState } from 'preact/hooks';
 import { isTouchEvent, type WisteriaUI } from '@wisteria-ui/utilities';
 
-type RippleState = [
-  WisteriaUI.Key,
-  {
-    size: number;
-    offsetX: number;
-    offsetY: number;
-  }
-];
+export type RippleState = {
+  key: WisteriaUI.Key;
+  size: number;
+  offsetX: number;
+  offsetY: number;
+};
 
 export const useRippleState = () => {
   const nextKey = useRef(0);
-  const [ripples, setRipples] = useState<RippleState[]>([]);
+  const [ripples, setRipples] = useState<Array<RippleState>>([]);
 
   const triggerRipple = useCallback((event: TouchEvent | MouseEvent) => {
     const evt = isTouchEvent(event) ? event.touches[0] : event;
@@ -31,7 +29,7 @@ export const useRippleState = () => {
 
     setRipples(prev => [
       ...prev,
-      [nextKey.current, { size: radius * 2, offsetX, offsetY }]
+      { key: nextKey.current, size: radius * 2, offsetX, offsetY }
     ]);
     nextKey.current += 1;
   }, []);
