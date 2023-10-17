@@ -4,7 +4,7 @@ import { useRadioGroupContext } from './RadioContext';
 import { useRef, forwardRef } from 'preact/compat';
 import {
   isNullish,
-  useForkRef,
+  useMergeRefs,
   useMergeValue,
   combineStyles,
   createCssClass,
@@ -19,7 +19,7 @@ export const Radio = forwardRef<
   WisteriaUI.PropsWithHTMLAttrs<RadioProps>
 >(({ color, style, className, children, ...props }, ref) => {
   const innerRef = useRef<HTMLInputElement>(null);
-  const mergeRef = useForkRef(ref, innerRef);
+  const mergeRef = useMergeRefs([ref, innerRef]);
 
   const { group, state } = useRadioGroupContext();
 
@@ -47,7 +47,7 @@ export const Radio = forwardRef<
     >
       <RadioMark
         {...props}
-        ref={mergeRef as any}
+        ref={mergeRef}
         checked={checked}
         onChange={event => {
           if (group) {
