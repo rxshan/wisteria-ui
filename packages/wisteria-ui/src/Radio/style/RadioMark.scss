@@ -8,7 +8,15 @@
   cursor: inherit;
   border-radius: $shape-corner-full;
 
-  @include element-state-layer(currentColor);
+  &:hover::after {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: '';
+    background: currentcolor;
+    border-radius: inherit;
+    opacity: $alpha-container-hovered;
+  }
 
   &[aria-checked='true'] {
     color: var(--wisteria-radio-color, $color-primary);
@@ -26,7 +34,7 @@
 .#{$prefix}-radio-input {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
   cursor: inherit;
   opacity: 0;
 }

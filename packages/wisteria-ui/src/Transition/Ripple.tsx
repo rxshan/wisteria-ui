@@ -47,18 +47,15 @@ const RippleEffect: WisteriaUI.Component<Omit<RippleState, 'key'>> = ({
   );
 };
 
-export const Ripple: WisteriaUI.Component<RippleProps> = ({
-  color,
-  disabled
-}) => {
-  const { ripples, triggerRipple, removeRipple } = useRippleState();
+export const Ripple: WisteriaUI.Component<RippleProps> = props => {
+  const { ripples, triggerRipple, removeRipple } = useRippleState(props.center);
 
   return (
     <span
       className={rootClass}
       style={combineStyles({
-        color,
-        pointerEvents: disabled && 'none'
+        color: props.color,
+        pointerEvents: props.disabled && 'none'
       })}
       onMouseUp={removeRipple}
       onMouseLeave={removeRipple}

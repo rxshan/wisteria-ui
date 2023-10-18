@@ -40,7 +40,7 @@ export const RadioMark = forwardRef<
         className={clsx('input')}
       />
       <RadioIcon checked={checked} />
-      {/* <Transition.Ripple /> */}
+      <Transition.Ripple center />
     </span>
   );
 });

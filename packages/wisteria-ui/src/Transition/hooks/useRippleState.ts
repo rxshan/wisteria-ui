@@ -8,7 +8,7 @@ export type RippleState = {
   offsetY: number;
 };
 
-export const useRippleState = () => {
+export const useRippleState = (center?: boolean) => {
   const nextKey = useRef(0);
   const [ripples, setRipples] = useState<Array<RippleState>>([]);
 
@@ -16,12 +16,18 @@ export const useRippleState = () => {
     const evt = isTouchEvent(event) ? event.touches[0] : event;
     const rect = (evt as any).currentTarget.getBoundingClientRect();
 
-    const localX = evt.clientX - rect.left;
-    const localY = evt.clientY - rect.top;
+    let localX, localY, maxEdgeX, maxEdgeY;
 
-    const maxEdgeX = Math.max(Math.abs(rect.width - localX), localX);
-    const maxEdgeY = Math.max(Math.abs(rect.height - localY), localY);
+    if (center) {
+      maxEdgeX = localX = rect.width / 2;
+      maxEdgeY = localY = rect.height / 2;
+    } else {
+      localX = evt.clientX - rect.left;
+      localY = evt.clientY - rect.top;
 
+      maxEdgeX = Math.max(Math.abs(rect.width - localX), localX);
+      maxEdgeY = Math.max(Math.abs(rect.height - localY), localY);
+    }
     const radius = Math.round(Math.sqrt(maxEdgeX ** 2 + maxEdgeY ** 2));
 
     const offsetX = localX - radius;
