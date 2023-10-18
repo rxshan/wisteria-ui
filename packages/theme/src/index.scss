@@ -1,5 +1,3 @@
+@forward './extends/index.scss';
 @forward './mixins/index.scss';
 @forward './tokens/index.scss';
-@forward './elevation.scss';
-
-$prefix: wisteria;
