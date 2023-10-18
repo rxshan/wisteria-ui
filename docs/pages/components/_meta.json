@@ -2,10 +2,7 @@
   "Provider": "Provider",
   "Transition": "Transition",
   "layouts": "布局",
-  "displays": {
-    "title": "数据展示"
-  },
-  "inputs": {
-    "title": "数据输入"
-  }
+  "commons": "通用",
+  "displays": "数据展示",
+  "inputs": "数据输入"
 }

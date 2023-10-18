@@ -1,5 +1,6 @@
 export * from './Avatar';
 export * from './Badge';
+export * from './Button';
 export * from './Divider';
 export * from './Paper';
 export * from './Provider';

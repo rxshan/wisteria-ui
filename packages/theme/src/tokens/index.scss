@@ -1,7 +1,11 @@
 @import './colors';
 @import './motion';
 @import './shape';
-@import './state';
 @import './typography';
 
 $prefix: wisteria;
+$alpha-text-disabled: 0.38;
+$alpha-container-hovered: 0.12;
+$alpha-container-focused: 0.16;
+$alpha-container-pressed: 0.16;
+$alpha-container-disabled: 0.08;

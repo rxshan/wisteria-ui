@@ -1,0 +1,152 @@
+import { Button } from 'wisteria-ui';
+import { Tabs, Tab, Callout } from 'nextra/components';
+import { Box, ConfigAPI, CodeDemoArea } from '@/components';
+
+# Button
+
+```tsx
+import { Button } from 'wisteria-ui';
+```
+
+## Variant
+
+<Callout type="info">
+  Button 共有 5
+  种样式类型，分别为：**Elevated**、**Filled**、**Tonal**、**Outlined**、**Text**。
+</Callout>
+
+```tsx filename="tsx"
+<Button>Elevated</Button>
+<Button variant="filled">Filled</Button>
+<Button variant="tonal">Tonal</Button>
+<Button variant="outlined">Outlined</Button>
+<Button variant="text">Text</Button>
+```
+
+<CodeDemoArea label="Variant">
+  <div className="flex-col">
+    <div className="pb-3 flex gap-4 justify-center">
+      <Button>Elevated</Button>
+      <Button variant="filled">Filled</Button>
+      <Button variant="tonal">Tonal</Button>
+      <Button variant="outlined">Outlined</Button>
+      <Button variant="text">Text</Button>
+    </div>
+    <div className="pt-3 flex gap-4 justify-center">
+      <Button disabled>Elevated</Button>
+      <Button disabled variant="filled">
+        Filled
+      </Button>
+      <Button disabled variant="tonal">
+        Tonal
+      </Button>
+      <Button disabled variant="outlined">
+        Outlined
+      </Button>
+      <Button disabled variant="text">
+        Text
+      </Button>
+    </div>
+  </div>
+</CodeDemoArea>
+
+## Block
+
+```tsx filename="tsx"
+<Button block variant="tonal">
+  Block
+</Button>
+```
+
+<CodeDemoArea label="Block">
+  <Button block variant="tonal">
+    Block
+  </Button>
+</CodeDemoArea>
+
+## Color
+
+```tsx filename="tsx"
+<Button color="pink">Elevated</Button>
+<Button color="green" variant="filled">Filled</Button>
+<Button color="cyan" variant="tonal">Tonal</Button>
+<Button color="red" variant="outlined">Outlined</Button>
+<Button color="orange" variant="text">Text</Button>
+```
+
+<CodeDemoArea label="Color">
+  <div className="pb-3 flex gap-4 justify-center">
+    <Button color="pink">Elevated</Button>
+    <Button color="green" variant="filled">
+      Filled
+    </Button>
+    <Button color="cyan" variant="tonal">
+      Tonal
+    </Button>
+    <Button color="red" variant="outlined">
+      Outlined
+    </Button>
+    <Button color="orange" variant="text">
+      Text
+    </Button>
+  </div>
+</CodeDemoArea>
+
+## Corner
+
+```tsx filename="tsx"
+<Button variant="tonal" corner="square">
+  Square
+</Button>
+<Button variant="tonal" corner="rounded">
+  Rounded
+</Button>
+<Button variant="tonal" corner="circular">
+  Circular
+</Button>
+```
+
+<CodeDemoArea label="Color">
+  <div className="pb-3 flex gap-4 justify-center">
+    <Button variant="tonal" corner="square">
+      Square
+    </Button>
+    <Button variant="tonal" corner="rounded">
+      Rounded
+    </Button>
+    <Button variant="tonal" corner="circular">
+      Circular
+    </Button>
+  </div>
+</CodeDemoArea>
+
+## API
+
+<Callout type="info">**Button** 组件支持 **html button** 所有属性。</Callout>
+
+<ConfigAPI
+  list={[
+    {
+      property: 'block',
+      description: '是否撑满容器',
+      typedef: 'boolean'
+    },
+    {
+      property: 'color',
+      description: '自定义颜色',
+      typedef: ' string'
+    },
+    {
+      property: 'corner',
+      description: '设置圆角',
+      typedef: 'square | rounded | circular',
+      defaultValue: 'rounded'
+    },
+    {
+      property: 'variant',
+      description: '按钮类型',
+      typedef: 'elevated | filled | tonal | outlined | text',
+      defaultValue: 'elevated'
+    }
+  ]}
+/>

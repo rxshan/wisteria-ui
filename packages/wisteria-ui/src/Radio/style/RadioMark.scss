@@ -15,7 +15,7 @@
   }
 
   &[aria-disabled='true'] {
-    opacity: $state-layer-disabled-alpha;
+    opacity: $alpha-container-disabled;
 
     &::after {
       display: none;

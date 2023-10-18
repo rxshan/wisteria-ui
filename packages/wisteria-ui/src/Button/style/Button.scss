@@ -1,0 +1,129 @@
+@import '@wisteria-ui/theme';
+
+$button-size: 40px;
+$button-color: var(--button-color);
+
+@mixin state-layer($layer-color, $disabled-layer-color) {
+  & .#{$prefix}-button-state-layer {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    color: inherit;
+    pointer-events: none;
+    background: $layer-color;
+    border-radius: inherit;
+  }
+
+  &:hover .#{$prefix}-button-state-layer::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background: currentcolor;
+    border-radius: inherit;
+    opacity: $alpha-container-hovered;
+  }
+
+  &:disabled .#{$prefix}-button-state-layer {
+    background: $disabled-layer-color;
+    opacity: $alpha-container-disabled;
+  }
+}
+
+.#{$prefix}-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $button-size;
+  padding-right: 24px;
+  padding-left: 24px;
+  background-color: transparent !important;
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  &-corner-square {
+    border-radius: $corner-none;
+  }
+
+  &-corner-rounded {
+    border-radius: $corner-small;
+  }
+
+  &-corner-circular {
+    border-radius: $corner-full;
+  }
+
+  & &-content {
+    @extend %typography-label-large;
+  }
+
+  &:disabled &-content {
+    color: $color-on-surface;
+    user-select: none;
+    opacity: $alpha-text-disabled;
+  }
+}
+
+.#{$prefix}-button-elevated {
+  @include state-layer(
+    var(--button-color, $color-surface-container-low),
+    $color-on-surface
+  );
+
+  color: $color-primary;
+
+  &:not(:disabled) {
+    @extend %elevation-level-1;
+  }
+
+  &:hover {
+    @extend %elevation-level-2;
+  }
+}
+
+.#{$prefix}-button-text {
+  @include state-layer(transparent, transparent);
+
+  color: var(--button-color, $color-primary);
+}
+
+.#{$prefix}-button-outlined {
+  @include state-layer(transparent, transparent);
+
+  color: var(--button-color, $color-primary);
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: '';
+    border: 1px solid currentcolor;
+    border-radius: inherit;
+  }
+
+  &:disabled::after {
+    border-color: $color-on-surface;
+    opacity: $alpha-container-disabled;
+  }
+}
+
+.#{$prefix}-button-filled {
+  @include state-layer(var(--button-color, $color-primary), $color-on-surface);
+
+  color: $color-on-primary;
+
+  &:hover {
+    @extend %elevation-level-1;
+  }
+}
+
+.#{$prefix}-button-tonal {
+  @include state-layer(
+    var(--button-color, $color-secondary-container),
+    $color-on-surface
+  );
+
+  color: $color-on-secondary-container;
+}

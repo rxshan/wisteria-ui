@@ -28,7 +28,7 @@ export namespace WisteriaUI {
   };
 
   export type PropsWithHTMLAttrs<
-    Props extends object,
+    Props extends object = object,
     Element extends HTMLElement = HTMLElement
   > = Omit<ElementAttrs<Element>, keyof Props> &
     ComponentProps<Props> & { children?: ComponentChild };

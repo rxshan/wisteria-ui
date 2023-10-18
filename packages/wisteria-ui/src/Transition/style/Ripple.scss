@@ -11,8 +11,9 @@
 
 .#{$prefix}-ripple-effect {
   position: absolute;
+  z-index: 999;
   pointer-events: none;
-  opacity: 0.18;
+  opacity: $alpha-container-pressed;
   transform: scale(1);
   animation-name: ripple-enter;
   animation-duration: 500ms;
@@ -37,12 +38,12 @@
 
 @keyframes ripple-enter {
   from {
-    opacity: 0.12;
+    opacity: $alpha-container-hovered;
     transform: scale(0);
   }
 
   to {
-    opacity: 0.18;
+    opacity: $alpha-container-pressed;
     transform: scale(1);
   }
 }

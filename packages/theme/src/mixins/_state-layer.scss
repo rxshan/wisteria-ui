@@ -1,4 +1,4 @@
-@use '../tokens/state' as state;
+@use '../tokens/index.scss' as state;
 
 @mixin element-state-layer($color, $color-alpha: 0) {
   &::after {
@@ -14,17 +14,17 @@
 
   &:hover::after {
     opacity: if(
-      $color-alpha > calc(3 * state.$state-layer-hovered-alpha),
-      calc($color-alpha - state.$state-layer-hovered-alpha),
-      calc(state.$state-layer-hovered-alpha + $color-alpha)
+      $color-alpha > calc(3 * state.$alpha-container-hovered),
+      calc($color-alpha - state.$alpha-container-hovered),
+      calc(state.$alpha-container-hovered + $color-alpha)
     );
   }
 
   &:active::after {
     opacity: if(
-      $color-alpha > calc(3 * state.$state-layer-pressed-alpha),
-      calc($color-alpha - state.$state-layer-pressed-alpha),
-      calc(state.$state-layer-pressed-alpha + $color-alpha)
+      $color-alpha > calc(3 * state.$alpha-container-pressed),
+      calc($color-alpha - state.$alpha-container-pressed),
+      calc(state.$alpha-container-pressed + $color-alpha)
     );
   }
 }
