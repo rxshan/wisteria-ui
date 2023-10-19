@@ -15,11 +15,6 @@ import {
 import { Transition } from 'wisteria-ui';
 ```
 
-<Callout type="info">
-  该组件基于第三方库
-  [preact-transitioning](https://www.npmjs.com/package/preact-transitioning)。
-</Callout>
-
 ## 用法
 
 ### Zoom
@@ -71,21 +66,6 @@ import { Transition } from 'wisteria-ui';
 
 <Callout type="info">**Zoom**、**Fade** 组件属性。</Callout>
 
-```tsx
-type TransitionChildren =
-  | VNode
-  | ((parameter: {
-      phase: Phase;
-      state: TransitionState;
-      phaseClass: PhaseClass;
-    }) => JSX.Element);
-```
-
-<Callout type="warning">
-  当 **children** 是一个函数时，**className** 将不会起作用，可以通过
-  **phaseClass** 获取组件当前状态类名。
-</Callout>
-
 <ConfigAPI
   list={[
     {
@@ -94,27 +74,19 @@ type TransitionChildren =
       typedef: 'boolean'
     },
     {
-      property: 'className',
-      description: '用于定义动画的类名',
-      typedef: 'string',
-      defaultValue: 'transition'
-    },
-    {
-      property: 'destoryOnClosed',
+      property: 'umountOnExit',
       description: '关闭后是否销毁节点',
-      typedef: 'boolean',
-      defaultValue: 'true'
+      typedef: 'boolean'
     },
     {
-      property: 'children',
-      description: '子组件',
-      typedef: 'AimateChildren'
+      property: 'nodeRef',
+      description: '节点引用',
+      typedef: 'boolean'
     },
     {
       property: 'appear',
       description: '组件首次渲染状态',
-      typedef: 'boolean',
-      defaultValue: 'true'
+      typedef: 'RefObject'
     },
     {
       property: 'enter',
@@ -127,12 +99,11 @@ type TransitionChildren =
       typedef: 'boolean'
     },
     {
-      property: 'duration',
+      property: 'timeout',
       description: '动画持续时间',
-      typedef: 'number',
+      typedef: 'number'
     }
-
-]}
+  ]}
 />
 
 ### Collpase
