@@ -12,6 +12,7 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
+    "@wisteria-ui/theme": "workspace:*",
     "next": "13.4.4",
     "nextra": "2.10.0",
     "nextra-theme-docs": "2.10.0",
