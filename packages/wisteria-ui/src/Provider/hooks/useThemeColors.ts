@@ -11,11 +11,16 @@ declare global {
 const COLOR_VAR_PREFIX = '--m3-color-';
 
 const getDefaultStaticColors = () => {
-  if (!isBrowser) return Object.create(null);
-  const styleSheets = Array.from(document.styleSheets);
-
   const darkColors: ThemeColors = Object.create(null);
   const lightColors: ThemeColors = Object.create(null);
+
+  if (!isBrowser) {
+    return {
+      dark: darkColors,
+      light: lightColors
+    };
+  }
+  const styleSheets = Array.from(document.styleSheets);
 
   for (const styleSheet of styleSheets) {
     if (!styleSheet.cssRules?.length || styleSheet.type !== 'text/css') {
