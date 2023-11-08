@@ -1,11 +1,11 @@
-import { Paper, Space } from 'wisteria-ui';
+import { Surface, Space } from 'wisteria-ui';
 import { Tabs, Tab } from 'nextra/components';
 import { Box, ConfigAPI, CodeDemoArea } from '@/components';
 
 # Paper
 
 ```tsx
-import { Paper } from 'wisteria-ui';
+import { Surface } from 'wisteria-ui';
 ```
 
 ## 用法
@@ -13,18 +13,18 @@ import { Paper } from 'wisteria-ui';
 ### Variant
 
 ```tsx
-<Paper variant="outlined">
+<Surface variant="outlined">
   <Box width={180} height={80}>Outlined</Box>
-</Paper>
+</Surface>
 
-<Paper variant="elevation" elevation={3}>
-  <Box width={180} height={80}>Elevation</Box>
-</Paper>
+<Surface variant="elevated" elevation={3}>
+  <Box width={180} height={80}>Elevated</Box>
+</Surface>
 ```
 
 <CodeDemoArea label="预览">
   <Space size={24}>
-    <Paper variant="outlined" corner={12}>
+    <Surface variant="outlined" corner={12}>
       <Box
         width={180}
         height={80}
@@ -32,16 +32,16 @@ import { Paper } from 'wisteria-ui';
       >
         Outlined
       </Box>
-    </Paper>
-    <Paper variant="elevation" elevation={3} corner={12}>
+    </Surface>
+    <Surface variant="elevated" elevation={3} corner={12}>
       <Box
         width={180}
         height={80}
         className="bg-transparent"
       >
-        Elevation
+        Elevated
       </Box>
-    </Paper>
+    </Surface>
 
   </Space>
 </CodeDemoArea>
@@ -50,22 +50,22 @@ import { Paper } from 'wisteria-ui';
 
 ```tsx
 Array.from({ length: 6 }, (_, index) => index).map(elevation => (
-  <Paper elevation={elevation}>
+  <Surface elevation={elevation}>
     <Box width={180} height={80} className="bg-transparent">
       {`elevation-${elevation}`}
     </Box>
-  </Paper>
+  </Surface>
 ));
 ```
 
 <CodeDemoArea label="预览">
   <Space wrap size={24}>
     {Array.from({ length: 6 }, (_, index) => index).map(elevation => (
-      <Paper elevation={elevation}>
+      <Surface elevation={elevation}>
         <Box width={180} height={80} className="bg-transparent">
           {`elevation-${elevation}`}
         </Box>
-      </Paper>
+      </Surface>
     ))}
   </Space>
 </CodeDemoArea>
@@ -73,28 +73,28 @@ Array.from({ length: 6 }, (_, index) => index).map(elevation => (
 ### Corner
 
 ```tsx
-<Paper corner="999px" elevation={3}>
+<Surface corner="999px" elevation={3}>
   <Box>Corner - Full</Box>
-</Paper>
+</Surface>
 ```
 
 <CodeDemoArea label="预览">
   <Space size={24}>
-    <Paper corner="0" elevation={3}>
+    <Surface corner="0" elevation={3}>
       <Box width={180} height={80} className="bg-transparent rounded-none">
         Corner - None
       </Box>
-    </Paper>
-    <Paper corner="16px" elevation={3}>
+    </Surface>
+    <Surface corner="16px" elevation={3}>
       <Box width={180} height={80} className="bg-transparent">
         Corner - 16px
       </Box>
-    </Paper>
-    <Paper corner="999px" elevation={3}>
+    </Surface>
+    <Surface corner="999px" elevation={3}>
       <Box width={180} height={80} className="bg-transparent">
         Corner - Full
       </Box>
-    </Paper>
+    </Surface>
   </Space>
 </CodeDemoArea>
 
@@ -102,16 +102,6 @@ Array.from({ length: 6 }, (_, index) => index).map(elevation => (
 
 <ConfigAPI
   list={[
-    {
-      property: 'width',
-      description: '指定容器宽度',
-      typedef: 'number | string'
-    },
-    {
-      property: 'height',
-      description: '指定容器高度',
-      typedef: 'number | string'
-    },
     {
       property: 'corner',
       description: '指定圆角大小',
@@ -128,6 +118,13 @@ Array.from({ length: 6 }, (_, index) => index).map(elevation => (
       description: '变体类型',
       typedef: 'elevation | outlined',
       defaultValue: 'elevation'
+    },
+    {
+      property: 'bgColor',
+      description: '背景颜色',
+      typedef: 'string',
+      defaultValue: 'colors.surface'
     }
-  ]}
+
+]}
 />

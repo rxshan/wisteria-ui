@@ -1,6 +1,7 @@
 {
-  "Provider": "Provider",
-  "Transition": "Transition",
+  "provider": "Provider",
+  "surface": "Surface",
+  "transition": "Transition",
   "layouts": "布局",
   "commons": "通用",
   "displays": "数据展示",
