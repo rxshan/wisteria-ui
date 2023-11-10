@@ -7,7 +7,6 @@ $button-color: var(--button-color);
   & .#{$prefix}-button-state-layer {
     position: absolute;
     inset: 0;
-    z-index: -1;
     color: inherit;
     pointer-events: none;
     background: $layer-color;
@@ -57,6 +56,8 @@ $button-color: var(--button-color);
 
   & &-content {
     @extend %typography-label-large;
+
+    z-index: 1;
   }
 
   &:disabled &-content {

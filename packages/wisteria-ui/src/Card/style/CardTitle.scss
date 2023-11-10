@@ -1,0 +1,39 @@
+@import '@wisteria-ui/theme';
+
+$title-number-of-lines: var(--title-ellipsis-lines, 1);
+$subtitle-number-of-lines: var(--subtitle-ellipsis-lines, 1);
+
+.#{$prefix}-card-header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px;
+
+  &-left {
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+  }
+}
+
+.#{$prefix}-card-title {
+  @extend %typography-title-large;
+
+  &-ellipsis {
+    @include text-number-of-lines($title-number-of-lines);
+  }
+}
+
+.#{$prefix}-card-subtitle {
+  @extend %typography-title-small;
+
+  font-weight: 500;
+
+  &-ellipsis {
+    @include text-number-of-lines($subtitle-number-of-lines);
+  }
+}

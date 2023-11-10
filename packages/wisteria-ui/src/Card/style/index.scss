@@ -1,0 +1,37 @@
+@import '@wisteria-ui/theme';
+@import './CardTitle';
+
+.#{$prefix}-card {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.#{$prefix}-card-content {
+  @extend %typography-body-medium;
+
+  box-sizing: border-box;
+  margin: 16px;
+}
+
+.#{$prefix}-card-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  margin: 8px;
+
+  &-left {
+    justify-content: flex-start;
+  }
+
+  &-right {
+    justify-content: flex-end;
+  }
+}
+
+.#{$prefix}-card-cover {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background-size: cover;
+}

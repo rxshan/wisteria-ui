@@ -1,0 +1,58 @@
+import { Card, Button } from 'wisteria-ui';
+import { CodeDemoArea, ConfigAPI } from '@/components';
+
+# CardActions
+
+```tsx
+import { Card, CardActions } from 'wisteria-ui';
+```
+
+## 用法
+
+```tsx
+<Card style={{ width: '50%' }}>
+  <Card.Title title="Card Actions" />
+  <Card.Actions placement="right">
+    <Button variant="text">SHARE</Button>
+    <Button variant="text">LIKE</Button>
+  </Card.Actions>
+</Card>
+```
+
+<CodeDemoArea>
+  <Card style={{ width: '50%' }}>
+    <Card.Title title="Card Actions" />
+    <Card.Actions placement="right">
+      <Button variant="text">SHARE</Button>
+      <Button variant="text">LIKE</Button>
+    </Card.Actions>
+  </Card>
+</CodeDemoArea>
+
+## API
+
+<ConfigAPI
+  list={[
+    {
+      property: 'style',
+      description: '样式',
+      typedef: ' CSSProperties'
+    },
+    {
+      property: 'className',
+      description: '类名',
+      typedef: ' string'
+    },
+    {
+      property: 'children',
+      description: '子元素',
+      typedef: 'ComponentChild'
+    },
+    {
+      property: ' placement',
+      description: '对齐位置',
+      typedef: 'left | right',
+      defaultValue: 'left'
+    }
+  ]}
+/>

@@ -6,7 +6,8 @@ export default {
       extends: ['stylelint-config-standard-scss'],
       customSyntax: 'postcss-scss',
       rules: {
-        'at-rule-no-unknown': null
+        'at-rule-no-unknown': null,
+        'scss/no-duplicate-mixins': null
       }
     }
   ],

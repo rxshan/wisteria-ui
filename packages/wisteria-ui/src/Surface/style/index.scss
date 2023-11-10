@@ -2,6 +2,7 @@
 
 .#{$prefix}-surface {
   display: inline-block;
+  width: 100%;
   overflow: hidden;
   background-color: $color-surface;
 

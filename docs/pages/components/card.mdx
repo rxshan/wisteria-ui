@@ -1,0 +1,46 @@
+import { Card, Button } from 'wisteria-ui';
+import { CodeDemoArea, ConfigAPI } from '@/components';
+
+# Card
+
+```tsx
+import { Card } from 'wisteria-ui';
+```
+
+## 用法
+
+```tsx
+<Card style={{ width: '50%' }} elevation={3}>
+  <Card.Cover src="https://images.pexels.com/photos/17539760/pexels-photo-17539760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+  <Card.Title title="Card Title" subtitle="Card Subtitle" />
+  <Card.Content>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi fugiat
+    facere sapiente error hic, id nobis repellendus natus atque, nostrum dolorem
+    laboriosam ex cumque deleniti expedita quo suscipit provident et?
+  </Card.Content>
+  <Card.Actions placement="right">
+    <Button variant="text">SHARE</Button>
+    <Button variant="text">LIKE</Button>
+  </Card.Actions>
+</Card>
+```
+
+<CodeDemoArea>
+  <Card style={{ width: '50%' }} elevation={3}>
+    <Card.Cover src="https://images.pexels.com/photos/17539760/pexels-photo-17539760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+    <Card.Title title="Card Title" subtitle="Card Subtitle" />
+    <Card.Content>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi fugiat
+      facere sapiente error hic, id nobis repellendus natus atque, nostrum
+      dolorem laboriosam ex cumque deleniti expedita quo suscipit provident et?
+    </Card.Content>
+    <Card.Actions placement="right">
+      <Button variant="text">SHARE</Button>
+      <Button variant="text">LIKE</Button>
+    </Card.Actions>
+  </Card>
+</CodeDemoArea>
+
+## API
+
+<ConfigAPI list={[]} />

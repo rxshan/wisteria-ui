@@ -1,0 +1,79 @@
+import { Card } from 'wisteria-ui';
+import { CodeDemoArea, ConfigAPI } from '@/components';
+
+# Card.Title
+
+```tsx
+import { Card, CardTitle } from 'wisteria-ui';
+```
+
+## 用法
+
+```tsx
+<Card style={{ width: '50%' }}>
+  <Card.Title
+    title="Card Title"
+    subtitle="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi fugiat facere sapiente error hic, id nobis repellendus natus atque, nostrum dolorem laboriosam ex cumque deleniti expedita quo suscipit provident et?"
+    subtitleNumberOfLines={2}
+  />
+</Card>
+```
+
+<CodeDemoArea>
+  <Card style={{ width: '50%' }}>
+    <Card.Title
+      title="Card Title"
+      subtitle="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi fugiat facere sapiente error hic, id nobis repellendus natus atque, nostrum dolorem laboriosam ex cumque deleniti expedita quo suscipit provident et?"
+      subtitleNumberOfLines={2}
+    />
+  </Card>
+</CodeDemoArea>
+
+## API
+
+<ConfigAPI
+  list={[
+    {
+      property: 'title',
+      description: '标题',
+      typedef: 'ComponentChild'
+    },
+    {
+      property: 'titleStyle',
+      description: '标题样式',
+      typedef: 'CSSProperties'
+    },
+    {
+      property: 'titleNumberOfLines',
+      description: '标题行数',
+      typedef: 'number',
+      defaultValue: '1'
+    },
+    {
+      property: 'subtitle',
+      description: '副标题',
+      typedef: 'ComponentChild'
+    },
+    {
+      property: 'subtitleStyle',
+      description: '副标题样式',
+      typedef: 'CSSProperties'
+    },
+    {
+      property: 'subtitleNumberOfLines',
+      description: '副标题行数',
+      typedef: 'number',
+      defaultValue: '1'
+    },
+    {
+      property: 'left',
+      description: '左侧图标',
+      typedef: 'function'
+    },
+    {
+      property: 'leftStyle',
+      description: '样式',
+      typedef: 'CSSProperties'
+    }
+  ]}
+/>
